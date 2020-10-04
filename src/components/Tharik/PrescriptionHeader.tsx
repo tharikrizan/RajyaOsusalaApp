@@ -8,19 +8,16 @@ import {
   IonTabBar,
   IonTabButton,
 } from "@ionic/react";
-import { ellipse, square, triangle } from "ionicons/icons";
 
 const PrescriptionHeader: React.FC = () => {
   return (
     <IonHeader>
       <IonTabBar slot="top">
-        <IonTabButton tab="tab1" href="/Prescription/Pending">
-          <IonIcon icon={triangle} />
-          <IonLabel>Tab 1</IonLabel>
+        <IonTabButton tab="tab1" href="/prescriptions">
+          <IonLabel>Pending</IonLabel>
         </IonTabButton>
-        <IonTabButton tab="tab2" href="/Prescription/Quoted">
-          <IonIcon icon={ellipse} />
-          <IonLabel>Tab 2</IonLabel>
+        <IonTabButton tab="tab2" href="/prescriptions/quoted">
+          <IonLabel>Quoted</IonLabel>
         </IonTabButton>
       </IonTabBar>
     </IonHeader>
