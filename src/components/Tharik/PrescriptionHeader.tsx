@@ -1,26 +1,31 @@
 import React from "react";
 
 import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
   IonHeader,
   IonIcon,
   IonLabel,
   IonPage,
   IonTabBar,
   IonTabButton,
+  IonToolbar,
 } from "@ionic/react";
 
 const PrescriptionHeader: React.FC = () => {
   return (
-    <IonHeader>
-      <IonTabBar slot="top">
-        <IonTabButton tab="tab1" href="/prescriptions">
+    <IonToolbar slot="top">
+      <IonButtons slot="start">
+        <IonBackButton defaultHref="/" />
+        <IonButton href="/prescriptions">
           <IonLabel>Pending</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab2" href="/prescriptions/quoted">
+        </IonButton>
+        <IonButton href="/prescriptions/quoted">
           <IonLabel>Quoted</IonLabel>
-        </IonTabButton>
-      </IonTabBar>
-    </IonHeader>
+        </IonButton>
+      </IonButtons>
+    </IonToolbar>
   );
 };
 

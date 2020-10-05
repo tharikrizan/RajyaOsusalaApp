@@ -41,26 +41,38 @@ import HomePage from "./pages/HomePage";
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
-      <IonTabs>
-        <IonRouterOutlet>
-          <Route path="/" component={HomePage} exact={true} />
-          <Route
-            path="/prescriptions"
-            component={PendingPrescription}
-            exact={true}
-          />
-          <Route
-            path="/prescriptions/quoted"
-            component={QuotedPrescription}
-            exact={true}
-          />
-          <Route
-            path="/prescriptions/add"
-            component={AddPrescription}
-            exact={true}
-          />
-        </IonRouterOutlet>
-      </IonTabs>
+      <IonRouterOutlet>
+        <Route path="/" component={HomePage} exact={true} />
+        <Route
+          path="/prescriptions"
+          component={PendingPrescription}
+          exact={true}
+        />
+        <Route
+          path="/prescriptions/quoted"
+          component={QuotedPrescription}
+          exact={true}
+        />
+        <Route
+          path="/prescriptions/add"
+          component={AddPrescription}
+          exact={true}
+        />
+      </IonRouterOutlet>
+      <IonTabBar slot="bottom">
+        <IonTabButton tab="tab1" href="/">
+          <IonIcon icon={triangle} />
+          <IonLabel>Home Page</IonLabel>
+        </IonTabButton>
+        <IonTabButton tab="tab2" href="/prescriptions">
+          <IonIcon icon={ellipse} />
+          <IonLabel>Prescriptions</IonLabel>
+        </IonTabButton>
+        <IonTabButton tab="tab3" href="/products">
+          <IonIcon icon={square} />
+          <IonLabel> Products</IonLabel>
+        </IonTabButton>
+      </IonTabBar>
     </IonReactRouter>
   </IonApp>
 );
