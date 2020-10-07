@@ -91,8 +91,8 @@ export default function LoginPage(props: any) {
           src={MainPurpleCircle}
           style={{
             position: "relative",
-            left: "-50px",
-            top: "-120px",
+            left: "-20%",
+            top: "-25%",
             height: "100%",
             width: "115%",
           }}
@@ -114,7 +114,7 @@ export default function LoginPage(props: any) {
       >
         <br />
 
-        <div>
+        <div style={{ height: "5%" }}>
           <IonIcon
             icon={person}
             style={{
@@ -122,9 +122,8 @@ export default function LoginPage(props: any) {
               zIndex: 100,
               height: "20px",
               width: "20px",
-              top: "23px",
               left: "6px",
-              position: "absolute",
+              position: "relative",
             }}
           />
           <input
