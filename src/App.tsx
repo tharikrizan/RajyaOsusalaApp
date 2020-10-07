@@ -2,18 +2,19 @@ import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
+  IonButton,
+  IonGrid,
   IonIcon,
   IonLabel,
+  IonNav,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
   IonTabs,
+  IonTitle,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { ellipse, square, triangle } from "ionicons/icons";
-import Tab1 from "./pages/Tab1";
-import Tab2 from "./pages/Tab2";
-import Tab3 from "./pages/Tab3";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -33,46 +34,16 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
-import PendingPrescription from "./pages/Tharik/PendingPrescription";
-import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
-import AddPrescription from "./pages/Tharik/AddPrescription";
 import HomePage from "./pages/HomePage";
+import CHAT from "./components/MR/Chat";
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/" component={HomePage} exact={true} />
-        <Route
-          path="/prescriptions"
-          component={PendingPrescription}
-          exact={true}
-        />
-        <Route
-          path="/prescriptions/quoted"
-          component={QuotedPrescription}
-          exact={true}
-        />
-        <Route
-          path="/prescriptions/add"
-          component={AddPrescription}
-          exact={true}
-        />
+        <Route path="/chat" component={CHAT} exact={true} />
       </IonRouterOutlet>
-      <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1" href="/">
-          <IonIcon icon={triangle} />
-          <IonLabel>Home Page</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab2" href="/prescriptions">
-          <IonIcon icon={ellipse} />
-          <IonLabel>Prescriptions</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab3" href="/products">
-          <IonIcon icon={square} />
-          <IonLabel> Products</IonLabel>
-        </IonTabButton>
-      </IonTabBar>
     </IonReactRouter>
   </IonApp>
 );
