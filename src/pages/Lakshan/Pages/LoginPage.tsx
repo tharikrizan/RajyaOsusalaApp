@@ -26,8 +26,9 @@ export default function LoginPage(props: any) {
       setPasswordError("Password cannot be empty!");
       return;
     }
+    console.log("Logged In!", props);
     await props.setLoggedInStatus(true);
-    props.history.push("/");
+    props.history.push("/products");
   };
 
   const onUsernameChange = (e: any) => {
