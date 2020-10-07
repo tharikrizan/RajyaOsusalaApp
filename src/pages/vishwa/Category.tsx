@@ -91,7 +91,7 @@ const Category: React.FC = () => {
                   <IonImg src="https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                 </div>
 
-                <IonCardTitle className="title">Some Awesome Dish Title</IonCardTitle>
+                <IonCardTitle className="title">Popular Category</IonCardTitle>
                 <IonCardSubtitle>Some description here</IonCardSubtitle>
                 <IonCardSubtitle>
                 </IonCardSubtitle>
@@ -107,7 +107,7 @@ const Category: React.FC = () => {
                   <IonImg src="https://images.pexels.com/photos/793759/pexels-photo-793759.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"></IonImg>
                 </div>
 
-                <IonCardTitle className="title">Some Awesome Products Title</IonCardTitle>
+                <IonCardTitle className="title">Popular Category</IonCardTitle>
                 <IonCardSubtitle>Some description here</IonCardSubtitle>
               </IonCardContent>
             </IonCard>
@@ -144,7 +144,7 @@ const Category: React.FC = () => {
               <IonCard className="category" color="danger" href="/products">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/dish.svg"></IonIcon>
-                  <IonCardTitle>Food</IonCardTitle>
+                  <IonCardTitle>Category 1</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -154,7 +154,7 @@ const Category: React.FC = () => {
               <IonCard className="category" color="primary">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/cocktail.svg"></IonIcon>
-                  <IonCardTitle>Drink</IonCardTitle>
+                  <IonCardTitle>Category 2</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -164,7 +164,7 @@ const Category: React.FC = () => {
               <IonCard className="category" color="warning">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Category 3</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -174,7 +174,7 @@ const Category: React.FC = () => {
               <IonCard className="category" color="success">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Category 4</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -184,7 +184,7 @@ const Category: React.FC = () => {
               <IonCard className="category" color="tertiary">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Category 5</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -202,7 +202,7 @@ const Category: React.FC = () => {
       <IonRow className="ion-align-items-baseline">
         <IonCol size="6">
           <h4 className="title">
-            Recommended Drinks
+            Trending Categories
           </h4>
         </IonCol>
 
@@ -225,7 +225,7 @@ const Category: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Category 1</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                   </IonCardContent>
                 </IonCard>
@@ -239,7 +239,7 @@ const Category: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Category 2</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                     <IonCardSubtitle>
                     </IonCardSubtitle>
@@ -255,7 +255,7 @@ const Category: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Category 3</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                     <IonCardSubtitle>
                     </IonCardSubtitle>

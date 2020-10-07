@@ -32,7 +32,7 @@ const Productoffers: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <IonButton fill="clear" color="light">
+    <IonButton fill="clear" color="light" href="/offers">
      <IonIcon icon={menu} />
     </IonButton>
   </IonItem>

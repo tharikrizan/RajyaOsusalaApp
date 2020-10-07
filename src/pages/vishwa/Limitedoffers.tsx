@@ -32,7 +32,7 @@ const Limitedoffers: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <IonButton fill="clear" color="light">
+    <IonButton fill="clear" color="light" href="/offers">
      <IonIcon icon={menu} />
     </IonButton>
   </IonItem>
@@ -105,7 +105,7 @@ const Limitedoffers: React.FC = () => {
               <IonCard className="category" color="success">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Discount</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -115,7 +115,7 @@ const Limitedoffers: React.FC = () => {
               <IonCard className="category" color="tertiary">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Discount</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -138,7 +138,7 @@ const Limitedoffers: React.FC = () => {
               <IonCard className="category" color="success">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Discount</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -148,7 +148,7 @@ const Limitedoffers: React.FC = () => {
               <IonCard className="category" color="tertiary">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Discount</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>

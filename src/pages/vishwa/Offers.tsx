@@ -63,55 +63,13 @@ const Offer: React.FC = () => {
         <IonContent fullscreen={true}>
 
 
-        <IonButton onClick={() => setShowActionSheet(true)} expand="block">
-        Show Action Sheet
-      </IonButton>
-      <IonActionSheet
-        isOpen={showActionSheet}
-        onDidDismiss={() => setShowActionSheet(false)}
-        cssClass='my-custom-class'
-        buttons={[{
-          text: 'Delete',
-          role: 'destructive',
-          icon: trash,
-          handler: () => {
-            console.log('Delete clicked');
-          }
-        }, {
-          text: 'Share',
-          icon: share,
-          handler: () => {
-            console.log('Share clicked');
-          }
-        }, {
-          text: 'Play (open modal)',
-          icon: caretForwardCircle,
-          handler: () => {
-            console.log('Play clicked');
-          }
-        }, {
-          text: 'Favorite',
-          icon: heart,
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Cancel',
-          icon: close,
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }]}
-      >
-      </IonActionSheet>
 
 
 
 
 
         <IonModal isOpen={showModal} cssClass='my-modal'>
-              <h2>Filter Products</h2>
+              <h2>Filter Offers</h2>
               <IonButton href="/limitedoffers">Limited Offers</IonButton>
               <IonButton href="/productoffers">Product Offers</IonButton>
               <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
@@ -171,7 +129,7 @@ const Offer: React.FC = () => {
                   <IonImg src="img/offer1.png"></IonImg>
                 </div>
 
-                <IonCardTitle className="title">Some Awesome Products Title</IonCardTitle>
+                <IonCardTitle className="title">Awesome offer 2</IonCardTitle>
                 <IonCardSubtitle>Some description here</IonCardSubtitle>
                 <IonCardSubtitle>
                   <IonIcon name="star"></IonIcon>
@@ -239,7 +197,7 @@ const Offer: React.FC = () => {
               <IonCard className="category" color="success">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Discount</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -249,7 +207,7 @@ const Offer: React.FC = () => {
               <IonCard className="category" color="tertiary">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Burger</IonCardTitle>
+                  <IonCardTitle>Discount</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
@@ -296,7 +254,7 @@ const Offer: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Product Discount</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                     <IonCardSubtitle>
                       <IonIcon name="star"></IonIcon>
@@ -317,7 +275,7 @@ const Offer: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Product Discount</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                     <IonCardSubtitle>
                     </IonCardSubtitle>
@@ -333,7 +291,7 @@ const Offer: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Product Discount</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                     <IonCardSubtitle>
                     </IonCardSubtitle>
@@ -359,7 +317,7 @@ const Offer: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Product Discount</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                     <IonCardSubtitle>
                       <IonIcon name="star"></IonIcon>
@@ -380,7 +338,7 @@ const Offer: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Product Discount</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                     <IonCardSubtitle>
                     </IonCardSubtitle>
@@ -396,7 +354,7 @@ const Offer: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Some Awesome Title</IonCardTitle>
+                    <IonCardTitle className="title">Product Discount</IonCardTitle>
                     <IonCardSubtitle>Some description here</IonCardSubtitle>
                     <IonCardSubtitle>
                     </IonCardSubtitle>

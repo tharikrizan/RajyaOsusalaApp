@@ -81,7 +81,7 @@ import { menu, options } from 'ionicons/icons';
               <IonRow>
                 <IonCol size="">
 
-                  <IonCardTitle>Car</IonCardTitle>
+                  <IonCardTitle>Pro1</IonCardTitle>
                   <IonCardSubtitle>Rs 150</IonCardSubtitle>
                 </IonCol>
 
@@ -96,7 +96,7 @@ import { menu, options } from 'ionicons/icons';
 
               <IonRow>
                 <IonCol size="">
-                  <IonCardTitle>Car</IonCardTitle>
+                  <IonCardTitle>Pro2</IonCardTitle>
                   <IonCardSubtitle>Rs 150</IonCardSubtitle>
                 </IonCol>
 
@@ -115,7 +115,7 @@ import { menu, options } from 'ionicons/icons';
               <IonRow>
                 <IonCol size="">
 
-                  <IonCardTitle>Car</IonCardTitle>
+                  <IonCardTitle>Pro3</IonCardTitle>
                   <IonCardSubtitle>Rs 150</IonCardSubtitle>
                 </IonCol>
 
@@ -130,7 +130,7 @@ import { menu, options } from 'ionicons/icons';
 
               <IonRow>
                 <IonCol size="">
-                  <IonCardTitle>Car</IonCardTitle>
+                  <IonCardTitle>Pro4</IonCardTitle>
                   <IonCardSubtitle>Rs 150</IonCardSubtitle>
                 </IonCol>
 
