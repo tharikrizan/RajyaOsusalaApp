@@ -46,31 +46,13 @@ export default function ForgotPassword(props: any) {
             zIndex: 100,
           }}
         >
-          <IonIcon
-            icon={logIn}
-            style={{
-              color: "#FFFFFF",
-              zIndex: 100,
-              height: "50px",
-              width: "100%",
-              margin: "auto",
-            }}
-          />
+          <IonIcon icon={logIn} style={styles.mainBubbleIconText} />
           <h5 style={{ margin: "auto", width: "120px", textAlign: "center" }}>
             Forgot Password
           </h5>
         </div>
 
-        <IonImg
-          src={MainPurpleCircle}
-          style={{
-            position: "relative",
-            left: "-50px",
-            top: "-120px",
-            height: "100%",
-            width: "115%",
-          }}
-        />
+        <IonImg src={MainPurpleCircle} style={styles.topLeftBubble} />
       </div>
 
       <form
@@ -150,16 +132,7 @@ export default function ForgotPassword(props: any) {
           position: "relative",
         }}
       >
-        <IonImg
-          src={SideMiddleCircle}
-          style={{
-            position: "relative",
-            right: "-250px",
-            bottom: "50%",
-            height: "55%",
-            width: "100%",
-          }}
-        />
+        <IonImg src={SideMiddleCircle} style={styles.rightMiddleBubble} />
       </div>
 
       <div
@@ -172,16 +145,7 @@ export default function ForgotPassword(props: any) {
           position: "relative",
         }}
       >
-        <IonImg
-          src={BottomRightCircle}
-          style={{
-            position: "relative",
-            right: "-165px",
-            bottom: "50%",
-            height: "55%",
-            width: "100%",
-          }}
-        />
+        <IonImg src={BottomRightCircle} style={styles.rightBottomBubble} />
       </div>
     </div>
   );
@@ -197,5 +161,41 @@ const styles = {
     borderRadius: "20px",
     margin: "auto",
     width: "200px",
+  },
+  mainBubbleIconTextWrapper: {
+    position: "absolute",
+    top: "100px",
+    color: "#FFFFFF",
+    margin: "auto",
+    width: "100%",
+    zIndex: 100,
+  },
+  mainBubbleIconText: {
+    color: "#FFFFFF",
+    zIndex: 100,
+    height: "50px",
+    width: "100%",
+    margin: "auto",
+  },
+  topLeftBubble: {
+    position: "relative",
+    left: "-20%",
+    top: "-25%",
+    height: "100%",
+    width: "115%",
+  },
+  rightMiddleBubble: {
+    position: "relative",
+    right: "-65%",
+    bottom: "50%",
+    height: "55%",
+    width: "100%",
+  },
+  rightBottomBubble: {
+    position: "relative",
+    right: "-50%",
+    bottom: "50%",
+    height: "55%",
+    width: "100%",
   },
 };

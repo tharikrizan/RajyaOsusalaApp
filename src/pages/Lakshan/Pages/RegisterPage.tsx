@@ -31,7 +31,7 @@ export default function RegisterPage(props: any) {
           backgroundColor: "#FFFFFF",
           width: "100%",
           height: "50%",
-          marginBottom: "-80px",
+          marginBottom: "-10%",
           color: "#000000",
           position: "relative",
         }}
@@ -65,8 +65,8 @@ export default function RegisterPage(props: any) {
           src={MainPurpleCircle}
           style={{
             position: "relative",
-            right: "-20px",
-            top: "-110px",
+            right: "-13%",
+            top: "-18%",
             height: "100%",
             width: "115%",
           }}
@@ -263,7 +263,7 @@ export default function RegisterPage(props: any) {
           src={SideMiddleCircle}
           style={{
             position: "relative",
-            left: "-260px",
+            left: "-65%",
             bottom: "45%",
             height: "55%",
             width: "100%",
@@ -276,7 +276,6 @@ export default function RegisterPage(props: any) {
           backgroundColor: "#FFFFFF",
           width: "100%",
           height: "50%",
-          marginBottom: "-80px",
           color: "#000000",
           position: "relative",
         }}
@@ -285,8 +284,8 @@ export default function RegisterPage(props: any) {
           src={BottomRightCircle}
           style={{
             position: "relative",
-            right: "-165px",
-            bottom: "70%",
+            right: "-40%",
+            bottom: "80%",
             height: "55%",
             width: "100%",
           }}
