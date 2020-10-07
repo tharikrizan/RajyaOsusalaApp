@@ -1,4 +1,4 @@
-import React, { FormEvent, SyntheticEvent, useState } from "react";
+import React, { FormEvent, useState } from "react";
 import MainPurpleCircle from "../res/purple-circle.svg";
 import SideMiddleCircle from "../res/side-middle-ciricle.svg";
 import BottomRightCircle from "../res/bottom-right-circle.svg";

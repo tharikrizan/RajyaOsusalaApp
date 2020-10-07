@@ -3,7 +3,7 @@ import MainPurpleCircle from "../res/purple-circle.svg";
 import SideMiddleCircle from "../res/side-middle-ciricle.svg";
 import BottomRightCircle from "../res/bottom-right-circle.svg";
 
-import { person, logIn, lockOpen, mail, locateOutline } from "ionicons/icons";
+import { person, logIn, lockOpen, mail } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
 import { IonImg, IonIcon, IonCheckbox } from "@ionic/react";

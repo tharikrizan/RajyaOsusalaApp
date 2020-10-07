@@ -9,6 +9,6 @@ export default function Logout(props: any) {
     }, 500);
 
     return () => {};
-  }, []);
+  }, [props]);
   return <h1>Loggin Out!</h1>;
 }
