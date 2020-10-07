@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MainPurpleCircle from "../res/purple-circle.svg";
 import SideMiddleCircle from "../res/side-middle-ciricle.svg";
 import BottomRightCircle from "../res/bottom-right-circle.svg";
@@ -6,11 +6,17 @@ import BottomRightCircle from "../res/bottom-right-circle.svg";
 import { person, logIn, lockOpen, mail, locateOutline } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
-import { IonImg, IonIcon } from "@ionic/react";
+import { IonImg, IonIcon, IonCheckbox } from "@ionic/react";
 
 const PURPLE_COLOR = "#B04CEF";
 
 export default function RegisterPage(props: any) {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  const onCheck = (e: any) => {
+    setIsChecked(e.target.value);
+  };
+
   const onSubmitForm = async (e: any) => {
     e.preventDefault();
     await props.setLoggedInStatus(true);
@@ -192,7 +198,7 @@ export default function RegisterPage(props: any) {
             }}
           />
           <input
-            type="retype-password"
+            type="password"
             name="retype-password"
             id="retype-password"
             placeholder="Retype Password"
@@ -210,11 +216,10 @@ export default function RegisterPage(props: any) {
         <br />
 
         <label>
-          <input
-            type="checkbox"
-            name="location"
-            id="location"
-            style={{ marginRight: "5px" }}
+          <IonCheckbox
+            checked={isChecked}
+            onChange={onCheck}
+            style={{ marginRight: "10px" }}
           />
           Use my current location as my address
         </label>
