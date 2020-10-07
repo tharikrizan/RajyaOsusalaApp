@@ -110,11 +110,12 @@ export default function LoginPage(props: any) {
           position: "relative",
           flexDirection: "column",
           justifyContent: "space-between",
+          zIndex: 2,
         }}
       >
         <br />
 
-        <div style={{ height: "5%" }}>
+        <div style={{ position: "relative" }}>
           <IonIcon
             icon={person}
             style={{
@@ -122,8 +123,9 @@ export default function LoginPage(props: any) {
               zIndex: 100,
               height: "20px",
               width: "20px",
-              left: "6px",
-              position: "relative",
+              left: "2%",
+              top: "15%",
+              position: "absolute",
             }}
           />
           <input
@@ -156,8 +158,8 @@ export default function LoginPage(props: any) {
               zIndex: 100,
               height: "20px",
               width: "20px",
-              top: "6px",
-              left: "6px",
+              left: "2%",
+              top: "15%",
               position: "absolute",
             }}
           />
@@ -220,7 +222,7 @@ export default function LoginPage(props: any) {
           backgroundColor: "#FFFFFF",
           width: "100%",
           height: "50%",
-          marginBottom: "-80px",
+          marginBottom: "-10%",
           color: "#000000",
           position: "relative",
         }}
@@ -229,7 +231,7 @@ export default function LoginPage(props: any) {
           src={SideMiddleCircle}
           style={{
             position: "relative",
-            right: "-250px",
+            right: "-65%",
             bottom: "50%",
             height: "55%",
             width: "100%",
@@ -242,17 +244,18 @@ export default function LoginPage(props: any) {
           backgroundColor: "#FFFFFF",
           width: "100%",
           height: "50%",
-          marginBottom: "-80px",
+          marginBottom: "-10%",
           color: "#000000",
           position: "relative",
+          zIndex: 1,
         }}
       >
         <IonImg
           src={BottomRightCircle}
           style={{
             position: "relative",
-            right: "-165px",
-            bottom: "50%",
+            right: "-50%",
+            bottom: "65%",
             height: "55%",
             width: "100%",
           }}
