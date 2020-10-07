@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
@@ -10,7 +10,7 @@ import {
   IonTabs,
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
-import { ellipse, square, triangle } from "ionicons/icons";
+import { ellipse, square, triangle, exit } from "ionicons/icons";
 import Tab1 from "./pages/Tab1";
 import Tab2 from "./pages/Tab2";
 import Tab3 from "./pages/Tab3";
@@ -37,10 +37,16 @@ import PendingPrescription from "./pages/Tharik/PendingPrescription";
 import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
 import AddPrescription from "./pages/Tharik/AddPrescription";
 import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/Lakshan/Pages/LoginPage";
+import RegisterPage from "./pages/Lakshan/Pages/RegisterPage";
+import Logout from "./pages/Lakshan/Pages/Logout";
+import ForgotPassword from "./pages/Lakshan/Pages/ForgotPassword";
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
+const App: React.FC = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const loggedInRoutes = (
+    <>
       <IonRouterOutlet>
         <Route path="/" component={HomePage} exact={true} />
         <Route
@@ -58,6 +64,13 @@ const App: React.FC = () => (
           component={AddPrescription}
           exact={true}
         />
+        <Route
+          path="/logout"
+          render={(props) => (
+            <Logout {...props} setLoggedInStatus={setIsLoggedIn} />
+          )}
+          exact={true}
+        />
       </IonRouterOutlet>
       <IonTabBar slot="bottom">
         <IonTabButton tab="tab1" href="/">
@@ -72,9 +85,45 @@ const App: React.FC = () => (
           <IonIcon icon={square} />
           <IonLabel> Products</IonLabel>
         </IonTabButton>
+        <IonTabButton tab="tab4" href="/logout">
+          <IonIcon icon={exit} />
+          <IonLabel> Logout</IonLabel>
+        </IonTabButton>
       </IonTabBar>
-    </IonReactRouter>
-  </IonApp>
-);
+    </>
+  );
+
+  const notLogged = (
+    <>
+      <Route
+        path="/"
+        render={(props) => (
+          <LoginPage {...props} setLoggedInStatus={setIsLoggedIn} />
+        )}
+        exact={true}
+      />
+      <Route
+        path="/register"
+        render={(props) => (
+          <RegisterPage {...props} setLoggedInStatus={setIsLoggedIn} />
+        )}
+        exact={true}
+      />
+      <Route
+        path="/forgot"
+        render={(props) => (
+          <ForgotPassword {...props} setLoggedInStatus={setIsLoggedIn} />
+        )}
+        exact={true}
+      />
+    </>
+  );
+
+  return (
+    <IonApp>
+      <IonReactRouter>{isLoggedIn ? loggedInRoutes : notLogged}</IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;
