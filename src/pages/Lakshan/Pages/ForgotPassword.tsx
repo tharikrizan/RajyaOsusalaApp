@@ -116,7 +116,7 @@ export default function ForgotPassword(props: any) {
             fontSize: "20px",
           }}
         >
-          <Link to="/">Login</Link>
+          <Link to="/login">Login</Link>
           <br />
           <Link to="/register">Create an account</Link>
         </div>

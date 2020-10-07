@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, useState } from "react";
+import React, { FormEvent, SyntheticEvent, useState } from "react";
 import MainPurpleCircle from "../res/purple-circle.svg";
 import SideMiddleCircle from "../res/side-middle-ciricle.svg";
 import BottomRightCircle from "../res/bottom-right-circle.svg";
@@ -16,7 +16,7 @@ export default function LoginPage(props: any) {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
 
-  const onSubmitForm = async (e: any) => {
+  const onSubmitForm = async (e: FormEvent<HTMLElement>) => {
     e.preventDefault();
     if (username.length === 0) {
       setUsernameError("Username cannot be empty!");
@@ -28,7 +28,7 @@ export default function LoginPage(props: any) {
     }
     console.log("Logged In!", props);
     await props.setLoggedInStatus(true);
-    props.history.push("/products");
+    props.history.push("/");
   };
 
   const onUsernameChange = (e: any) => {

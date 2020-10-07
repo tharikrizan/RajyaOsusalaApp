@@ -245,7 +245,7 @@ export default function RegisterPage(props: any) {
             fontSize: "20px",
           }}
         >
-          <Link to="/">Already have an account?</Link>
+          <Link to="/login">Already have an account?</Link>
         </div>
       </form>
 

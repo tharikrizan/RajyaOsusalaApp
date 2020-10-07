@@ -5,7 +5,7 @@ export default function Logout(props: any) {
     props.setLoggedInStatus(false);
 
     setTimeout(() => {
-      props.history.push("/");
+      props.history.push("/login");
     }, 500);
 
     return () => {};

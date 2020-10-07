@@ -49,65 +49,76 @@ import Logout from "./pages/Lakshan/Pages/Logout";
 import ForgotPassword from "./pages/Lakshan/Pages/ForgotPassword";
 
 const App: React.FC = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const setLoggedInStatus = (value: boolean) => {
+    setIsLoggedIn(value);
+    console.log("New Value: ", value);
+  };
   const guestRoutes = (
     <>
       <Switch>
         <Route
+          path="/"
+          render={(props) => <Offers {...props} loggedIn={isLoggedIn} />}
+          exact={true}
+        />
+        <Route
+          path="/logout"
+          render={(props) => (
+            <Logout {...props} setLoggedInStatus={setLoggedInStatus} />
+          )}
+          exact={true}
+        />
+        <Route
+          path="/prescriptions"
+          component={PendingPrescription}
+          exact={true}
+        />
+        <Route
+          path="/prescriptions/quoted"
+          component={QuotedPrescription}
+          exact={true}
+        />
+        <Route
+          path="/prescriptions/add"
+          component={AddPrescription}
+          exact={true}
+        />
+        <Route path="/products" component={Products} exact={true} />
+        <Route path="/category" component={Category} exact={true} />
+        <Route path="/offers" component={Offers} exact={true} />
+        <Route path="/limitedoffers" component={Limitedoffers} exact={true} />
+        <Route path="/productoffers" component={Productoffers} exact={true} />
+        <Route path="/maps" component={Maps} exact={true} />
+        <Route
           path="/register"
           render={(props) => (
-            <RegisterPage {...props} setLoggedInStatus={setIsLoggedIn} />
+            <RegisterPage {...props} setLoggedInStatus={setLoggedInStatus} />
           )}
           exact={true}
         />
         <Route
           path="/forgot"
           render={(props) => (
-            <ForgotPassword {...props} setLoggedInStatus={setIsLoggedIn} />
+            <ForgotPassword {...props} setLoggedInStatus={setLoggedInStatus} />
           )}
           exact={true}
         />
         <Route
-          path="/"
+          path="/login"
+          exact={true}
           render={(props) => (
-            <LoginPage {...props} setLoggedInStatus={setIsLoggedIn} />
+            <LoginPage {...props} setLoggedInStatus={setLoggedInStatus} />
           )}
         />
       </Switch>
     </>
   );
-  const authenticatedRoutes = (
-    <>
-      <Route path="/offers" component={Offers} exact={true} />
-      <Route
-        path="/prescriptions"
-        component={PendingPrescription}
-        exact={true}
-      />
-      <Route
-        path="/prescriptions/quoted"
-        component={QuotedPrescription}
-        exact={true}
-      />
-      <Route
-        path="/prescriptions/add"
-        component={AddPrescription}
-        exact={true}
-      />
-      <Route path="/products" component={Products} exact={true} />
-      <Route path="/category" component={Category} exact={true} />
-      <Route path="/offers" component={Offers} exact={true} />
-      <Route path="/limitedoffers" component={Limitedoffers} exact={true} />
-      <Route path="/productoffers" component={Productoffers} exact={true} />
-      <Route path="/maps" component={Maps} exact={true} />
-    </>
-  );
+  const authenticatedRoutes = <></>;
   return (
     <IonApp>
       <IonReactRouter>
-        <IonRouterOutlet>
-          {isLoggedIn ? authenticatedRoutes : guestRoutes}
-        </IonRouterOutlet>
+        <IonRouterOutlet>{guestRoutes}</IonRouterOutlet>
       </IonReactRouter>
     </IonApp>
   );
