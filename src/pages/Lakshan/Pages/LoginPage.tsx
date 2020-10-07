@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { SyntheticEvent, useState } from "react";
 import MainPurpleCircle from "../res/purple-circle.svg";
 import SideMiddleCircle from "../res/side-middle-ciricle.svg";
 import BottomRightCircle from "../res/bottom-right-circle.svg";
@@ -11,10 +11,10 @@ import { IonImg, IonIcon } from "@ionic/react";
 const PURPLE_COLOR = "#B04CEF";
 
 export default function LoginPage(props: any) {
-  const [usernameError, setUsernameError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [usernameError, setUsernameError] = useState<string>("");
+  const [passwordError, setPasswordError] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
   const onSubmitForm = async (e: any) => {
     e.preventDefault();
