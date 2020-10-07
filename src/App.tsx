@@ -37,12 +37,17 @@ import PendingPrescription from "./pages/Tharik/PendingPrescription";
 import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
 import AddPrescription from "./pages/Tharik/AddPrescription";
 import HomePage from "./pages/HomePage";
+import Products from "./pages/vishwa/Products";
+import Category from "./pages/vishwa/Category";
+import Offers from "./pages/vishwa/Offers";
+import Limitedoffers from "./pages/vishwa/Limitedoffers";
+import Productoffers from "./pages/vishwa/Productoffers";
 
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route path="/" component={HomePage} exact={true} />
+        <Route path="/" component={Offers} exact={true} />
         <Route
           path="/prescriptions"
           component={PendingPrescription}
@@ -58,21 +63,33 @@ const App: React.FC = () => (
           component={AddPrescription}
           exact={true}
         />
+        <Route
+          path="/products"
+          component={Products}
+          exact={true}
+        />
+        <Route
+          path="/category"
+          component={Category}
+          exact={true}
+        />
+        <Route
+          path="/offers"
+          component={Offers}
+          exact={true}
+        />
+        <Route
+          path="/limitedoffers"
+          component={Limitedoffers}
+          exact={true}
+        />
+        <Route
+          path="/productoffers"
+          component={Productoffers}
+          exact={true}
+        />
       </IonRouterOutlet>
-      <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1" href="/">
-          <IonIcon icon={triangle} />
-          <IonLabel>Home Page</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab2" href="/prescriptions">
-          <IonIcon icon={ellipse} />
-          <IonLabel>Prescriptions</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab3" href="/products">
-          <IonIcon icon={square} />
-          <IonLabel> Products</IonLabel>
-        </IonTabButton>
-      </IonTabBar>
+
     </IonReactRouter>
   </IonApp>
 );
