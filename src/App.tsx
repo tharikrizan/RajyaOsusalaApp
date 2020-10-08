@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import {
@@ -55,7 +54,6 @@ import RegisterPage from "./pages/Lakshan/Pages/RegisterPage";
 import Logout from "./pages/Lakshan/Pages/Logout";
 import ForgotPassword from "./pages/Lakshan/Pages/ForgotPassword";
 
-
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const setLoggedInStatus = (value: boolean) => {
@@ -67,7 +65,12 @@ const App: React.FC = () => {
       <Switch>
         <Route
           path="/"
-          render={(props) =>(<Offers {...props} isLoggedIn={isLoggedIn}  />)}
+          render={(props) => <Home {...props} isLoggedIn={isLoggedIn} />}
+          exact={true}
+        />
+        <Route
+          path="/offers"
+          render={(props) => <Offers {...props} isLoggedIn={isLoggedIn} />}
           exact={true}
         />
         <Route
@@ -82,21 +85,8 @@ const App: React.FC = () => {
           component={PendingPrescription}
           exact={true}
         />
-        <Route
-          path="/home"
-          component={Home}
-          exact={true}
-        />
-        <Route
-          path="/products"
-          component={Products}
-          exact={true}
-        />
-        <Route
-          path="/pro"
-          component={Productsnew}
-          exact={true}
-        />
+        <Route path="/products" component={Products} exact={true} />
+        <Route path="/pro" component={Productsnew} exact={true} />
         <Route
           path="/prescriptions/quoted"
           component={QuotedPrescription}
@@ -109,7 +99,6 @@ const App: React.FC = () => {
         />
 
         <Route path="/category" component={Category} exact={true} />
-        <Route path="/offers" component={Offers} exact={true} />
         <Route path="/limitedoffers" component={Limitedoffers} exact={true} />
         <Route path="/productoffers" component={Productoffers} exact={true} />
         <Route path="/maps" component={Maps} exact={true} />
@@ -134,7 +123,7 @@ const App: React.FC = () => {
             <LoginPage {...props} setLoggedInStatus={setLoggedInStatus} />
           )}
         />
-          <Route
+        <Route
           path="/prescriptions/edit/:id"
           component={EditPrescription}
           exact={true}
@@ -151,6 +140,5 @@ const App: React.FC = () => {
     </IonApp>
   );
 };
-
 
 export default App;

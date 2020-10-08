@@ -96,6 +96,7 @@ export default function LoginPage(props: any) {
             top: "-25%",
             height: "100%",
             width: "115%",
+            fill: "#000000",
           }}
         />
       </div>
