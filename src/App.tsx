@@ -1,14 +1,6 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
-import {
-  IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
-} from "@ionic/react";
+import { IonApp, IonRouterOutlet } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import { ellipse, square, triangle } from "ionicons/icons";
 import Tab1 from "./pages/Tab1";
@@ -37,6 +29,7 @@ import PendingPrescription from "./pages/Tharik/PendingPrescription";
 import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
 import AddPrescription from "./pages/Tharik/AddPrescription";
 import HomePage from "./pages/HomePage";
+import EditPrescription from "./pages/Tharik/EditPrescription";
 
 const App: React.FC = () => (
   <IonApp>
@@ -58,21 +51,12 @@ const App: React.FC = () => (
           component={AddPrescription}
           exact={true}
         />
+        <Route
+          path="/prescriptions/edit/:id"
+          component={EditPrescription}
+          exact={true}
+        />
       </IonRouterOutlet>
-      <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1" href="/">
-          <IonIcon icon={triangle} />
-          <IonLabel>Home Page</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab2" href="/prescriptions">
-          <IonIcon icon={ellipse} />
-          <IonLabel>Prescriptions</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab3" href="/products">
-          <IonIcon icon={square} />
-          <IonLabel> Products</IonLabel>
-        </IonTabButton>
-      </IonTabBar>
     </IonReactRouter>
   </IonApp>
 );
