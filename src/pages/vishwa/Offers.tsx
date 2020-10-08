@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { IonAvatar,IonModal,IonActionSheet, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
-import { menu, options, trash, share, caretForwardCircle, heart, close } from 'ionicons/icons';
+import { menu, options, trash, share, caretForwardCircle, heart, close, person, logIn, lockOpen  } from 'ionicons/icons';
 import "../vishwa/Offers.page.scss";
 import "../vishwa/modell.page.scss";
-
+import { Link } from "react-router-dom";
 
 
 const Offer: React.FC = () => {
@@ -16,6 +16,8 @@ const Offer: React.FC = () => {
         setShowToast(true);
         setTimeout(() => setShowToast(false), 1500);
     }
+
+    const PURPLE_COLOR = "#B04CEF";
 
     const optioons = {
         centeredSlides: true,
@@ -62,16 +64,34 @@ const Offer: React.FC = () => {
 
         <IonContent fullscreen={true}>
 
-
-
-
-
-
-
         <IonModal isOpen={showModal} cssClass='my-modal'>
-              <h2>Filter Offers</h2>
-              <IonButton href="/limitedoffers">Limited Offers</IonButton>
-              <IonButton href="/productoffers">Product Offers</IonButton>
+
+
+        <div style={{
+
+            top: "1px",
+            color: "white",
+
+            backgroundColor: "#316dd0",
+            width: "100%",
+
+          }}><h2 style={{
+              marginLeft: "20px"
+          }}>Filter Offers  By</h2></div>
+
+<div style={{
+            marginTop: "1px",
+            textAlign: "center",
+            fontSize: "20px",
+          }}>
+            <IonButton color= "secondary" href="/limitedoffers">Limited Offers</IonButton>
+          <br />
+          <br />
+
+
+          <IonButton color= "secondary" href="/productoffers">Product Offers</IonButton>
+
+          </div>
               <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
             </IonModal>
 
@@ -176,7 +196,7 @@ const Offer: React.FC = () => {
             <IonSlide>
               <IonCard className="category" color="danger" href="/category">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/dish.svg"></IonIcon>
+                  <IonIcon src="img/man.svg"></IonIcon>
                   <IonCardTitle>Senior Discount</IonCardTitle>
                   <IonCardSubtitle>Something here</IonCardSubtitle>
                 </IonCardHeader>
@@ -186,9 +206,9 @@ const Offer: React.FC = () => {
             <IonSlide>
               <IonCard className="category" color="primary">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/cocktail.svg"></IonIcon>
-                  <IonCardTitle>New Discount</IonCardTitle>
-                  <IonCardSubtitle>Something here</IonCardSubtitle>
+                  <IonIcon src="img/free.svg"></IonIcon>
+                  <IonCardTitle>Buy 2 Get 1 Free</IonCardTitle>
+                  <IonCardSubtitle>Ends 20th Sept</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
@@ -196,9 +216,9 @@ const Offer: React.FC = () => {
             <IonSlide>
               <IonCard className="category" color="success">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Discount</IonCardTitle>
-                  <IonCardSubtitle>Something here</IonCardSubtitle>
+                  <IonIcon src="img/discount.svg"></IonIcon>
+                  <IonCardTitle>20% discount</IonCardTitle>
+                  <IonCardSubtitle>Ends 1st Oct</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
@@ -206,9 +226,9 @@ const Offer: React.FC = () => {
             <IonSlide>
               <IonCard className="category" color="tertiary">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/burger.svg"></IonIcon>
-                  <IonCardTitle>Discount</IonCardTitle>
-                  <IonCardSubtitle>Something here</IonCardSubtitle>
+                  <IonIcon src="img/discount.svg"></IonIcon>
+                  <IonCardTitle>30% discount</IonCardTitle>
+                  <IonCardSubtitle>Ends 5th Oct</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
             </IonSlide>

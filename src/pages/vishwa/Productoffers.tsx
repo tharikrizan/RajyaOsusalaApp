@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { IonAvatar, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
+import { IonAvatar, IonModal, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
 import { menu, options } from 'ionicons/icons';
 import "../vishwa/Offers.page.scss";
 
@@ -8,6 +8,7 @@ import "../vishwa/Offers.page.scss";
 const Productoffers: React.FC = () => {
 
     const [showToast, setShowToast] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const handleclick = () => {
 
         setShowToast(true);
@@ -47,7 +48,7 @@ const Productoffers: React.FC = () => {
           <IonSearchbar placeholder="Search for category" searchIcon="location-outline"></IonSearchbar>
         </IonCol>
         <IonCol size="2">
-          <IonButton color="light" fill="clear">
+          <IonButton color="light" fill="clear" onClick={() => setShowModal(true)}>
           <IonIcon icon={options} />
           </IonButton>
         </IonCol>
@@ -58,6 +59,44 @@ const Productoffers: React.FC = () => {
 </IonHeader>
 
         <IonContent fullscreen={true}>
+
+
+        <IonModal isOpen={showModal} cssClass='my-modal'>
+
+
+<div style={{
+
+    top: "1px",
+    color: "white",
+
+    backgroundColor: "#316dd0",
+    width: "100%",
+
+  }}><h2 style={{
+      marginLeft: "20px"
+  }}>Filter Offers  By</h2></div>
+
+<div style={{
+    marginTop: "1px",
+    textAlign: "center",
+    fontSize: "20px",
+  }}>
+    <IonButton color= "secondary" href="/limitedoffers">Discount</IonButton>
+  <br />
+  <br />
+
+
+  <IonButton color= "secondary" href="/productoffers">Discount End date</IonButton>
+  <br />
+  <br />
+
+
+  <IonButton color= "secondary" href="/productoffers">Reset All</IonButton>
+
+
+  </div>
+      <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
+    </IonModal>
 
 
   <div className="ion-padding-horizontal wrapper">

@@ -38,11 +38,14 @@ import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
 import AddPrescription from "./pages/Tharik/AddPrescription";
 import HomePage from "./pages/HomePage";
 import Products from "./pages/vishwa/Products";
+import Productsnew from "./pages/vishwa/Productsnew";
 import Category from "./pages/vishwa/Category";
 import Offers from "./pages/vishwa/Offers";
 import Limitedoffers from "./pages/vishwa/Limitedoffers";
 import Productoffers from "./pages/vishwa/Productoffers";
+import Home from "./pages/vishwa/Home";
 import Maps from "./pages/Lakshan/Pages/Maps";
+import LoginPage from "./pages/Lakshan/Pages/LoginPage";
 
 const App: React.FC = () => (
   <IonApp>
@@ -65,8 +68,18 @@ const App: React.FC = () => (
           exact={true}
         />
         <Route
+          path="/home"
+          component={Home}
+          exact={true}
+        />
+        <Route
           path="/products"
           component={Products}
+          exact={true}
+        />
+        <Route
+          path="/pro"
+          component={Productsnew}
           exact={true}
         />
         <Route
@@ -92,6 +105,11 @@ const App: React.FC = () => (
         <Route
           path="/maps"
           component={Maps}
+          exact={true}
+        />
+        <Route
+          path="/login"
+          component={LoginPage}
           exact={true}
         />
       </IonRouterOutlet>
