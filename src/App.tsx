@@ -36,6 +36,7 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import HomePage from "./pages/HomePage";
 import CHAT from "./components/MR/Chat";
+import EditProfile from "./components/MR/Profile/EditProfile";
 
 const App: React.FC = () => (
   <IonApp>
@@ -43,6 +44,7 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route path="/" component={HomePage} exact={true} />
         <Route path="/chat" component={CHAT} exact={true} />
+        <Route path="/editProfile" component={EditProfile} exact={true} />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>

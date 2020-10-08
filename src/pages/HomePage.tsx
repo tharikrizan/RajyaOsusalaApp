@@ -22,6 +22,7 @@ const HomePage: React.FC = () => {
     <IonPage>
         <IonHeader>
            <IonButton href='/chat'> Chat </IonButton>
+           <IonButton href='/editProfile'> Edit </IonButton>
         </IonHeader>
     </IonPage>
   );
