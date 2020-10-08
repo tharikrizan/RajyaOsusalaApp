@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="140" height="166" viewBox="0 0 140 166"><defs><style>.a{fill:#9684f6;stroke:rgba(112,112,112,0);}.b{stroke:none;}.c{fill:none;}</style></defs><g class="a"><ellipse class="b" cx="70" cy="83" rx="70" ry="83"/><ellipse class="c" cx="70" cy="83" rx="69.5" ry="82.5"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="140" height="166" viewBox="0 0 140 166">
+  <g id="Ellipse_3" data-name="Ellipse 3" fill="#5260ff" stroke="rgba(112,112,112,0)" stroke-width="1">
+    <ellipse cx="70" cy="83" rx="70" ry="83" stroke="none"/>
+    <ellipse cx="70" cy="83" rx="69.5" ry="82.5" fill="none"/>
+  </g>
+</svg>
