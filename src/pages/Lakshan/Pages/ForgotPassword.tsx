@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 import { IonImg, IonIcon } from "@ionic/react";
 
-const PURPLE_COLOR = "#B04CEF";
+const PURPLE_COLOR = "#316DD0";
 
 export default function ForgotPassword(props: any) {
   const onSubmitForm = async (e: any) => {
