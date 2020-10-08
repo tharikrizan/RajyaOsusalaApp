@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { camera, trash, close } from "ionicons/icons";
+import React, { useState, useEffect } from "react";
+import { camera } from "ionicons/icons";
 import {
   IonContent,
   IonHeader,
@@ -22,88 +22,109 @@ import {
   IonButton,
   IonAlert,
 } from "@ionic/react";
-import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
-import { usePhotoGallery } from "../../hooks/usePhotoGallery";
-import { prescriptions } from "../../Database";
-import { useHistory } from "react-router";
-export interface AddPrescriptionProps {}
 
-const AddPrescription: React.FC = (props) => {
-  const { photos, takePhoto } = usePhotoGallery();
-  const [time, setTime] = useState<string>("");
+import { usePhotoGallery } from "../../hooks/usePhotoGallery";
+import { Photo, Prescription, prescriptions } from "../../Database";
+import { useParams } from "react-router";
+
+export interface IUserPublicProfileRouteParams {
+  id: string;
+}
+const EditPrescription: React.FC = () => {
+  const { id } = useParams<IUserPublicProfileRouteParams>();
   const [alert, setAlert] = useState(false);
   const [successAlert, setSuccessAlert] = useState(false);
-  const [orderType, setOrderType] = useState<string>("Pick Up");
-  const history = useHistory();
-  const submitForm = () => {
-    console.log(photos[0]);
 
-    prescriptions.push({
-      id: 12457 + prescriptions.length,
-      orderType: orderType,
+  const { photos, takePhoto } = usePhotoGallery();
+  const [time, setTime] = useState<string>(
+    prescriptions.filter((x) => x.id === +id)[0].time
+  );
+  const [photo, setPhoto] = useState<Photo>(
+    prescriptions.filter((x) => x.id === +id)[0].photo
+  );
+  const [orderType, setOrderType] = useState<string>(
+    prescriptions.filter((x) => x.id === +id)[0].orderType
+  );
+
+  const [prescription, setPrescription] = useState<Prescription>(
+    prescriptions.filter((x) => x.id === +id)[0]
+  );
+
+  useEffect(() => {
+    setPrescription(prescriptions.filter((x) => x.id === +id)[0]);
+  }, [prescription]);
+  useEffect(() => {
+    setPrescription({
+      ...prescription,
+      photo: photo,
       time: time,
-      cost: "Rs 5210.00",
-      quoted: false,
-      deliveryStatus: true,
-      photo: photos[0],
-      path: "s",
+      orderType: orderType,
     });
+  }, [photo, time, orderType]);
 
+  const tookPhoto = () => {
+    setPhoto(photos[0]);
+  };
+  const submitForm = () => {
     setSuccessAlert(true);
   };
+  console.log("prescription", prescription);
+
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonRow className="ion-justify-content-start">
             <IonBackButton defaultHref="/" />
-            <IonTitle>Pending Prescriptions</IonTitle>
+            <IonTitle>Edit Prescription</IonTitle>
           </IonRow>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonAlert
-          isOpen={alert}
-          onDidDismiss={() => setAlert(false)}
-          cssClass="my-custom-class"
-          header={`Rajya Osusala`}
-          subHeader={"Form Submission"}
-          message={"Please Complete All details"}
-          buttons={["OK"]}
-        />
         <IonAlert
           isOpen={successAlert}
           onDidDismiss={() => setSuccessAlert(false)}
           cssClass="my-custom-class"
           header={`Rajya Osusala`}
           subHeader={"Form Submission"}
-          message={"Successfully added"}
-          buttons={[
-            {
-              text: "Okay",
-              handler: () => {
-                setTime("");
-                setOrderType("");
-                history.push("/prescriptions");
-              },
-            },
-          ]}
+          message={"Edited Successfuly"}
+          buttons={["OK"]}
         />
+        <IonAlert
+          isOpen={alert}
+          onDidDismiss={() => setAlert(false)}
+          cssClass="my-custom-class"
+          header={`Rajya Osusala`}
+          subHeader={"Form Submission"}
+          message={"Edit not success"}
+          buttons={["OK"]}
+        />
+
         <IonGrid>
           <IonRow className="ion-justify-content-center">
-            {photos.map((photo, index) => (
-              <IonCol size="6" key={index}>
-                <IonImg
-                  style={{ height: "300px", width: "100%" }}
-                  src={photo.webviewPath}
-                />
-              </IonCol>
-            ))}
+            <IonCol size="6">
+              <IonImg
+                style={{ height: "300px", width: "100%" }}
+                src={
+                  prescription.photo !== undefined
+                    ? prescription.photo.hasOwnProperty("webviewPath")
+                      ? prescription.photo.webviewPath
+                      : `assets/${prescription.path}`
+                    : ""
+                }
+              />
+            </IonCol>
           </IonRow>
           <IonRow className="ion-justify-content-center">
             <IonCol size="12" className="ion-float-right">
               <IonFab>
-                <IonFabButton onClick={() => takePhoto()}>
+                <IonFabButton
+                  onClick={() => {
+                    takePhoto();
+
+                    tookPhoto();
+                  }}
+                >
                   <IonIcon icon={camera}></IonIcon>
                 </IonFabButton>
               </IonFab>
@@ -170,4 +191,4 @@ const AddPrescription: React.FC = (props) => {
   );
 };
 
-export default AddPrescription;
+export default EditPrescription;

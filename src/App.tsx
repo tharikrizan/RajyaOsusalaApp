@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
 import {
@@ -9,6 +10,7 @@ import {
   IonTabButton,
   IonTabs,
 } from "@ionic/react";
+
 import { IonReactRouter } from "@ionic/react-router";
 import { ellipse, square, triangle } from "ionicons/icons";
 import Tab1 from "./pages/Tab1";
@@ -37,6 +39,9 @@ import PendingPrescription from "./pages/Tharik/PendingPrescription";
 import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
 import AddPrescription from "./pages/Tharik/AddPrescription";
 import HomePage from "./pages/HomePage";
+
+import EditPrescription from "./pages/Tharik/EditPrescription";
+
 import Products from "./pages/vishwa/Products";
 import Category from "./pages/vishwa/Category";
 import Offers from "./pages/vishwa/Offers";
@@ -47,6 +52,7 @@ import LoginPage from "./pages/Lakshan/Pages/LoginPage";
 import RegisterPage from "./pages/Lakshan/Pages/RegisterPage";
 import Logout from "./pages/Lakshan/Pages/Logout";
 import ForgotPassword from "./pages/Lakshan/Pages/ForgotPassword";
+
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -84,6 +90,7 @@ const App: React.FC = () => {
           component={AddPrescription}
           exact={true}
         />
+
         <Route path="/products" component={Products} exact={true} />
         <Route path="/category" component={Category} exact={true} />
         <Route path="/offers" component={Offers} exact={true} />
@@ -111,6 +118,11 @@ const App: React.FC = () => {
             <LoginPage {...props} setLoggedInStatus={setLoggedInStatus} />
           )}
         />
+          <Route
+          path="/prescriptions/edit/:id"
+          component={EditPrescription}
+          exact={true}
+        />
       </Switch>
     </>
   );
@@ -123,5 +135,6 @@ const App: React.FC = () => {
     </IonApp>
   );
 };
+
 
 export default App;
