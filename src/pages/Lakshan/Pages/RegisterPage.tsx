@@ -1,16 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import MainPurpleCircle from "../res/purple-circle.svg";
 import SideMiddleCircle from "../res/side-middle-ciricle.svg";
 import BottomRightCircle from "../res/bottom-right-circle.svg";
 
-import { person, logIn, lockOpen, mail, locateOutline } from "ionicons/icons";
+import { person, logIn, lockOpen, mail } from "ionicons/icons";
 import { Link } from "react-router-dom";
 
-import { IonImg, IonIcon } from "@ionic/react";
+import { IonImg, IonIcon, IonCheckbox } from "@ionic/react";
 
 const PURPLE_COLOR = "#B04CEF";
 
 export default function RegisterPage(props: any) {
+  const [isChecked, setIsChecked] = useState<boolean>(false);
+
+  const onCheck = (e: any) => {
+    setIsChecked(e.target.value);
+  };
+
   const onSubmitForm = async (e: any) => {
     e.preventDefault();
     await props.setLoggedInStatus(true);
@@ -31,7 +37,7 @@ export default function RegisterPage(props: any) {
           backgroundColor: "#FFFFFF",
           width: "100%",
           height: "50%",
-          marginBottom: "-80px",
+          marginBottom: "-10%",
           color: "#000000",
           position: "relative",
         }}
@@ -65,8 +71,8 @@ export default function RegisterPage(props: any) {
           src={MainPurpleCircle}
           style={{
             position: "relative",
-            right: "-20px",
-            top: "-110px",
+            right: "-13%",
+            top: "-18%",
             height: "100%",
             width: "115%",
           }}
@@ -192,7 +198,7 @@ export default function RegisterPage(props: any) {
             }}
           />
           <input
-            type="retype-password"
+            type="password"
             name="retype-password"
             id="retype-password"
             placeholder="Retype Password"
@@ -210,11 +216,10 @@ export default function RegisterPage(props: any) {
         <br />
 
         <label>
-          <input
-            type="checkbox"
-            name="location"
-            id="location"
-            style={{ marginRight: "5px" }}
+          <IonCheckbox
+            checked={isChecked}
+            onChange={onCheck}
+            style={{ marginRight: "10px" }}
           />
           Use my current location as my address
         </label>
@@ -245,7 +250,7 @@ export default function RegisterPage(props: any) {
             fontSize: "20px",
           }}
         >
-          <Link to="/">Already have an account?</Link>
+          <Link to="/login">Already have an account?</Link>
         </div>
       </form>
 
@@ -263,7 +268,7 @@ export default function RegisterPage(props: any) {
           src={SideMiddleCircle}
           style={{
             position: "relative",
-            left: "-260px",
+            left: "-65%",
             bottom: "45%",
             height: "55%",
             width: "100%",
@@ -276,7 +281,6 @@ export default function RegisterPage(props: any) {
           backgroundColor: "#FFFFFF",
           width: "100%",
           height: "50%",
-          marginBottom: "-80px",
           color: "#000000",
           position: "relative",
         }}
@@ -285,8 +289,8 @@ export default function RegisterPage(props: any) {
           src={BottomRightCircle}
           style={{
             position: "relative",
-            right: "-165px",
-            bottom: "70%",
+            right: "-40%",
+            bottom: "80%",
             height: "55%",
             width: "100%",
           }}
