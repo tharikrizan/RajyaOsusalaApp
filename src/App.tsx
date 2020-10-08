@@ -68,11 +68,7 @@ const App: React.FC = () => {
           render={(props) => <Home {...props} isLoggedIn={isLoggedIn} />}
           exact={true}
         />
-        <Route
-          path="/offers"
-          render={(props) => <Offers {...props} isLoggedIn={isLoggedIn} />}
-          exact={true}
-        />
+
         <Route
           path="/logout"
           render={(props) => (
@@ -101,6 +97,7 @@ const App: React.FC = () => {
         <Route path="/category" component={Category} exact={true} />
         <Route path="/limitedoffers" component={Limitedoffers} exact={true} />
         <Route path="/productoffers" component={Productoffers} exact={true} />
+        <Route path="/offers" component={Offers} exact={true} />
         <Route path="/maps" component={Maps} exact={true} />
         <Route
           path="/register"
