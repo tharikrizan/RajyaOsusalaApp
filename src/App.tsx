@@ -1,6 +1,16 @@
-import React from "react";
-import { Redirect, Route } from "react-router-dom";
-import { IonApp, IonRouterOutlet } from "@ionic/react";
+
+import React, { useState } from "react";
+import { Redirect, Route, Switch } from "react-router-dom";
+import {
+  IonApp,
+  IonIcon,
+  IonLabel,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs,
+} from "@ionic/react";
+
 import { IonReactRouter } from "@ionic/react-router";
 import { ellipse, square, triangle } from "ionicons/icons";
 import Tab1 from "./pages/Tab1";
@@ -29,13 +39,42 @@ import PendingPrescription from "./pages/Tharik/PendingPrescription";
 import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
 import AddPrescription from "./pages/Tharik/AddPrescription";
 import HomePage from "./pages/HomePage";
+
 import EditPrescription from "./pages/Tharik/EditPrescription";
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/" component={HomePage} exact={true} />
+import Products from "./pages/vishwa/Products";
+import Category from "./pages/vishwa/Category";
+import Offers from "./pages/vishwa/Offers";
+import Limitedoffers from "./pages/vishwa/Limitedoffers";
+import Productoffers from "./pages/vishwa/Productoffers";
+import Maps from "./pages/Lakshan/Pages/Maps";
+import LoginPage from "./pages/Lakshan/Pages/LoginPage";
+import RegisterPage from "./pages/Lakshan/Pages/RegisterPage";
+import Logout from "./pages/Lakshan/Pages/Logout";
+import ForgotPassword from "./pages/Lakshan/Pages/ForgotPassword";
+
+
+const App: React.FC = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const setLoggedInStatus = (value: boolean) => {
+    setIsLoggedIn(value);
+    console.log("New Value: ", value);
+  };
+  const guestRoutes = (
+    <>
+      <Switch>
+        <Route
+          path="/"
+          render={(props) => <Offers {...props} loggedIn={isLoggedIn} />}
+          exact={true}
+        />
+        <Route
+          path="/logout"
+          render={(props) => (
+            <Logout {...props} setLoggedInStatus={setLoggedInStatus} />
+          )}
+          exact={true}
+        />
         <Route
           path="/prescriptions"
           component={PendingPrescription}
@@ -51,14 +90,51 @@ const App: React.FC = () => (
           component={AddPrescription}
           exact={true}
         />
+
+        <Route path="/products" component={Products} exact={true} />
+        <Route path="/category" component={Category} exact={true} />
+        <Route path="/offers" component={Offers} exact={true} />
+        <Route path="/limitedoffers" component={Limitedoffers} exact={true} />
+        <Route path="/productoffers" component={Productoffers} exact={true} />
+        <Route path="/maps" component={Maps} exact={true} />
         <Route
+          path="/register"
+          render={(props) => (
+            <RegisterPage {...props} setLoggedInStatus={setLoggedInStatus} />
+          )}
+          exact={true}
+        />
+        <Route
+          path="/forgot"
+          render={(props) => (
+            <ForgotPassword {...props} setLoggedInStatus={setLoggedInStatus} />
+          )}
+          exact={true}
+        />
+        <Route
+          path="/login"
+          exact={true}
+          render={(props) => (
+            <LoginPage {...props} setLoggedInStatus={setLoggedInStatus} />
+          )}
+        />
+          <Route
           path="/prescriptions/edit/:id"
           component={EditPrescription}
           exact={true}
         />
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+      </Switch>
+    </>
+  );
+  const authenticatedRoutes = <></>;
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>{guestRoutes}</IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
+
 
 export default App;
