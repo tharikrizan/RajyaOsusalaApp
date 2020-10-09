@@ -19,10 +19,10 @@ import {
   } from "@ionic/react";
 import React from 'react';
 import './Message.css';
+import { Messages } from "../../Database";
 
 const Message: React.FC = () => {
-    return (
-        
+    return(
         <div id="chat-message-list">
             <div className="message-row other-message">
                 <div className="message-content">
@@ -41,7 +41,9 @@ const Message: React.FC = () => {
                 </div>
             </div>
         </div>
+    
     );
+     
   };
 
 export default Message;

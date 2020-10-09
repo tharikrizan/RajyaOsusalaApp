@@ -5,7 +5,7 @@
   
   #chat-form > img {
     cursor: pointer;
-    max-width: 10%;
+    max-width: 6%;
     margin-left: auto;
     transform: rotate(90deg);
   }
