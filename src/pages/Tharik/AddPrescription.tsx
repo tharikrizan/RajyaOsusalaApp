@@ -19,13 +19,19 @@ import {
   IonSelect,
   IonSelectOption,
   IonItemDivider,
+  IonAvatar,
   IonButton,
   IonAlert,
+  IonCard,
 } from "@ionic/react";
 import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
 import { usePhotoGallery } from "../../hooks/usePhotoGallery";
+import { add, menu,text } from "ionicons/icons";
 import { prescriptions } from "../../Database";
 import { useHistory } from "react-router";
+import "../Tharik/Pendingpre.pages.scss";
+import "../Tharik/AddPrescription.page.scss";
+import "../Tharik/Backgroundcolor.page.scss";
 export interface AddPrescriptionProps {}
 
 const AddPrescription: React.FC = (props) => {
@@ -52,15 +58,31 @@ const AddPrescription: React.FC = (props) => {
     setSuccessAlert(true);
   };
   return (
+      <div className="bg-color">
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonRow className="ion-justify-content-start">
-            <IonBackButton defaultHref="/" />
-            <IonTitle>Pending Prescriptions</IonTitle>
-          </IonRow>
-        </IonToolbar>
+        <div className = "addpres-page">
+           <IonHeader className="ion-no-border">
+        <IonItem lines="none">
+          <IonAvatar slot="end">
+            <img src="img/profile.jpg" />
+          </IonAvatar>
+          <IonButton fill="clear" color="light" href="/offers">
+            <IonIcon icon={menu} />
+          </IonButton>
+        </IonItem>
+        <IonItem lines="none">
+          <div className="ion-padding-start ion-padding-bottom">
+            <IonLabel>
+              <h2>Add prescriptions</h2>
+            </IonLabel>
+
+            <IonRow className="ion-align-items-center">
+              <IonCol size="10"></IonCol>
+            </IonRow>
+          </div>
+        </IonItem>
       </IonHeader>
+      </div>
       <IonContent fullscreen>
         <IonAlert
           isOpen={alert}
@@ -109,7 +131,8 @@ const AddPrescription: React.FC = (props) => {
               </IonFab>
             </IonCol>
           </IonRow>
-
+          <div className="pendingpre-page">
+        <IonCard>
           <IonRow className="ion-justify-content-center">
             <IonItem>
               <IonLabel>Prescription For</IonLabel>
@@ -140,6 +163,13 @@ const AddPrescription: React.FC = (props) => {
               </IonSelect>
             </IonItem>
           </IonRow>
+          </IonCard>
+          </div>
+
+          <br />
+
+          <div className="pendingpre-page">
+        <IonCard>
           <IonItemDivider>Your Selections</IonItemDivider>
           <IonRow className="ion-justify-content-center">
             <IonItem>Time: {time ?? "(none selected)"}</IonItem>
@@ -151,7 +181,7 @@ const AddPrescription: React.FC = (props) => {
           <IonRow className="ion-justify-content-center">
             <IonItem>
               <IonButton
-                color="success"
+                color="primary"
                 onClick={() => {
                   if (time == "" || orderType == "" || photos.length == 0) {
                     setAlert(true);
@@ -164,9 +194,12 @@ const AddPrescription: React.FC = (props) => {
               </IonButton>
             </IonItem>
           </IonRow>
+          </IonCard>
+          </div>
         </IonGrid>
       </IonContent>
     </IonPage>
+    </div>
   );
 };
 

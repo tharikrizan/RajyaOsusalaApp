@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   IonAvatar,
   IonBadge,
@@ -133,7 +134,7 @@ const Maps = (props: any) => {
                 </IonCardContent>
               </IonCard>
 
-              <IonCard>
+              <IonCard href="/maps">
                 <IonCardContent>
                   <IonImg src="img/locationn.svg"></IonImg>
 
