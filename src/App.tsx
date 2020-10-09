@@ -54,6 +54,8 @@ import LoginPage from "./pages/Lakshan/Pages/LoginPage";
 import RegisterPage from "./pages/Lakshan/Pages/RegisterPage";
 import Logout from "./pages/Lakshan/Pages/Logout";
 import ForgotPassword from "./pages/Lakshan/Pages/ForgotPassword";
+import Chat from "./components/MR/Chat";
+import EditProfile from "./components/MR/Profile/EditProfile";
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -127,6 +129,19 @@ const App: React.FC = () => {
           component={EditPrescription}
           exact={true}
         />
+
+        //added chat and profile paths
+        <Route
+          path="/chat"
+          component={Chat}
+          exact={true}
+        />
+        <Route
+          path="/editProfile"
+          component={EditProfile}
+          exact={true}
+        />
+
       </Switch>
     </>
   );

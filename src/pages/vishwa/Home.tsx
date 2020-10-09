@@ -175,7 +175,7 @@ const Maps = (props: any) => {
             </IonRow>
 
             <IonRow>
-              <IonCard>
+              <IonCard href="/chat">
                 <IonCardContent>
                   <IonImg src="img/chat.svg"></IonImg>
 
@@ -187,7 +187,7 @@ const Maps = (props: any) => {
                 </IonCardContent>
               </IonCard>
 
-              <IonCard>
+              <IonCard href="/editProfile">
                 <IonCardContent>
                   <IonImg src="img/profile.jpg"></IonImg>
 
