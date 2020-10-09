@@ -16,34 +16,32 @@ import {
     IonTabs,
     IonTitle,
     IonToolbar,
+    IonList,
   } from "@ionic/react";
 import React from 'react';
 import './Message.css';
 import { Messages } from "../../Database";
 
 const Message: React.FC = () => {
-    return(
+    let messages = Messages;
+    console.log(messages);
+    return (
         <div id="chat-message-list">
-            <div className="message-row other-message">
+            { messages.map( (M,index) => 
+            <div className="message-row you-message" key={index}>
                 <div className="message-content">
                     <div className="message-text">
-                        Hey mate what's up?
+                        {M.msgs}
                     </div>
-                    <div className="message-time">Apr 13</div>
+                    <div className="message-time">
+                        {M.time}
+                    </div>
                 </div>
             </div>
-            <div className="message-row you-message">
-                <div className="message-content">
-                    <div className="message-text">
-                        Hey Daryl?
-                    </div>
-                    <div className="message-time">Apr 13</div>
-                </div>
-            </div>
+            )}
         </div>
     
     );
-     
   };
 
 export default Message;

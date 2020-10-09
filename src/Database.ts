@@ -65,4 +65,9 @@ export let prescriptions = [
   },
 ];
 //add new message interface
-export let Messages  = <any>[]; 
+export let Messages = [
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+]; 

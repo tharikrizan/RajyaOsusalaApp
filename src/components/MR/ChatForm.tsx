@@ -5,12 +5,12 @@ import { Messages } from "../../Database";
 import './ChatForm.css';
 export interface ChatForm {}
 
-const ChatForm: React.FC = () => {
+const ChatForm: React.FC = (props) => {
     const [msgs, setMsgs] = useState<string>("");
     const submitForm = () => {
         Messages.push({
+            time: String(Date.now()),
             msgs: msgs,
-            time: Date.now(),
         });
         console.log(Messages);
       };
