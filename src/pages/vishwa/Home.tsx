@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   IonAvatar,
   IonBadge,
@@ -133,7 +134,7 @@ const Maps = (props: any) => {
                 </IonCardContent>
               </IonCard>
 
-              <IonCard>
+              <IonCard href="/maps">
                 <IonCardContent>
                   <IonImg src="img/locationn.svg"></IonImg>
 
@@ -174,7 +175,7 @@ const Maps = (props: any) => {
             </IonRow>
 
             <IonRow>
-              <IonCard>
+              <IonCard href="/chat">
                 <IonCardContent>
                   <IonImg src="img/chat.svg"></IonImg>
 
@@ -186,7 +187,7 @@ const Maps = (props: any) => {
                 </IonCardContent>
               </IonCard>
 
-              <IonCard>
+              <IonCard href="/editProfile">
                 <IonCardContent>
                   <IonImg src="img/profile.jpg"></IonImg>
 

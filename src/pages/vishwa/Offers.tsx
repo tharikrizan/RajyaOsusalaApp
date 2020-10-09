@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   IonAvatar,
   IonModal,
@@ -39,8 +39,9 @@ import {
 } from "ionicons/icons";
 import "../vishwa/Offers.page.scss";
 import "../vishwa/modell.page.scss";
+import { Link } from "react-router-dom";
 
-const Offers = (props: any) => {
+const Offer: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showActionSheet, setShowActionSheet] = useState(false);
@@ -61,13 +62,6 @@ const Offers = (props: any) => {
     slidesPerView: 2.5,
   };
 
-  // check if the user has logged in
-  useEffect(() => {
-    if (!props.isLoggedIn) {
-      props.history.push("/login");
-    }
-  }, [props.isLoggedIn]);
-
   return (
     <div className="offer-page">
       <IonHeader className="ion-no-border">
@@ -75,7 +69,7 @@ const Offers = (props: any) => {
           <IonAvatar slot="end">
             <img src="img/profile.jpg" />
           </IonAvatar>
-          <IonButton fill="clear" color="light">
+          <IonButton fill="clear" color="light" href="/">
             <IonIcon icon={menu} />
           </IonButton>
         </IonItem>
@@ -410,4 +404,4 @@ const Offers = (props: any) => {
   );
 };
 
-export default Offers;
+export default Offer;

@@ -10,14 +10,20 @@ import {
   IonIcon,
   IonPage,
   IonRow,
+  IonItem,
+  IonButton,
+  IonAvatar,
+  IonLabel,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import { trashBin } from "ionicons/icons";
+import { trashBin, menu } from "ionicons/icons";
 import React, { useState } from "react";
 import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
 import PrescriptionHeader from "../../components/Tharik/PrescriptionHeader";
 import QuotedPrescriptionContent from "../../components/Tharik/QuotedPrescriptionContent";
+import "../Tharik/Pending.page.scss";
+import "../Tharik/Backgroundcolor.page.scss";
 import { Prescription, prescriptions } from "../../Database";
 
 const QuotedPrescription: React.FC = () => {
@@ -44,15 +50,31 @@ const QuotedPrescription: React.FC = () => {
     setAlertAD(true);
   };
   return (
+    <div className="bg-color">
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonRow className="ion-justify-content-start">
-            <IonBackButton defaultHref="/" />
-            <IonTitle>Quoted Prescriptions</IonTitle>
-          </IonRow>
-        </IonToolbar>
+      <div className="pending-page">
+      <IonHeader className="ion-no-border">
+        <IonItem lines="none">
+          <IonAvatar slot="end">
+            <img src="img/profile.jpg" />
+          </IonAvatar>
+          <IonButton fill="clear" color="light" href="/offers">
+            <IonIcon icon={menu} />
+          </IonButton>
+        </IonItem>
+        <IonItem lines="none">
+          <div className="ion-padding-start ion-padding-bottom">
+            <IonLabel>
+              <h2>Quoted prescriptions</h2>
+            </IonLabel>
+
+            <IonRow className="ion-align-items-center">
+              <IonCol size="10"></IonCol>
+            </IonRow>
+          </div>
+        </IonItem>
       </IonHeader>
+      </div>
       <IonContent fullscreen>
         <IonAlert
           isOpen={alert}
@@ -155,6 +177,7 @@ const QuotedPrescription: React.FC = () => {
         </IonGrid>
       </IonContent>
     </IonPage>
+    </div>
   );
 };
 

@@ -64,3 +64,10 @@ export let prescriptions = [
     path: "pres2.jpeg",
   },
 ];
+//add new message interface
+export let Messages = [
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+]; 
