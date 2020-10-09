@@ -4,6 +4,7 @@ import {
   IonButton,
   IonButtons,
   IonCol,
+  IonCard,
   IonContent,
   IonIcon,
   IonImg,
@@ -15,6 +16,7 @@ import {
 import React, { useState, useEffect } from "react";
 import { Prescription, prescriptions } from "../../Database";
 import { trashBin, pencil, car } from "ionicons/icons";
+import "../Tharik/PrescriptionContent.page.scss";
 
 interface Props {
   quotedPrescriptionsProp: Prescription[];
@@ -37,6 +39,8 @@ const QuotedPrescriptionContent: React.FC<Props> = ({
 
   return (
     <>
+    <div className="precontent-page">
+    <IonCard>
       <IonList>
         {quotedPrescription.map((pres, index) => {
           let realPath =
@@ -98,6 +102,8 @@ const QuotedPrescriptionContent: React.FC<Props> = ({
           );
         })}
       </IonList>
+      </IonCard>
+      </div>
     </>
   );
 };

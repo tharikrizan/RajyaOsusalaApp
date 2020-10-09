@@ -2,6 +2,7 @@ import {
   IonAvatar,
   IonButton,
   IonButtons,
+  IonCard,
   IonCol,
   IonContent,
   IonIcon,
@@ -14,6 +15,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { Prescription, prescriptions } from "../../Database";
 import { trashBin, pencil } from "ionicons/icons";
+import "../Tharik/PrescriptionContent.page.scss";
 import { useHistory } from "react-router";
 
 interface Props {
@@ -34,6 +36,8 @@ const PrescriptionContent: React.FC<Props> = ({
 
   const history = useHistory();
   return (
+<div className="precontent-page">
+<IonCard>
     <IonList>
       {pendingPrescription.map((pres, index) => {
         let realPath =
@@ -77,9 +81,37 @@ const PrescriptionContent: React.FC<Props> = ({
               </IonCol>
             </IonRow>
           </IonItem>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         );
       })}
     </IonList>
+
+    </IonCard>
+
+    </div>
   );
 };
 

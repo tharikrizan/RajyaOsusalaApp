@@ -35,6 +35,7 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import PendingPrescription from "./pages/Tharik/PendingPrescription";
+import PendingPres from "./pages/Tharik/PendingPres";
 import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
 import AddPrescription from "./pages/Tharik/AddPrescription";
 import HomePage from "./pages/HomePage";
@@ -70,11 +71,7 @@ const App: React.FC = () => {
           render={(props) => <Home {...props} isLoggedIn={isLoggedIn} />}
           exact={true}
         />
-        <Route
-          path="/offers"
-          render={(props) => <Offers {...props} isLoggedIn={isLoggedIn} />}
-          exact={true}
-        />
+
         <Route
           path="/logout"
           render={(props) => (
@@ -103,7 +100,9 @@ const App: React.FC = () => {
         <Route path="/category" component={Category} exact={true} />
         <Route path="/limitedoffers" component={Limitedoffers} exact={true} />
         <Route path="/productoffers" component={Productoffers} exact={true} />
+        <Route path="/offers" component={Offers} exact={true} />
         <Route path="/maps" component={Maps} exact={true} />
+        <Route path="/pendingpre" component={PendingPres} exact={true} />
         <Route
           path="/register"
           render={(props) => (
