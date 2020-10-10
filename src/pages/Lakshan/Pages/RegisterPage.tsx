@@ -45,7 +45,7 @@ export default function RegisterPage(props: any) {
         <div
           style={{
             position: "absolute",
-            top: "100px",
+            top: "25%",
             color: "#FFFFFF",
             margin: "auto",
             width: "100%",
@@ -71,9 +71,9 @@ export default function RegisterPage(props: any) {
           src={MainPurpleCircle}
           style={{
             position: "relative",
-            right: "-13%",
-            top: "-18%",
-            height: "100%",
+            left: "5%",
+            bottom: "25%",
+            height: "110%",
             width: "115%",
           }}
         />

@@ -1,12 +1,12 @@
-import React, { FormEvent, useState } from "react";
-import MainPurpleCircle from "../res/purple-circle.svg";
+import React, {FormEvent, useState} from "react";
 import SideMiddleCircle from "../res/side-middle-ciricle.svg";
 import BottomRightCircle from "../res/bottom-right-circle.svg";
 
-import { person, logIn, lockOpen } from "ionicons/icons";
-import { Link } from "react-router-dom";
+import {lockOpen, person} from "ionicons/icons";
+import {Link} from "react-router-dom";
 
-import { IonImg, IonIcon } from "@ionic/react";
+import {IonIcon, IonImg} from "@ionic/react";
+import {topHeaderBubble} from "./LoginPageTopBubble";
 
 const PURPLE_COLOR = "#316DD0";
 
@@ -43,226 +43,179 @@ export default function LoginPage(props: any) {
       setPasswordError("");
     }
   };
-
-  return (
+    return (
     <div
-      style={{
-        backgroundColor: "#FFFFFF",
-        height: "100%",
-        width: "100%",
-        color: "#000000",
-      }}
-    >
-      <div
         style={{
-          backgroundColor: "#FFFFFF",
-          width: "100%",
-          height: "50%",
-          marginBottom: "-80px",
-          color: "#000000",
-          position: "relative",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            top: "100px",
-            color: "#FFFFFF",
-            margin: "auto",
-            width: "100%",
-            zIndex: 100,
-          }}
-        >
-          <IonIcon
-            icon={logIn}
-            style={{
-              color: "#FFFFFF",
-              zIndex: 100,
-              height: "50px",
-              width: "100%",
-              margin: "auto",
-            }}
-          />
-          <h5 style={{ margin: "auto", width: "120px", textAlign: "center" }}>
-            Log in to your account
-          </h5>
-        </div>
-
-        <IonImg
-          src={MainPurpleCircle}
-          style={{
-            position: "relative",
-            left: "-20%",
-            top: "-25%",
+            backgroundColor: "#FFFFFF",
             height: "100%",
-            width: "115%",
-            fill: "#000000",
-          }}
-        />
-      </div>
-
-      <form
-        action="/login"
-        method="post"
-        onSubmit={onSubmitForm}
-        style={{
-          width: "90%",
-          display: "flex",
-          margin: "auto",
-          position: "relative",
-          flexDirection: "column",
-          justifyContent: "space-between",
-          zIndex: 2,
-        }}
-      >
-        <br />
-
-        <div style={{ position: "relative" }}>
-          <IonIcon
-            icon={person}
-            style={{
-              color: "#000000",
-              zIndex: 100,
-              height: "20px",
-              width: "20px",
-              left: "2%",
-              top: "15%",
-              position: "absolute",
-            }}
-          />
-          <input
-            type="text"
-            name="username"
-            id="username"
-            value={username}
-            onChange={onUsernameChange}
-            placeholder="Username or email"
-            style={{
-              borderWidth: "1px",
-              borderRadius: "20px",
-              margin: "auto",
-              width: "100%",
-              fontSize: "25px",
-              paddingLeft: "35px",
-            }}
-          />
-          {usernameError.length > 0 && (
-            <span style={styles.errorStyle}>{usernameError}</span>
-          )}
-        </div>
-        <br />
-        <div style={{ position: "relative" }}>
-          <IonIcon
-            icon={lockOpen}
-            slot="start"
-            style={{
-              color: "#000000",
-              zIndex: 100,
-              height: "20px",
-              width: "20px",
-              left: "2%",
-              top: "15%",
-              position: "absolute",
-            }}
-          />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            value={password}
-            onChange={onPasswordChange}
-            placeholder="Password"
-            style={{
-              borderWidth: "1px",
-              borderRadius: "20px",
-              margin: "auto",
-              width: "100%",
-              fontSize: "25px",
-              paddingLeft: "35px",
-            }}
-          />
-
-          {passwordError.length > 0 && (
-            <span style={styles.errorStyle}>{passwordError}</span>
-          )}
-        </div>
-
-        <br />
-        <input
-          type="submit"
-          value="Login"
-          style={{
-            color: "#FFFFFF",
-            backgroundColor: PURPLE_COLOR,
-            padding: "2%",
-            borderBlockColor: PURPLE_COLOR,
-            borderWidth: "1px",
-            borderRadius: "20px",
-            margin: "auto",
-            width: "100px",
-          }}
-        />
-        <br />
-        <div
-          style={{
             width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "space-between",
-            textAlign: "center",
-            fontSize: "20px",
-          }}
+            color: "#000000",
+        }}
+    >
+        {topHeaderBubble}
+
+        <form
+            action="/login"
+            method="post"
+            onSubmit={onSubmitForm}
+            style={{
+                width: "90%",
+                display: "flex",
+                margin: "auto",
+                position: "relative",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                zIndex: 2,
+            }}
         >
-          <Link to="/forgot">Forgot Password?</Link>
-          <br />
-          <Link to="/register">Create an account</Link>
+            <br/>
+
+            <div style={{position: "relative"}}>
+                <IonIcon
+                    icon={person}
+                    style={{
+                        color: "#000000",
+                        zIndex: 100,
+                        height: "20px",
+                        width: "20px",
+                        left: "2%",
+                        top: "15%",
+                        position: "absolute",
+                    }}
+                />
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    value={username}
+                    onChange={onUsernameChange}
+                    placeholder="Username or email"
+                    style={{
+                        borderWidth: "1px",
+                        borderRadius: "20px",
+                        margin: "auto",
+                        width: "100%",
+                        fontSize: "25px",
+                        paddingLeft: "35px",
+                    }}
+                />
+                {usernameError.length > 0 && (
+                    <span style={styles.errorStyle}>{usernameError}</span>
+                )}
+            </div>
+            <br/>
+            <div style={{position: "relative"}}>
+                <IonIcon
+                    icon={lockOpen}
+                    slot="start"
+                    style={{
+                        color: "#000000",
+                        zIndex: 100,
+                        height: "20px",
+                        width: "20px",
+                        left: "2%",
+                        top: "15%",
+                        position: "absolute",
+                    }}
+                />
+                <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    value={password}
+                    onChange={onPasswordChange}
+                    placeholder="Password"
+                    style={{
+                        borderWidth: "1px",
+                        borderRadius: "20px",
+                        margin: "auto",
+                        width: "100%",
+                        fontSize: "25px",
+                        paddingLeft: "35px",
+                    }}
+                />
+
+                {passwordError.length > 0 && (
+                    <span style={styles.errorStyle}>{passwordError}</span>
+                )}
+            </div>
+
+            <br/>
+            <input
+                type="submit"
+                value="Login"
+                style={{
+                    color: "#FFFFFF",
+                    backgroundColor: PURPLE_COLOR,
+                    padding: "2%",
+                    borderBlockColor: PURPLE_COLOR,
+                    borderWidth: "1px",
+                    borderRadius: "20px",
+                    margin: "auto",
+                    width: "100px",
+                }}
+            />
+            <br/>
+            <div
+                style={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    textAlign: "center",
+                    fontSize: "20px",
+                }}
+            >
+                <Link to="/forgot">Forgot Password?</Link>
+                <br/>
+                <Link to="/register">Create an account</Link>
+            </div>
+        </form>
+
+        <div
+            style={{
+                backgroundColor: "#FFFFFF",
+                width: "100%",
+                height: "50%",
+                marginBottom: "-10%",
+                color: "#000000",
+                position: "relative",
+            }}
+        >
+            <IonImg
+                src={SideMiddleCircle}
+                style={{
+                    position: "relative",
+                    right: "-65%",
+                    bottom: "50%",
+                    height: "55%",
+                    width: "100%",
+                }}
+            />
         </div>
-      </form>
 
-      <div
-        style={{
-          backgroundColor: "#FFFFFF",
-          width: "100%",
-          height: "50%",
-          marginBottom: "-10%",
-          color: "#000000",
-          position: "relative",
-        }}
-      >
-        <IonImg
-          src={SideMiddleCircle}
-          style={{
-            position: "relative",
-            right: "-65%",
-            bottom: "50%",
-            height: "55%",
-            width: "100%",
-          }}
-        />
-      </div>
-
-      <div
-        style={{
-          backgroundColor: "#FFFFFF",
-          width: "100%",
-          height: "50%",
-          marginBottom: "-10%",
-          color: "#000000",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        <IonImg
-          src={BottomRightCircle}
-          style={{
-            position: "relative",
-            right: "-50%",
-            bottom: "65%",
-            height: "55%",
-            width: "100%",
-          }}
-        />
-      </div>
+        <div
+            style={{
+                backgroundColor: "#FFFFFF",
+                width: "100%",
+                height: "50%",
+                marginBottom: "-10%",
+                color: "#000000",
+                position: "relative",
+                zIndex: 1,
+            }}
+        >
+            <IonImg
+                src={BottomRightCircle}
+                style={{
+                    position: "relative",
+                    right: "-50%",
+                    bottom: "65%",
+                    height: "55%",
+                    width: "100%",
+                }}
+            />
+        </div>
     </div>
   );
 }
