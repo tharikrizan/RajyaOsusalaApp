@@ -28,7 +28,7 @@ import {
 import { usePhotoGallery } from "../../hooks/usePhotoGallery";
 import { Photo, Prescription, prescriptions } from "../../Database";
 import { useParams } from "react-router";
-import { add, menu,text } from "ionicons/icons";
+import { add, menu,text, arrowBackOutline } from "ionicons/icons";
 import "../Tharik/Pendingpre.pages.scss";
 import "../Tharik/AddPrescription.page.scss";
 import "../Tharik/Backgroundcolor.page.scss";
@@ -85,8 +85,8 @@ const EditPrescription: React.FC = () => {
           <IonAvatar slot="end">
             <img src="img/profile.jpg" />
           </IonAvatar>
-          <IonButton fill="clear" color="light" href="/offers">
-            <IonIcon icon={menu} />
+          <IonButton fill="clear" color="light" href="/prescriptions">
+            <IonIcon icon={arrowBackOutline} />
           </IonButton>
         </IonItem>
         <IonItem lines="none">

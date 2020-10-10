@@ -37,17 +37,18 @@ import {
   logIn,
   lockOpen,
 } from "ionicons/icons";
+import { menuController } from "@ionic/core";
 import "../vishwa/Offers.page.scss";
 import "../vishwa/modell.page.scss";
 import { Link } from "react-router-dom";
+import Sidebar from "../vishwa/Sidebar";
 
 const Offer: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [showActionSheet, setShowActionSheet] = useState(false);
   const handleclick = () => {
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 1500);
+    menuController.open();
   };
 
   const PURPLE_COLOR = "#B04CEF";
@@ -69,7 +70,7 @@ const Offer: React.FC = () => {
           <IonAvatar slot="end">
             <img src="img/profile.jpg" />
           </IonAvatar>
-          <IonButton fill="clear" color="light" href="/">
+          <IonButton fill="clear" color="light" onClick={() => handleclick()}>
             <IonIcon icon={menu} />
           </IonButton>
         </IonItem>
@@ -100,6 +101,8 @@ const Offer: React.FC = () => {
         </IonItem>
       </IonHeader>
 
+      <Sidebar />
+
       <IonContent fullscreen={true}>
         <IonModal isOpen={showModal} cssClass="my-modal">
           <div
@@ -127,15 +130,20 @@ const Offer: React.FC = () => {
               fontSize: "20px",
             }}
           >
-            <IonButton color="secondary" href="/limitedoffers">
+              <Link to="/limitedoffers"  style={{
+            textDecoration: "none",
+          }} >
+            <IonButton color="secondary">
               Limited Offers
             </IonButton>
+            </Link>
             <br />
             <br />
 
             <IonButton color="secondary" href="/productoffers">
               Product Offers
             </IonButton>
+
           </div>
           <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
         </IonModal>

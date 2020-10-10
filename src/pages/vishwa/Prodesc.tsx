@@ -37,9 +37,9 @@ import { menu, options, paperPlane } from "ionicons/icons";
 import "../vishwa/Productsnew.page.scss";
 import "../vishwa/Side";
 import Sidebar from "../vishwa/Sidebar";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
-const Maps: React.FC = () => {
+const Prodesc: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const handleclick = () => {
     menuController.open();
@@ -120,21 +120,15 @@ const Maps: React.FC = () => {
                 <Link to="/pro"  style={{
             textDecoration: "none",
           }} >
-              <IonButton color="secondary" href="/pro">
+              <IonButton color="secondary">
                 Ascending Order
               </IonButton>
+              <br />
+              <br />
               </Link>
-              <br />
-              <br />
-
-
-              <Link to="/prodesc"  style={{
-            textDecoration: "none",
-          }} >
-              <IonButton color="secondary">
+              <IonButton color="secondary" href="/prodesc">
                 Descending Order
               </IonButton>
-              </Link>
               <br />
               <br />
               <Link to="/pro"  style={{
@@ -146,13 +140,10 @@ const Maps: React.FC = () => {
               </Link>
               <br />
               <br />
-              <Link to="/prodesc"  style={{
-            textDecoration: "none",
-          }} >
+
               <IonButton color="secondary" href="/prodesc">
                 Price: High to Low
               </IonButton>
-              </Link>
             </div>
             <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
           </IonModal>
@@ -173,62 +164,18 @@ const Maps: React.FC = () => {
             </IonRow>
             <div className="pronew-page">
             <IonRow>
-              <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro1.jpeg"></IonImg>
-
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>AProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 150</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
-
-              <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro2.jpg"></IonImg>
-
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>BProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 200</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
-            </IonRow>
-
-            <IonRow>
-              <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro3.jpg"></IonImg>
-
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>CProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 250</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
-
-              <IonCard>
+            <IonCard>
                 <IonCardContent>
                   <IonImg src="img/pro4.jpg"></IonImg>
 
                   <IonRow>
                     <IonCol size="">
-                      <IonCardTitle>DProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 300</IonCardSubtitle>
+                      <IonCardTitle>FProduct</IonCardTitle>
+                      <IonCardSubtitle>Rs 400</IonCardSubtitle>
                     </IonCol>
                   </IonRow>
                 </IonCardContent>
               </IonCard>
-            </IonRow>
-
-            <IonRow>
               <IonCard>
                 <IonCardContent>
                   <IonImg src="img/pro3.jpg"></IonImg>
@@ -242,18 +189,68 @@ const Maps: React.FC = () => {
                 </IonCardContent>
               </IonCard>
 
+            </IonRow>
+
+            <IonRow>
+
+
               <IonCard>
                 <IonCardContent>
                   <IonImg src="img/pro4.jpg"></IonImg>
 
                   <IonRow>
                     <IonCol size="">
-                      <IonCardTitle>FProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 400</IonCardSubtitle>
+                      <IonCardTitle>DProduct</IonCardTitle>
+                      <IonCardSubtitle>Rs 300</IonCardSubtitle>
                     </IonCol>
                   </IonRow>
                 </IonCardContent>
               </IonCard>
+
+              <IonCard>
+                <IonCardContent>
+                  <IonImg src="img/pro3.jpg"></IonImg>
+
+                  <IonRow>
+                    <IonCol size="">
+                      <IonCardTitle>CProduct</IonCardTitle>
+                      <IonCardSubtitle>Rs 250</IonCardSubtitle>
+                    </IonCol>
+                  </IonRow>
+                </IonCardContent>
+              </IonCard>
+            </IonRow>
+
+            <IonRow>
+
+            <IonCard>
+                <IonCardContent>
+                  <IonImg src="img/pro2.jpg"></IonImg>
+
+                  <IonRow>
+                    <IonCol size="">
+                      <IonCardTitle>BProduct</IonCardTitle>
+                      <IonCardSubtitle>Rs 200</IonCardSubtitle>
+                    </IonCol>
+                  </IonRow>
+                </IonCardContent>
+              </IonCard>
+
+            <IonCard>
+                <IonCardContent>
+                  <IonImg src="img/pro1.jpeg"></IonImg>
+
+                  <IonRow>
+                    <IonCol size="">
+                      <IonCardTitle>AProduct</IonCardTitle>
+                      <IonCardSubtitle>Rs 150</IonCardSubtitle>
+                    </IonCol>
+                  </IonRow>
+                </IonCardContent>
+              </IonCard>
+
+
+
             </IonRow>
           </div>
           </div>
@@ -264,4 +261,4 @@ const Maps: React.FC = () => {
   );
 };
 
-export default Maps;
+export default Prodesc;

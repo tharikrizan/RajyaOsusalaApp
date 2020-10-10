@@ -46,8 +46,14 @@ import Products from "./pages/vishwa/Products";
 import Productsnew from "./pages/vishwa/Productsnew";
 import Category from "./pages/vishwa/Category";
 import Offers from "./pages/vishwa/Offers";
+import Sidebar from "./pages/vishwa/Sidebar";
 import Limitedoffers from "./pages/vishwa/Limitedoffers";
 import Productoffers from "./pages/vishwa/Productoffers";
+import Allcategories from "./pages/vishwa/Allcategories";
+import Discount from "./pages/vishwa/Discount";
+import Discountend from "./pages/vishwa/Discountend";
+import Prodesc from "./pages/vishwa/Prodesc";
+import Ayurveda from "./pages/vishwa/Ayurveda";
 import Home from "./pages/vishwa/Home";
 import Maps from "./pages/Lakshan/Pages/Maps";
 import LoginPage from "./pages/Lakshan/Pages/LoginPage";
@@ -56,6 +62,8 @@ import Logout from "./pages/Lakshan/Pages/Logout";
 import ForgotPassword from "./pages/Lakshan/Pages/ForgotPassword";
 import Chat from "./components/MR/Chat";
 import EditProfile from "./components/MR/Profile/EditProfile";
+import Profilenew from "./components/MR/Profile/Profilenew";
+import Chatnew from "./components/MR/Chatnew";
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -102,7 +110,12 @@ const App: React.FC = () => {
         <Route path="/productoffers" component={Productoffers} exact={true} />
         <Route path="/offers" component={Offers} exact={true} />
         <Route path="/maps" component={Maps} exact={true} />
+        <Route path="/allcat" component={Allcategories} exact={true} />
         <Route path="/pendingpre" component={PendingPres} exact={true} />
+        <Route path="/ayu" component={Ayurveda} exact={true} />
+        <Route path="/prodesc" component={Prodesc} exact={true} />
+        <Route path="/dis" component={Discount} exact={true} />
+        <Route path="/dise" component={Discountend} exact={true} />
         <Route
           path="/register"
           render={(props) => (
@@ -130,6 +143,13 @@ const App: React.FC = () => {
           exact={true}
         />
 
+        <Route
+          path="/sidebar"
+          component={Sidebar}
+          exact={true}
+        />
+
+
         //added chat and profile paths
         <Route
           path="/chat"
@@ -139,6 +159,18 @@ const App: React.FC = () => {
         <Route
           path="/editProfile"
           component={EditProfile}
+          exact={true}
+        />
+
+        <Route
+          path="/message"
+          component={Chatnew}
+          exact={true}
+        />
+
+        <Route
+          path="/profileEdit"
+          component={Profilenew}
           exact={true}
         />
 

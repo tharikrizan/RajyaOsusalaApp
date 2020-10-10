@@ -11,7 +11,9 @@ import {
   IonSearchbar,
 } from "@ionic/react";
 import { menu } from "ionicons/icons";
+import { menuController } from "@ionic/core";
 import "../Pages/Maps.page.scss";
+import Sidebar from "../../vishwa/Sidebar";
 
 const Maps: React.FC = () => {
   const [searchKeyWords, setSearchKeyWords] = useState<string>(
@@ -26,6 +28,9 @@ const Maps: React.FC = () => {
     const text = searchText.replace(" ", "+") + "+Pharmacy";
     setSearchKeyWords(text);
   };
+  const handleclick = () => {
+    menuController.open();
+  };
   return (
     <div
       className="map-page"
@@ -36,7 +41,7 @@ const Maps: React.FC = () => {
           <IonAvatar slot="end">
             <img src="img/profile.jpg" alt="User" />
           </IonAvatar>
-          <IonButton fill="clear" color="light">
+          <IonButton fill="clear" color="light" onClick={() => handleclick()}>
             <IonIcon icon={menu} />
           </IonButton>
         </IonItem>
@@ -66,6 +71,8 @@ const Maps: React.FC = () => {
           </div>
         </IonItem>
       </IonHeader>
+
+      <Sidebar />
 
       <br />
       <iframe

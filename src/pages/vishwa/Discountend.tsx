@@ -2,11 +2,10 @@ import React, {useState} from 'react';
 import { IonAvatar, IonModal, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
 import { menu, options, arrowBackOutline } from 'ionicons/icons';
 import "../vishwa/Offers.page.scss";
-import { Link } from "react-router-dom";
 
 
 
-const Limitedoffers: React.FC = () => {
+const Discountend: React.FC = () => {
 
     const [showToast, setShowToast] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -34,13 +33,9 @@ const Limitedoffers: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <Link to="/offers"  style={{
-            textDecoration: "none",
-          }} >
-    <IonButton fill="clear" color="light">
+    <IonButton fill="clear" color="light" href="/offers">
      <IonIcon icon={arrowBackOutline} />
     </IonButton>
-    </Link>
   </IonItem>
   <IonItem lines="none">
     <div className="ion-padding-start ion-padding-bottom">
@@ -122,16 +117,6 @@ const Limitedoffers: React.FC = () => {
           <IonSlides options={categories}>
 
           <IonSlide>
-              <IonCard className="category" color="danger" href="/category">
-                <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/man.svg"></IonIcon>
-                  <IonCardTitle>Senior Discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 1st Nov</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonSlide>
-
-            <IonSlide>
               <IonCard className="category" color="primary">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/free.svg"></IonIcon>
@@ -140,6 +125,20 @@ const Limitedoffers: React.FC = () => {
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
+
+            <IonSlide>
+              <IonCard className="category" color="success">
+                <IonCardHeader className="ion-text-center">
+                  <IonIcon src="img/discount.svg"></IonIcon>
+                  <IonCardTitle>20% discount</IonCardTitle>
+                  <IonCardSubtitle>Ends 1st Oct</IonCardSubtitle>
+                </IonCardHeader>
+              </IonCard>
+            </IonSlide>
+
+
+
+
           </IonSlides>
         </IonCol>
       </IonRow>
@@ -151,17 +150,9 @@ const Limitedoffers: React.FC = () => {
         <IonCol size="12">
           <IonSlides options={categories}>
 
-          <IonSlide>
-              <IonCard className="category" color="success">
-                <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/discount.svg"></IonIcon>
-                  <IonCardTitle>20% discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 1st Oct</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonSlide>
 
-            <IonSlide>
+
+          <IonSlide>
               <IonCard className="category" color="tertiary">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/discount.svg"></IonIcon>
@@ -170,6 +161,17 @@ const Limitedoffers: React.FC = () => {
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
+
+            <IonSlide>
+              <IonCard className="category" color="danger" href="/category">
+                <IonCardHeader className="ion-text-center">
+                  <IonIcon src="img/man.svg"></IonIcon>
+                  <IonCardTitle>Senior Discount</IonCardTitle>
+                  <IonCardSubtitle>Ends 1st Nov</IonCardSubtitle>
+                </IonCardHeader>
+              </IonCard>
+            </IonSlide>
+
 
 
 
@@ -186,4 +188,4 @@ const Limitedoffers: React.FC = () => {
      );
 }
 
-export default Limitedoffers;
+export default Discountend;

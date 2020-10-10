@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { IonAvatar, IonModal, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
-import { menu, options } from 'ionicons/icons';
+import { menu, options, arrowBackOutline } from 'ionicons/icons';
 import "../vishwa/Offers.page.scss";
+import { Link } from "react-router-dom"
 
 
 
@@ -33,9 +34,13 @@ const Productoffers: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <IonButton fill="clear" color="light" href="/offers">
-     <IonIcon icon={menu} />
+    <Link to="/offers"  style={{
+            textDecoration: "none",
+          }} >
+    <IonButton fill="clear" color="light">
+     <IonIcon icon={arrowBackOutline} />
     </IonButton>
+    </Link>
   </IonItem>
   <IonItem lines="none">
     <div className="ion-padding-start ion-padding-bottom">
@@ -148,6 +153,9 @@ const Productoffers: React.FC = () => {
         </IonRow>
       </IonGrid>
 
+      <br />
+      <br />
+
       <IonGrid class="ion-no-padding">
         <IonRow>
           <IonCol size="12">
@@ -180,6 +188,9 @@ const Productoffers: React.FC = () => {
           </IonCol>
         </IonRow>
       </IonGrid>
+
+      <br />
+      <br />
 
       <IonGrid class="ion-no-padding">
         <IonRow>

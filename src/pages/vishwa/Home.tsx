@@ -25,16 +25,22 @@ import {
   IonToast,
 } from "@ionic/react";
 import { menu, options } from "ionicons/icons";
+import { menuController } from "@ionic/core";
 import "../vishwa/Home.page.scss";
 import "../vishwa/Homee.page.scss";
 import "../vishwa/Offers.page.scss";
 import "../vishwa/Homecolor.page.scss";
+import Sidebar from "../vishwa/Sidebar";
 
 const Maps = (props: any) => {
   const optioons = {
     centeredSlides: true,
     slidesPerView: 1,
     spaceBetween: -60,
+  };
+
+  const handleclick = () => {
+    menuController.open();
   };
 
   // check if the user has logged in
@@ -52,7 +58,7 @@ const Maps = (props: any) => {
             <IonAvatar slot="end">
               <img src="img/profile.jpg" />
             </IonAvatar>
-            <IonButton fill="clear" color="light">
+            <IonButton fill="clear" color="light" onClick={() => handleclick()}>
               <IonIcon icon={menu} />
             </IonButton>
           </IonItem>
@@ -74,6 +80,7 @@ const Maps = (props: any) => {
             </div>
           </IonItem>
         </IonHeader>
+        <Sidebar />
       </div>
 
       <IonContent fullscreen={true}>

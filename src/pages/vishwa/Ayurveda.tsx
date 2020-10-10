@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import { IonAvatar, IonModal, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
-import { menu, options, arrowBackOutline } from 'ionicons/icons';
+import { menu, options, search, arrowBackOutline  } from 'ionicons/icons';
 import "../vishwa/Offers.page.scss";
 import { Link } from "react-router-dom";
+import { NONAME } from 'dns';
 
 
 
-const Limitedoffers: React.FC = () => {
+const Ayurveda: React.FC = () => {
 
     const [showToast, setShowToast] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -34,10 +35,8 @@ const Limitedoffers: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <Link to="/offers"  style={{
-            textDecoration: "none",
-          }} >
-    <IonButton fill="clear" color="light">
+    <Link to="/allcat">
+    <IonButton fill="clear" color="light" href="/allcat">
      <IonIcon icon={arrowBackOutline} />
     </IonButton>
     </Link>
@@ -45,7 +44,7 @@ const Limitedoffers: React.FC = () => {
   <IonItem lines="none">
     <div className="ion-padding-start ion-padding-bottom">
       <IonLabel>
-        <h2>Offers</h2>
+        <h2>Categories</h2>
       </IonLabel>
 
       <IonRow className="ion-align-items-center">
@@ -53,8 +52,8 @@ const Limitedoffers: React.FC = () => {
           <IonSearchbar placeholder="Search for category" searchIcon="location-outline"></IonSearchbar>
         </IonCol>
         <IonCol size="2">
-          <IonButton color="light" fill="clear" onClick={() => setShowModal(true)}>
-          <IonIcon icon={options} />
+          <IonButton color="light" fill="clear" href="/ayu">
+          <IonIcon icon={search} />
           </IonButton>
         </IonCol>
       </IonRow>
@@ -87,14 +86,7 @@ const Limitedoffers: React.FC = () => {
     fontSize: "20px",
   }}>
     <IonButton color= "secondary" href="/offers">Reset offers</IonButton>
-    <br />
-    <br />
-    <IonButton color= "secondary" href="/offers">Discount</IonButton>
-    <br />
-    <br />
-    <IonButton color= "secondary" href="/offers">Discount End Date</IonButton>
-    <br />
-    <br />
+
   </div>
       <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
     </IonModal>
@@ -106,7 +98,7 @@ const Limitedoffers: React.FC = () => {
       <IonRow className="ion-align-items-baseline">
         <IonCol size="6">
           <h4 className="title">
-            Limited Offers
+            All categories
           </h4>
         </IonCol>
         <IonCol size="6">
@@ -118,61 +110,22 @@ const Limitedoffers: React.FC = () => {
 
     <IonGrid className="ion-no-padding">
       <IonRow>
-        <IonCol size="12">
+      <IonCol size="12">
           <IonSlides options={categories}>
 
-          <IonSlide>
-              <IonCard className="category" color="danger" href="/category">
-                <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/man.svg"></IonIcon>
-                  <IonCardTitle>Senior Discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 1st Nov</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonSlide>
-
             <IonSlide>
-              <IonCard className="category" color="primary">
+            <Link to="/pro"  style={{
+            textDecoration: "none",
+          }} >
+              <IonCard className="category" color="danger">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/free.svg"></IonIcon>
-                  <IonCardTitle>Buy 2 Get 1 Free</IonCardTitle>
-                  <IonCardSubtitle>Ends 20th Sept</IonCardSubtitle>
+                  <IonIcon src="img/ayurvedic.svg"></IonIcon>
+                  <IonCardTitle>Ayurvedic</IonCardTitle>
+                  <IonCardSubtitle>Category</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
+              </Link>
             </IonSlide>
-          </IonSlides>
-        </IonCol>
-      </IonRow>
-    </IonGrid>
-
-
-    <IonGrid className="ion-no-padding">
-      <IonRow>
-        <IonCol size="12">
-          <IonSlides options={categories}>
-
-          <IonSlide>
-              <IonCard className="category" color="success">
-                <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/discount.svg"></IonIcon>
-                  <IonCardTitle>20% discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 1st Oct</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonSlide>
-
-            <IonSlide>
-              <IonCard className="category" color="tertiary">
-                <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/discount.svg"></IonIcon>
-                  <IonCardTitle>30% discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 5th Oct</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonSlide>
-
-
-
           </IonSlides>
         </IonCol>
       </IonRow>
@@ -186,4 +139,4 @@ const Limitedoffers: React.FC = () => {
      );
 }
 
-export default Limitedoffers;
+export default Ayurveda;

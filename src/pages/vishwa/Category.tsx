@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
-import { IonAvatar, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
+import { IonAvatar, IonModal, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
 import { menu, options } from 'ionicons/icons';
+import { menuController } from "@ionic/core";
 import "../vishwa/Category.page.scss";
+import Sidebar from "../vishwa/Sidebar";
+import { Link } from "react-router-dom";
 
 
 const Category: React.FC = () => {
 
     const [showToast, setShowToast] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const handleclick = () => {
-
-        setShowToast(true);
-        setTimeout(() => setShowToast(false), 1500);
-    }
+        menuController.open();
+      };
 
     const optioons = {
         centeredSlides: true,
@@ -31,8 +33,8 @@ const Category: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <IonButton fill="clear" color="light">
-     <IonIcon icon={menu} />
+    <IonButton fill="clear" color="light" onClick={() => handleclick()}>
+     <IonIcon icon={menu}/>
     </IonButton>
   </IonItem>
   <IonItem lines="none">
@@ -46,7 +48,7 @@ const Category: React.FC = () => {
           <IonSearchbar placeholder="Search for category" searchIcon="location-outline"></IonSearchbar>
         </IonCol>
         <IonCol size="2">
-          <IonButton color="light" fill="clear">
+          <IonButton color="light" fill="clear" onClick={() => setShowModal(true)}>
           <IonIcon icon={options} />
           </IonButton>
         </IonCol>
@@ -56,7 +58,50 @@ const Category: React.FC = () => {
   </IonItem>
 </IonHeader>
 
+<Sidebar />
+
         <IonContent fullscreen={true}>
+
+        <IonModal isOpen={showModal} cssClass="my-modal">
+          <div
+            style={{
+              top: "1px",
+              color: "white",
+
+              backgroundColor: "#316dd0",
+              width: "100%",
+            }}
+          >
+            <h2
+              style={{
+                marginLeft: "20px",
+              }}
+            >
+              Filter Categories By
+            </h2>
+          </div>
+
+          <div
+            style={{
+              marginTop: "1px",
+              textAlign: "center",
+              fontSize: "20px",
+            }}
+          >
+              <Link to="/allcat">
+            <IonButton color="secondary">
+              All product categories
+            </IonButton>
+            </Link>
+            <br />
+            <br />
+
+            <IonButton color="secondary" href="/productoffers">
+              Essentials
+            </IonButton>
+          </div>
+          <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
+        </IonModal>
 
 <div className="ion-padding wrapper">
 

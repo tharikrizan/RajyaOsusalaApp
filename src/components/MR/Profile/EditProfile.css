@@ -1,9 +1,6 @@
 .background-blue {
-    background-color: purple;
+  background-color: purple;
 }
 .background-white {
-    background-color: white;
-}
-ion-list {
-    display: flex;
+  background-color: white;
 }

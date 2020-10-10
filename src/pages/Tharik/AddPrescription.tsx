@@ -26,7 +26,7 @@ import {
 } from "@ionic/react";
 import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
 import { usePhotoGallery } from "../../hooks/usePhotoGallery";
-import { add, menu,text } from "ionicons/icons";
+import { add, menu,text, arrowBackOutline } from "ionicons/icons";
 import { prescriptions } from "../../Database";
 import { useHistory } from "react-router";
 import "../Tharik/Pendingpre.pages.scss";
@@ -66,8 +66,8 @@ const AddPrescription: React.FC = (props) => {
           <IonAvatar slot="end">
             <img src="img/profile.jpg" />
           </IonAvatar>
-          <IonButton fill="clear" color="light" href="/offers">
-            <IonIcon icon={menu} />
+          <IonButton fill="clear" color="light" href="/prescriptions">
+            <IonIcon icon={arrowBackOutline} />
           </IonButton>
         </IonItem>
         <IonItem lines="none">
