@@ -70,4 +70,20 @@ export let Messages = [
     time: "Apr 13",
     msgs: "Hi Team",
   },
-]; 
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+];

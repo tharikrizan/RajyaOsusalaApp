@@ -127,21 +127,32 @@ const Maps = (props: any) => {
           <div className="ion-padding">
             <IonRow>
               <IonCard>
+              <Link to="/prescriptions"  style={{
+            textDecoration: "none",
+          }} >
                 <IonCardContent>
                   <div className="img-wrapper">
                     <IonImg src="img/pres.png"></IonImg>
                   </div>
 
                   <IonRow>
+
                     <IonCol size="">
+
                       <IonCardTitle>Upload</IonCardTitle>
                       <IonCardSubtitle>Prescription</IonCardSubtitle>
+
                     </IonCol>
+
                   </IonRow>
                 </IonCardContent>
+                </Link>
               </IonCard>
 
-              <IonCard href="/maps">
+              <IonCard>
+              <Link to="/maps"  style={{
+            textDecoration: "none",
+          }} >
                 <IonCardContent>
                   <IonImg src="img/locationn.svg"></IonImg>
 
@@ -152,6 +163,7 @@ const Maps = (props: any) => {
                     </IonCol>
                   </IonRow>
                 </IonCardContent>
+                </Link>
               </IonCard>
             </IonRow>
 
@@ -182,7 +194,10 @@ const Maps = (props: any) => {
             </IonRow>
 
             <IonRow>
-              <IonCard href="/chat">
+              <IonCard>
+              <Link to="/message"  style={{
+            textDecoration: "none",
+          }} >
                 <IonCardContent>
                   <IonImg src="img/chat.svg"></IonImg>
 
@@ -192,9 +207,13 @@ const Maps = (props: any) => {
                     </IonCol>
                   </IonRow>
                 </IonCardContent>
+                </Link>
               </IonCard>
 
-              <IonCard href="/editProfile">
+              <IonCard>
+              <Link to="/profileEdit"  style={{
+            textDecoration: "none",
+          }} >
                 <IonCardContent>
                   <IonImg src="img/profile.jpg"></IonImg>
 
@@ -204,6 +223,7 @@ const Maps = (props: any) => {
                     </IonCol>
                   </IonRow>
                 </IonCardContent>
+                </Link>
               </IonCard>
             </IonRow>
           </div>
