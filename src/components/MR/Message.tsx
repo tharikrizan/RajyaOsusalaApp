@@ -20,19 +20,23 @@ import {
   } from "@ionic/react";
 import React, {useState, useEffect} from 'react';
 import './Message.css';
-import { Messages } from "../../Database";
+import { MessageInt } from "../../Database";
 
-const Message: React.FC = () => {
-    const [messages, setMessages] = useState(Messages);
+interface Props{
+    messages:MessageInt[];
+    
+}
 
-    useEffect(() => {
-        setMessages(Messages)
-    });
+const Message: React.FC<Props> = ({messages}) => {
+const [Messages, setMessages] = useState(messages);
 
-    console.log(messages);
+
+
+    console.log(Messages);
+    
     return (
         <div id="chat-message-list">
-            { messages.map( (M,index) =>
+            { Messages.map( (M,index) =>
             <div className="message-row you-message" key={index}>
                 <div className="message-content">
                     <div className="message-text">

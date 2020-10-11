@@ -151,7 +151,7 @@ const App: React.FC = () => {
 
 
         //added chat and profile paths
-        <Route
+       <Route
           path="/chat"
           component={Chat}
           exact={true}

@@ -32,14 +32,32 @@ import "../MR/Chatt.page.scss";
 import { Link } from "react-router-dom";
 import ChatForm from "./ChatForm";
 import Message from "./Message";
+import { MessageInt, Messages } from "../../Database";
 
 const Chatt: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [messages, setMessages] = useState(Messages);
+
+  useEffect(() => {
+    setMessages(Messages);
+  });
 
   const handleclick = () => {
     setShowToast(true);
     setTimeout(() => setShowToast(false), 1500);
+  };
+
+  const submitForm = (message:MessageInt) => {
+    Messages.unshift({
+        time: `${new Date().toLocaleString('default', { month: 'short' })}  ${(new Date()).getDate()}`,
+        msgs: message.msgs,
+    });
+    setMessages([...Messages,{
+      time: `${new Date().toLocaleString('default', { month: 'short' })}  ${(new Date()).getDate()}`,
+      msgs: message.msgs,
+  }]);
+    
   };
 
   const optioons = {
@@ -98,7 +116,6 @@ const Chatt: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen={true}>
-
         <div className="ion-padding-horizontal wrapper">
           <IonGrid className="ion-no-padding">
             <IonRow className="ion-align-items-baseline">
@@ -110,13 +127,9 @@ const Chatt: React.FC = () => {
           </IonGrid>
         </div>
 
-        <Message />
+        <Message  messages={messages}/>
 
-        <ChatForm />
-
-
-
-
+        <ChatForm  submitForm={submitForm}/>
       </IonContent>
     </div>
   );
