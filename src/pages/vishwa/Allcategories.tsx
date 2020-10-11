@@ -132,7 +132,7 @@ const Allcat: React.FC = () => {
             </IonSlide>
 
             <IonSlide>
-              <IonCard className="category" color="primary">
+              <IonCard className="category" color="primary" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/skin-care.svg"></IonIcon>
                   <IonCardTitle>Skin</IonCardTitle>
@@ -152,7 +152,7 @@ const Allcat: React.FC = () => {
           <IonSlides options={categories}>
 
           <IonSlide>
-              <IonCard className="category" color="success">
+              <IonCard className="category" color="success" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/supplement.svg"></IonIcon>
                   <IonCardTitle>Vitamins</IonCardTitle>
@@ -163,7 +163,7 @@ const Allcat: React.FC = () => {
 
 
             <IonSlide>
-              <IonCard className="category" color="warning">
+              <IonCard className="category" color="warning" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/diabetes.svg"></IonIcon>
                   <IonCardTitle>Diabetes</IonCardTitle>

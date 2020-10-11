@@ -204,7 +204,7 @@ const Category: React.FC = () => {
             </IonSlide>
 
             <IonSlide>
-              <IonCard className="category" color="primary">
+              <IonCard className="category" color="primary" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/skin-care.svg"></IonIcon>
                   <IonCardTitle>Skin</IonCardTitle>
@@ -214,7 +214,7 @@ const Category: React.FC = () => {
             </IonSlide>
 
             <IonSlide>
-              <IonCard className="category" color="success">
+              <IonCard className="category" color="success" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/supplement.svg"></IonIcon>
                   <IonCardTitle>Vitamins</IonCardTitle>
@@ -225,7 +225,7 @@ const Category: React.FC = () => {
 
 
             <IonSlide>
-              <IonCard className="category" color="warning">
+              <IonCard className="category" color="warning" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/diabetes.svg"></IonIcon>
                   <IonCardTitle>Diabetes</IonCardTitle>
@@ -236,7 +236,7 @@ const Category: React.FC = () => {
 
 
             <IonSlide>
-              <IonCard className="category" color="tertiary">
+              <IonCard className="category" color="tertiary" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/food.svg"></IonIcon>
                   <IonCardTitle>Food</IonCardTitle>
