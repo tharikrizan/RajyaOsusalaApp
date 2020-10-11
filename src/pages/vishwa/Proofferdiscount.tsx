@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 
 
 
-const Productoffers: React.FC = () => {
+const Proofferdiscount: React.FC = () => {
 
     const [showToast, setShowToast] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -86,14 +86,12 @@ const Productoffers: React.FC = () => {
     textAlign: "center",
     fontSize: "20px",
   }}>
-
-    <IonButton color= "secondary" href="/prodise">Discount</IonButton>
-
+    <IonButton color= "secondary">Discount</IonButton>
   <br />
   <br />
 
 
-  <IonButton color= "secondary">Discount End date</IonButton>
+  <IonButton color= "secondary" href="/productoffers">Discount End date</IonButton>
   <br />
   <br />
 
@@ -127,19 +125,20 @@ const Productoffers: React.FC = () => {
           <IonCol size="12">
             <IonSlides options={optioons}>
 
-            <IonSlide>
+
+
+                <IonSlide>
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="img/ayuu.jpg"></IonImg>
+                        <IonImg src="img/ayu2.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Ayurveda 20% Discount
+                        Ayurveda 50% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Ends 10th Oct</IonCardSubtitle>
-                      <IonCardSubtitle>
-                      </IonCardSubtitle>
+                      <IonCardSubtitle>Ends 20th Oct</IonCardSubtitle>
+                      <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
                 </IonSlide>
@@ -164,13 +163,13 @@ const Productoffers: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="img/ayu2.jpg"></IonImg>
+                        <IonImg src="img/health.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Ayurveda 50% Discount
+                        Health Drink 40% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Ends 20th Oct</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 30th Oct</IonCardSubtitle>
                       <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -223,21 +222,25 @@ const Productoffers: React.FC = () => {
           <IonCol size="12">
             <IonSlides options={optioons}>
 
+
             <IonSlide>
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="img/health.jpg"></IonImg>
+                        <IonImg src="img/ayuu.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Health Drink 40% Discount
+                        Ayurveda 20% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Ends 30th Oct</IonCardSubtitle>
-                      <IonCardSubtitle></IonCardSubtitle>
+                      <IonCardSubtitle>Ends 10th Oct</IonCardSubtitle>
+                      <IonCardSubtitle>
+                      </IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
                 </IonSlide>
+
+
 
 
 
@@ -255,4 +258,4 @@ const Productoffers: React.FC = () => {
      );
 }
 
-export default Productoffers;
+export default Proofferdiscount;

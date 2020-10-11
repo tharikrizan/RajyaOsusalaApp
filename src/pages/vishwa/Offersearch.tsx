@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 
-const Discount: React.FC = () => {
+const Offersearch: React.FC = () => {
 
     const [showToast, setShowToast] = useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -34,9 +34,13 @@ const Discount: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <IonButton fill="clear" color="light" href="/offers">
+    <Link to="/offers"  style={{
+            textDecoration: "none",
+          }} >
+    <IonButton fill="clear" color="light">
      <IonIcon icon={arrowBackOutline} />
     </IonButton>
+    </Link>
   </IonItem>
   <IonItem lines="none">
     <div className="ion-padding-start ion-padding-bottom">
@@ -49,13 +53,9 @@ const Discount: React.FC = () => {
           <IonSearchbar placeholder="Search" searchIcon="location-outline"></IonSearchbar>
         </IonCol>
         <IonCol size="2">
-        <Link to="/offersearch"  style={{
-            textDecoration: "none",
-          }} >
-          <IonButton color="light" fill="clear">
+          <IonButton color="light" fill="clear" onClick={() => setShowModal(true)}>
           <IonIcon icon={search} />
           </IonButton>
-          </Link>
         </IonCol>
         <IonCol size="2">
           <IonButton color="light" fill="clear" onClick={() => setShowModal(true)}>
@@ -91,7 +91,8 @@ const Discount: React.FC = () => {
     textAlign: "center",
     fontSize: "20px",
   }}>
-    <Link to="/dise"  style={{
+
+<Link to="/dise"  style={{
             textDecoration: "none",
           }} >
           <IonItem>
@@ -110,6 +111,7 @@ const Discount: React.FC = () => {
           </IonLabel>
         </IonItem>
         </Link>
+
   </div>
       <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
     </IonModal>
@@ -137,50 +139,6 @@ const Discount: React.FC = () => {
           <IonSlides options={categories}>
 
           <IonSlide>
-              <IonCard className="category" color="tertiary">
-                <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/discount.svg"></IonIcon>
-                  <IonCardTitle>30% discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 5th Oct</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonSlide>
-
-            <IonSlide>
-              <IonCard className="category" color="success">
-                <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/discount.svg"></IonIcon>
-                  <IonCardTitle>20% discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 1st Oct</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonSlide>
-
-
-
-          </IonSlides>
-        </IonCol>
-      </IonRow>
-    </IonGrid>
-
-
-    <IonGrid className="ion-no-padding">
-      <IonRow>
-        <IonCol size="12">
-          <IonSlides options={categories}>
-
-
-            <IonSlide>
-              <IonCard className="category" color="primary">
-                <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/free.svg"></IonIcon>
-                  <IonCardTitle>Buy 2 Get 1 Free</IonCardTitle>
-                  <IonCardSubtitle>Ends 20th Sept</IonCardSubtitle>
-                </IonCardHeader>
-              </IonCard>
-            </IonSlide>
-
-            <IonSlide>
               <IonCard className="category" color="danger" href="/category">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/man.svg"></IonIcon>
@@ -189,13 +147,11 @@ const Discount: React.FC = () => {
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
-
-
-
           </IonSlides>
         </IonCol>
       </IonRow>
     </IonGrid>
+
 
 
   </IonContent>
@@ -205,4 +161,4 @@ const Discount: React.FC = () => {
      );
 }
 
-export default Discount;
+export default Offersearch;

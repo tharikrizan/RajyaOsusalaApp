@@ -33,7 +33,7 @@ import {
   IonList,
 } from "@ionic/react";
 import { menuController } from "@ionic/core";
-import { menu, options, paperPlane } from "ionicons/icons";
+import { menu, options, paperPlane, search } from "ionicons/icons";
 import "../vishwa/Productsnew.page.scss";
 import "../vishwa/Side";
 import Sidebar from "../vishwa/Sidebar";
@@ -64,11 +64,19 @@ const Maps: React.FC = () => {
               </IonLabel>
 
               <IonRow className="ion-align-items-center">
-                <IonCol size="10">
+                <IonCol size="8">
                   <IonSearchbar
-                    placeholder="Search for products"
+                    placeholder="Search"
                     searchIcon="location-outline"
                   ></IonSearchbar>
+                </IonCol>
+                <IonCol size="2">
+                  <IonButton
+                    color="light"
+                    fill="clear"
+                  >
+                    <IonIcon icon={search} />
+                  </IonButton>
                 </IonCol>
                 <IonCol size="2">
                   <IonButton
@@ -117,42 +125,48 @@ const Maps: React.FC = () => {
                 fontSize: "20px",
               }}
             >
-                <Link to="/pro"  style={{
-            textDecoration: "none",
-          }} >
-              <IonButton color="secondary" href="/pro">
-                Ascending Order
-              </IonButton>
-              </Link>
-              <br />
-              <br />
 
 
-              <Link to="/prodesc"  style={{
+<Link to="/limitedoffers"  style={{
             textDecoration: "none",
           }} >
-              <IonButton color="secondary">
-                Descending Order
-              </IonButton>
-              </Link>
-              <br />
-              <br />
-              <Link to="/pro"  style={{
+            <IonItem>
+          <IonLabel>
+            Ascending Order
+          </IonLabel>
+        </IonItem>
+        </Link>
+
+        <Link to="/prodesc"  style={{
             textDecoration: "none",
           }} >
-              <IonButton color="secondary">
-                Price: Low to High
-              </IonButton>
-              </Link>
-              <br />
-              <br />
-              <Link to="/prodesc"  style={{
+            <IonItem>
+          <IonLabel>
+            Descending Order
+          </IonLabel>
+        </IonItem>
+        </Link>
+
+        <Link to="/pro"  style={{
             textDecoration: "none",
           }} >
-              <IonButton color="secondary" href="/prodesc">
-                Price: High to Low
-              </IonButton>
-              </Link>
+            <IonItem>
+          <IonLabel>
+            Price: Low to High
+          </IonLabel>
+        </IonItem>
+        </Link>
+
+        <Link to="/prodesc"  style={{
+            textDecoration: "none",
+          }} >
+            <IonItem>
+          <IonLabel>
+            Price: High to Low
+          </IonLabel>
+        </IonItem>
+        </Link>
+
             </div>
             <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
           </IonModal>

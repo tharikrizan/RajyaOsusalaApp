@@ -28,6 +28,7 @@ import {
 import {
   menu,
   options,
+  search,
   trash,
   share,
   caretForwardCircle,
@@ -96,6 +97,7 @@ const Offer: React.FC = () => {
                   <IonIcon icon={options} />
                 </IonButton>
               </IonCol>
+
             </IonRow>
           </div>
         </IonItem>
@@ -125,24 +127,23 @@ const Offer: React.FC = () => {
 
           <div
             style={{
-              marginTop: "1px",
-              textAlign: "center",
-              fontSize: "20px",
+
             }}
           >
               <Link to="/limitedoffers"  style={{
             textDecoration: "none",
           }} >
-            <IonButton color="secondary">
-              Limited Offers
-            </IonButton>
-            </Link>
-            <br />
-            <br />
-
-            <IonButton color="secondary" href="/productoffers">
-              Product Offers
-            </IonButton>
+            <IonItem>
+          <IonLabel>
+            Limited Offers
+          </IonLabel>
+        </IonItem>
+        </Link>
+        <IonItem href="/productoffers">
+          <IonLabel>
+           Product Offers
+          </IonLabel>
+        </IonItem>
 
           </div>
           <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
@@ -292,19 +293,14 @@ const Offer: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
+                        <IonImg src="img/ayuu.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Product Discount
+                        Ayurveda 20% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 10th Oct</IonCardSubtitle>
                       <IonCardSubtitle>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
                       </IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -314,29 +310,13 @@ const Offer: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
+                        <IonImg src="img/ayu2.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Product Discount
+                        Ayurveda 50% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
-                      <IonCardSubtitle></IonCardSubtitle>
-                    </IonCardContent>
-                  </IonCard>
-                </IonSlide>
-
-                <IonSlide>
-                  <IonCard className="card">
-                    <IonCardContent className="ion-text-left">
-                      <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
-                      </div>
-
-                      <IonCardTitle className="title">
-                        Product Discount
-                      </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 20th Oct</IonCardSubtitle>
                       <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -346,6 +326,9 @@ const Offer: React.FC = () => {
           </IonRow>
         </IonGrid>
 
+        <br />
+
+
         <IonGrid class="ion-no-padding">
           <IonRow>
             <IonCol size="12">
@@ -354,19 +337,14 @@ const Offer: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
+                        <IonImg src="img/fruit.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Product Discount
+                        Fruits 20% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 25th Oct</IonCardSubtitle>
                       <IonCardSubtitle>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
                       </IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -376,29 +354,13 @@ const Offer: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
+                        <IonImg src="img/health.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Product Discount
+                        Health Drink 40% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
-                      <IonCardSubtitle></IonCardSubtitle>
-                    </IonCardContent>
-                  </IonCard>
-                </IonSlide>
-
-                <IonSlide>
-                  <IonCard className="card">
-                    <IonCardContent className="ion-text-left">
-                      <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
-                      </div>
-
-                      <IonCardTitle className="title">
-                        Product Discount
-                      </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 30th Oct</IonCardSubtitle>
                       <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>

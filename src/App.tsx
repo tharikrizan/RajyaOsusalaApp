@@ -55,6 +55,8 @@ import Discountend from "./pages/vishwa/Discountend";
 import Prodesc from "./pages/vishwa/Prodesc";
 import Ayurveda from "./pages/vishwa/Ayurveda";
 import Home from "./pages/vishwa/Home";
+import Proofferdiscount from "./pages/vishwa/Proofferdiscount";
+import Prosearch from "./pages/vishwa/Prosearch"
 import Maps from "./pages/Lakshan/Pages/Maps";
 import LoginPage from "./pages/Lakshan/Pages/LoginPage";
 import RegisterPage from "./pages/Lakshan/Pages/RegisterPage";
@@ -64,6 +66,7 @@ import Chat from "./components/MR/Chat";
 import EditProfile from "./components/MR/Profile/EditProfile";
 import Profilenew from "./components/MR/Profile/Profilenew";
 import Chatnew from "./components/MR/Chatnew";
+import Offersearch from "./pages/vishwa/Offersearch";
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -116,6 +119,9 @@ const App: React.FC = () => {
         <Route path="/prodesc" component={Prodesc} exact={true} />
         <Route path="/dis" component={Discount} exact={true} />
         <Route path="/dise" component={Discountend} exact={true} />
+        <Route path="/prodise" component={Proofferdiscount} exact={true} />
+        <Route path="/prosearch" component={Prosearch} exact={true} />
+        <Route path="/offersearch" component={Offersearch} exact={true} />
         <Route
           path="/register"
           render={(props) => (

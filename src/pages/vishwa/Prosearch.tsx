@@ -74,7 +74,7 @@ const Prodesc: React.FC = () => {
                   <IonButton
                     color="light"
                     fill="clear"
-                    href = "/prosearch"
+                    onClick={() => setShowModal(true)}
                   >
                     <IonIcon icon={search} />
                   </IonButton>
@@ -173,18 +173,6 @@ const Prodesc: React.FC = () => {
             </IonRow>
             <div className="pronew-page">
             <IonRow>
-            <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro4.jpg"></IonImg>
-
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>FProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 400</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
               <IonCard>
                 <IonCardContent>
                   <IonImg src="img/pro3.jpg"></IonImg>
@@ -197,68 +185,6 @@ const Prodesc: React.FC = () => {
                   </IonRow>
                 </IonCardContent>
               </IonCard>
-
-            </IonRow>
-
-            <IonRow>
-
-
-              <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro4.jpg"></IonImg>
-
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>DProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 300</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
-
-              <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro3.jpg"></IonImg>
-
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>CProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 250</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
-            </IonRow>
-
-            <IonRow>
-
-            <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro2.jpg"></IonImg>
-
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>BProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 200</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
-
-            <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro1.jpeg"></IonImg>
-
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>AProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 150</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
-
-
 
             </IonRow>
           </div>

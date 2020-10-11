@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import { IonAvatar, IonModal, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
-import { menu, options, arrowBackOutline } from 'ionicons/icons';
+import { menu, options, arrowBackOutline, search } from 'ionicons/icons';
 import "../vishwa/Offers.page.scss";
+import { Link } from "react-router-dom";
 
 
 
@@ -44,8 +45,17 @@ const Discountend: React.FC = () => {
       </IonLabel>
 
       <IonRow className="ion-align-items-center">
-        <IonCol size="10">
-          <IonSearchbar placeholder="Search for category" searchIcon="location-outline"></IonSearchbar>
+        <IonCol size="8">
+          <IonSearchbar placeholder="Search" searchIcon="location-outline"></IonSearchbar>
+        </IonCol>
+        <IonCol size="2">
+        <Link to="/offersearch"  style={{
+            textDecoration: "none",
+          }} >
+          <IonButton color="light" fill="clear">
+          <IonIcon icon={search} />
+          </IonButton>
+          </Link>
         </IonCol>
         <IonCol size="2">
           <IonButton color="light" fill="clear" onClick={() => setShowModal(true)}>
@@ -81,15 +91,25 @@ const Discountend: React.FC = () => {
     textAlign: "center",
     fontSize: "20px",
   }}>
-    <IonButton color= "secondary" href="/offers">Reset offers</IonButton>
-    <br />
-    <br />
-    <IonButton color= "secondary" href="/offers">Discount</IonButton>
-    <br />
-    <br />
-    <IonButton color= "secondary" href="/offers">Discount End Date</IonButton>
-    <br />
-    <br />
+    <Link to="/dise"  style={{
+            textDecoration: "none",
+          }} >
+          <IonItem>
+          <IonLabel>
+          Discount End Date
+          </IonLabel>
+        </IonItem>
+        </Link>
+
+        <Link to="/dis"  style={{
+            textDecoration: "none",
+          }} >
+          <IonItem>
+          <IonLabel>
+          Discount
+          </IonLabel>
+        </IonItem>
+        </Link>
   </div>
       <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
     </IonModal>

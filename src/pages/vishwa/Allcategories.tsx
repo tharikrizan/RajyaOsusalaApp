@@ -34,11 +34,11 @@ const Allcat: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <Link to="/category">
+
     <IonButton fill="clear" color="light" href="/category">
      <IonIcon icon={arrowBackOutline} />
     </IonButton>
-    </Link>
+
   </IonItem>
   <IonItem lines="none">
     <div className="ion-padding-start ion-padding-bottom">

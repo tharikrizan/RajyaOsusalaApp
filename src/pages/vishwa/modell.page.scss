@@ -1,12 +1,16 @@
 .my-modal {
-    .modal-wrapper {
-        border-radius: 10px 10px 10px 10px;
-        overflow: hidden;
-        top: 30%;
-        left: 25%;
-        position: absolute;
-        width: 50%;
-        height: 50%;
-    }
+  .modal-wrapper {
+    border-radius: 10px 10px;
+    overflow: hidden;
+    top: 30%;
+    left: 25%;
+    position: absolute;
+    width: 50%;
+    height: 40%;
+  }
 
+  ion-item {
+    color: #316dd0;
+    text-align: center;
+  }
 }

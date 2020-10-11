@@ -170,7 +170,7 @@ const Maps = (props: any) => {
             <IonRow>
               <IonCard href="/category">
                 <IonCardContent>
-                  <IonImg src="img/pro3.jpg"></IonImg>
+                  <IonImg src="img/pro4.jpg"></IonImg>
 
                   <IonRow>
                     <IonCol size="">

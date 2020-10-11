@@ -43,24 +43,18 @@ const Sidebar: React.FC = () => {
             <IonLabel>Prescriptions</IonLabel>
           </IonItem>
           </Link>
-          <Link to="/category"  style={{
-            textDecoration: "none",
 
-          }} >
-          <IonItem>
+          <IonItem href="/category">
             <IonIcon icon={heart} slot="start"></IonIcon>
             <IonLabel>Products</IonLabel>
           </IonItem>
-          </Link>
-          <Link to="/offers"  style={{
-            textDecoration: "none",
 
-          }} >
-          <IonItem>
+
+          <IonItem href="/offers">
             <IonIcon icon={paperPlane} slot="start"></IonIcon>
             <IonLabel>Offers</IonLabel>
           </IonItem>
-          </Link>
+
           <Link to="/maps"  style={{
             textDecoration: "none",
 

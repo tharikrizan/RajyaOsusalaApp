@@ -114,17 +114,15 @@ const Ayurveda: React.FC = () => {
           <IonSlides options={categories}>
 
             <IonSlide>
-            <Link to="/pro"  style={{
-            textDecoration: "none",
-          }} >
-              <IonCard className="category" color="danger">
+
+              <IonCard className="category" color="danger" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/ayurvedic.svg"></IonIcon>
                   <IonCardTitle>Ayurvedic</IonCardTitle>
                   <IonCardSubtitle>Category</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
-              </Link>
+
             </IonSlide>
           </IonSlides>
         </IonCol>
