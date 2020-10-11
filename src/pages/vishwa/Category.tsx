@@ -90,11 +90,7 @@ const Category: React.FC = () => {
           </IonLabel>
         </IonItem>
         </Link>
-        <IonItem href="/productoffers">
-          <IonLabel>
-          Essentials
-          </IonLabel>
-        </IonItem>
+
 
         </div>
 

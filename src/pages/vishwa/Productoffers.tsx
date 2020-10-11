@@ -86,19 +86,27 @@ const Productoffers: React.FC = () => {
     textAlign: "center",
     fontSize: "20px",
   }}>
+      <IonItem href="/prodise">
+          <IonLabel>
 
-    <IonButton color= "secondary" href="/prodise">Discount</IonButton>
+    Discount
 
-  <br />
-  <br />
-
-
-  <IonButton color= "secondary">Discount End date</IonButton>
-  <br />
-  <br />
+    </IonLabel>
+    </IonItem>
 
 
-  <IonButton color= "secondary" href="/offers">Reset All</IonButton>
+<IonItem>
+    <IonLabel>
+  Discount End date
+  </IonLabel>
+  </IonItem>
+
+
+  <IonItem href="/offers">
+      <IonLabel>
+  Reset All
+  </IonLabel>
+  </IonItem>
 
 
   </div>

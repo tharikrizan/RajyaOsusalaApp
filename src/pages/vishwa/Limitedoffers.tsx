@@ -34,13 +34,11 @@ const Limitedoffers: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <Link to="/offers"  style={{
-            textDecoration: "none",
-          }} >
-    <IonButton fill="clear" color="light">
+
+    <IonButton fill="clear" color="light" href="/offers">
      <IonIcon icon={arrowBackOutline} />
     </IonButton>
-    </Link>
+
   </IonItem>
   <IonItem lines="none">
     <div className="ion-padding-start ion-padding-bottom">

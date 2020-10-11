@@ -27,26 +27,28 @@ import {
   IonSlides,
   IonToast,
 } from "@ionic/react";
-import { menu, options, arrowBackOutline } from "ionicons/icons";
+import { menu, options, arrowBackOutline, trashBin } from "ionicons/icons";
+import { menuController } from "@ionic/core";
 import "../MR/Chatt.page.scss";
 import { Link } from "react-router-dom";
 import ChatForm from "./ChatForm";
 import Message from "./Message";
+import Sidebar from "../../pages/vishwa/Sidebar";
 import { MessageInt, Messages } from "../../Database";
 
 const Chatt: React.FC = () => {
   const [showToast, setShowToast] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [messages, setMessages] = useState(Messages);
+  const handleclick = () => {
+    menuController.open();
+  };
 
   useEffect(() => {
     setMessages(Messages);
   });
 
-  const handleclick = () => {
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 1500);
-  };
+
 
   const submitForm = (message:MessageInt) => {
     Messages.unshift({
@@ -57,7 +59,7 @@ const Chatt: React.FC = () => {
       time: `${new Date().toLocaleString('default', { month: 'short' })}  ${(new Date()).getDate()}`,
       msgs: message.msgs,
   }]);
-    
+
   };
 
   const optioons = {
@@ -71,14 +73,14 @@ const Chatt: React.FC = () => {
   };
 
   return (
-    <div className="offer-page">
+    <div className="chattt-page">
       <IonHeader className="ion-no-border">
         <IonItem lines="none">
           <IonAvatar slot="end">
             <img src="img/profile.jpg" />
           </IonAvatar>
           <Link
-            to="/offers"
+            to="/homenew"
             style={{
               textDecoration: "none",
             }}
@@ -86,12 +88,14 @@ const Chatt: React.FC = () => {
             <IonButton fill="clear" color="light">
               <IonIcon icon={arrowBackOutline} />
             </IonButton>
-          </Link>
+
+            </Link>
+
         </IonItem>
         <IonItem lines="none">
           <div className="ion-padding-start ion-padding-bottom">
             <IonLabel>
-              <h2>Offers</h2>
+              <h2>Chat</h2>
             </IonLabel>
 
             <IonRow className="ion-align-items-center">
@@ -105,14 +109,14 @@ const Chatt: React.FC = () => {
                 <IonButton
                   color="light"
                   fill="clear"
-                  onClick={() => setShowModal(true)}
                 >
-                  <IonIcon icon={options} />
+                  <IonIcon icon={trashBin} />
                 </IonButton>
               </IonCol>
             </IonRow>
           </div>
         </IonItem>
+        <Sidebar />
       </IonHeader>
 
       <IonContent fullscreen={true}>

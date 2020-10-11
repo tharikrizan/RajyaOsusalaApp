@@ -26,7 +26,7 @@ const Sidebar: React.FC = () => {
       </IonHeader>
       <IonContent fullscreen={true}>
         <IonList>
-        <Link to="/"  style={{
+        <Link to="/homenew"  style={{
             textDecoration: "none",
           }} >
           <IonItem>

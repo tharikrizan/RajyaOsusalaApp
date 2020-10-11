@@ -127,7 +127,7 @@ const Maps: React.FC = () => {
             >
 
 
-<Link to="/limitedoffers"  style={{
+<Link to="/pro"  style={{
             textDecoration: "none",
           }} >
             <IonItem>

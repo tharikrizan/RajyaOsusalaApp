@@ -67,6 +67,7 @@ import EditProfile from "./components/MR/Profile/EditProfile";
 import Profilenew from "./components/MR/Profile/Profilenew";
 import Chatnew from "./components/MR/Chatnew";
 import Offersearch from "./pages/vishwa/Offersearch";
+import Homenew from "./pages/vishwa/Homenew";
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -122,6 +123,7 @@ const App: React.FC = () => {
         <Route path="/prodise" component={Proofferdiscount} exact={true} />
         <Route path="/prosearch" component={Prosearch} exact={true} />
         <Route path="/offersearch" component={Offersearch} exact={true} />
+        <Route path="/homenew" component={Homenew} exact={true} />
         <Route
           path="/register"
           render={(props) => (

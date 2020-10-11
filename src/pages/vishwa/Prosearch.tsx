@@ -129,30 +129,42 @@ const Prodesc: React.FC = () => {
                 <Link to="/pro"  style={{
             textDecoration: "none",
           }} >
-              <IonButton color="secondary">
-                Ascending Order
-              </IonButton>
-              <br />
-              <br />
-              </Link>
-              <IonButton color="secondary" href="/prodesc">
-                Descending Order
-              </IonButton>
-              <br />
-              <br />
-              <Link to="/pro"  style={{
+            <IonItem>
+          <IonLabel>
+            Ascending Order
+          </IonLabel>
+        </IonItem>
+        </Link>
+
+        <Link to="/prodesc"  style={{
             textDecoration: "none",
           }} >
-              <IonButton color="secondary">
-                Price: Low to High
-              </IonButton>
-              </Link>
-              <br />
-              <br />
+            <IonItem>
+          <IonLabel>
+            Descending Order
+          </IonLabel>
+        </IonItem>
+        </Link>
 
-              <IonButton color="secondary" href="/prodesc">
-                Price: High to Low
-              </IonButton>
+        <Link to="/pro"  style={{
+            textDecoration: "none",
+          }} >
+            <IonItem>
+          <IonLabel>
+            Price: Low to High
+          </IonLabel>
+        </IonItem>
+        </Link>
+
+        <Link to="/prodesc"  style={{
+            textDecoration: "none",
+          }} >
+            <IonItem>
+          <IonLabel>
+            Price: High to Low
+          </IonLabel>
+        </IonItem>
+        </Link>
             </div>
             <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
           </IonModal>

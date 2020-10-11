@@ -34,7 +34,7 @@ const Offersearch: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <Link to="/offers"  style={{
+    <Link to="/limitedoffers"  style={{
             textDecoration: "none",
           }} >
     <IonButton fill="clear" color="light">
