@@ -109,6 +109,7 @@ const Chatt: React.FC = () => {
                 <IonButton
                   color="light"
                   fill="clear"
+                  onClick={() => setShowModal(true)}
                 >
                   <IonIcon icon={trashBin} />
                 </IonButton>
@@ -120,6 +121,47 @@ const Chatt: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen={true}>
+      <IonModal isOpen={showModal} cssClass="my-modal">
+          <div
+            style={{
+              top: "1px",
+              color: "white",
+
+              backgroundColor: "#316dd0",
+              width: "100%",
+            }}
+          >
+            <h2
+              style={{
+                marginLeft: "20px",
+              }}
+            >
+              Clear chat?
+            </h2>
+          </div>
+
+          <div
+          >
+
+            <IonItem>
+          <IonLabel>
+              <IonButton href="/logout">
+            Yes
+            </IonButton>
+          </IonLabel>
+        </IonItem>
+
+        <IonItem>
+          <IonLabel>
+              <IonButton onClick={() => setShowModal(false)}>
+            No
+            </IonButton>
+          </IonLabel>
+        </IonItem>
+
+          </div>
+          <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
+        </IonModal>
         <div className="ion-padding-horizontal wrapper">
           <IonGrid className="ion-no-padding">
             <IonRow className="ion-align-items-baseline">

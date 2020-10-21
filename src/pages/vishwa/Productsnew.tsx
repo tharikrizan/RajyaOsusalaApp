@@ -74,6 +74,7 @@ const Maps: React.FC = () => {
                   <IonButton
                     color="light"
                     fill="clear"
+                    href="/prosearch"
                   >
                     <IonIcon icon={search} />
                   </IonButton>

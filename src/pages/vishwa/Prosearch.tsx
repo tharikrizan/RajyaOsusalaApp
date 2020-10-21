@@ -33,7 +33,7 @@ import {
   IonList,
 } from "@ionic/react";
 import { menuController } from "@ionic/core";
-import { menu, options, paperPlane, search } from "ionicons/icons";
+import { menu, options, paperPlane, search, arrowBackOutline } from "ionicons/icons";
 import "../vishwa/Prodesc.page.scss";
 import "../vishwa/Side";
 import Sidebar from "../vishwa/Sidebar";
@@ -53,8 +53,8 @@ const Prodesc: React.FC = () => {
             <IonAvatar slot="end">
               <img src="img/profile.jpg" />
             </IonAvatar>
-            <IonButton fill="clear" color="light" onClick={() => handleclick()}>
-              <IonIcon icon={menu}></IonIcon>
+            <IonButton fill="clear" color="light" href="/pro">
+              <IonIcon icon={arrowBackOutline}></IonIcon>
             </IonButton>
           </IonItem>
           <IonItem lines="none">

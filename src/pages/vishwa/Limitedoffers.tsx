@@ -141,7 +141,7 @@ const Limitedoffers: React.FC = () => {
           <IonSlides options={categories}>
 
           <IonSlide>
-              <IonCard className="category" color="danger" href="/category">
+              <IonCard className="category" color="danger">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/man.svg"></IonIcon>
                   <IonCardTitle>Senior Discount</IonCardTitle>
