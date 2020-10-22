@@ -3,10 +3,10 @@ import MainPurpleCircle from "../res/purple-circle.svg";
 import SideMiddleCircle from "../res/side-middle-ciricle.svg";
 import BottomRightCircle from "../res/bottom-right-circle.svg";
 
-import {person, logIn} from "ionicons/icons";
+import {logIn, person} from "ionicons/icons";
 import {Link} from "react-router-dom";
 
-import {IonImg, IonIcon} from "@ionic/react";
+import {IonIcon, IonImg} from "@ionic/react";
 
 const PURPLE_COLOR = "#316DD0";
 
