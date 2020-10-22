@@ -15,7 +15,6 @@ import {
 } from "@ionic/react";
 import { arrowBackOutline, trashBin } from "ionicons/icons";
 import "../MR/Chatt.page.scss";
-import { Link } from "react-router-dom";
 import ChatForm from "./ChatForm";
 import Message from "./Message";
 import Sidebar from "../../pages/vishwa/Sidebar";
