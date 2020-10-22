@@ -1,20 +1,12 @@
 import React from "react";
 
 import {
-  IonBackButton,
   IonButton,
   IonButtons,
   IonCol,
   IonGrid,
-  IonHeader,
-  IonIcon,
   IonLabel,
-  IonPage,
-  IonRoute,
   IonRow,
-  IonTabBar,
-  IonTabButton,
-  IonToolbar,
 } from "@ionic/react";
 
 const PrescriptionHeader: React.FC = () => {

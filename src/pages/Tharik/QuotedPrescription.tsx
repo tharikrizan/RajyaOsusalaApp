@@ -1,85 +1,84 @@
 import {
-    IonAlert,
-    IonBackButton,
-    IonCol,
-    IonContent,
-    IonFab,
-    IonFabButton,
-    IonGrid,
-    IonHeader,
-    IonIcon,
-    IonPage,
-    IonRow,
-    IonItem,
-    IonButton,
-    IonAvatar,
-    IonLabel,
-    IonTitle,
-    IonToolbar,
-  } from "@ionic/react";
-  import { trashBin, menu } from "ionicons/icons";
-  import React, { useState } from "react";
-  import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
-  import PrescriptionHeader from "../../components/Tharik/PrescriptionHeader";
-  import { menuController } from "@ionic/core";
-  import Sidebar from "../vishwa/Sidebar";
-  import QuotedPrescriptionContent from "../../components/Tharik/QuotedPrescriptionContent";
-  import "../Tharik/Pending.page.scss";
-  import "../Tharik/Backgroundcolor.page.scss";
-  import { Prescription, prescriptions } from "../../Database";
+  IonAlert,
+  IonCol,
+  IonContent,
+  IonFab,
+  IonFabButton,
+  IonGrid,
+  IonHeader,
+  IonIcon,
+  IonPage,
+  IonRow,
+  IonItem,
+  IonButton,
+  IonAvatar,
+  IonLabel,
+} from "@ionic/react";
+import { trashBin, menu } from "ionicons/icons";
+import React, { useState } from "react";
 
-  const QuotedPrescription: React.FC = () => {
-    const [alert, setAlert] = useState(false);
-    const [alertAD, setAlertAD] = useState(false);
-    const [alertD, setDAlert] = useState(false);
-    const [id, setId] = useState(1);
-    const [color, setColor] = useState("red");
-    const [idD, setDId] = useState(1);
-    const [quotedPrescription, setQuotedPrescription] = useState<Prescription[]>(
-      prescriptions.filter((x) => x.quoted)
-    );
-    const deletePrescription = (id: number) => {
-      console.log("id", id);
-      setId(id);
-      setAlert(true);
-    };
-    const delivery = (id: number) => {
-      console.log("id", id);
-      setDId(id);
-      setDAlert(true);
-    };
-    const deleteAllPrescription = () => {
-      setAlertAD(true);
-    };
-    const handleclick = () => {
-        menuController.open();
-      };
-    return (
-      <div className="bg-color">
+import PrescriptionHeader from "../../components/Tharik/PrescriptionHeader";
+import { menuController } from "@ionic/core";
+import Sidebar from "../vishwa/Sidebar";
+import QuotedPrescriptionContent from "../../components/Tharik/QuotedPrescriptionContent";
+import "../Tharik/Pending.page.scss";
+import "../Tharik/Backgroundcolor.page.scss";
+import { Prescription, prescriptions } from "../../Database";
+
+const QuotedPrescription: React.FC = () => {
+  const [alert, setAlert] = useState(false);
+  const [alertAD, setAlertAD] = useState(false);
+  const [alertD, setDAlert] = useState(false);
+  const [id, setId] = useState(1);
+  const [color, setColor] = useState("red");
+  const [idD, setDId] = useState(1);
+  const [quotedPrescription, setQuotedPrescription] = useState<Prescription[]>(
+    prescriptions.filter((x) => x.quoted)
+  );
+  const deletePrescription = (id: number) => {
+    setId(id);
+    setAlert(true);
+  };
+  const delivery = (id: number) => {
+    setDId(id);
+    setDAlert(true);
+  };
+  const deleteAllPrescription = () => {
+    setAlertAD(true);
+  };
+  const handleclick = () => {
+    menuController.open();
+  };
+  return (
+    <div className="bg-color">
       <IonPage>
         <div className="pending-page">
-        <IonHeader className="ion-no-border">
-          <IonItem lines="none">
-            <IonAvatar slot="end">
-              <img src="img/profile.jpg" />
-            </IonAvatar>
-            <IonButton fill="clear" color="light" onClick={() => handleclick()}>
-              <IonIcon icon={menu} />
-            </IonButton>
-          </IonItem>
-          <IonItem lines="none">
-            <div className="ion-padding-start ion-padding-bottom">
-              <IonLabel>
-                <h2>Quoted prescriptions</h2>
-              </IonLabel>
+          <IonHeader className="ion-no-border">
+            <IonItem lines="none">
+              <IonAvatar slot="end">
+                <img src="img/profile.jpg" />
+              </IonAvatar>
+              <IonButton
+                fill="clear"
+                color="light"
+                onClick={() => handleclick()}
+              >
+                <IonIcon icon={menu} />
+              </IonButton>
+            </IonItem>
+            <IonItem lines="none">
+              <div className="ion-padding-start ion-padding-bottom">
+                <IonLabel>
+                  <h2>Quoted prescriptions</h2>
+                </IonLabel>
 
-              <IonRow className="ion-align-items-center">
-                <IonCol size="10"></IonCol>
-              </IonRow>
-            </div>
-          </IonItem>
-        </IonHeader>
-        <Sidebar />
+                <IonRow className="ion-align-items-center">
+                  <IonCol size="10"></IonCol>
+                </IonRow>
+              </div>
+            </IonItem>
+          </IonHeader>
+          <Sidebar />
         </div>
         <IonContent fullscreen>
           <IonAlert
@@ -183,8 +182,8 @@ import {
           </IonGrid>
         </IonContent>
       </IonPage>
-      </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export default QuotedPrescription;
+export default QuotedPrescription;

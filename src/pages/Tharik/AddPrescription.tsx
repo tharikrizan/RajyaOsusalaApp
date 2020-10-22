@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { camera, trash, close } from "ionicons/icons";
+import { camera } from "ionicons/icons";
 import {
   IonContent,
   IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
   IonFab,
   IonFabButton,
   IonIcon,
@@ -13,7 +11,6 @@ import {
   IonRow,
   IonCol,
   IonImg,
-  IonBackButton,
   IonItem,
   IonLabel,
   IonSelect,
@@ -24,9 +21,9 @@ import {
   IonAlert,
   IonCard,
 } from "@ionic/react";
-import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
+
 import { usePhotoGallery } from "../../hooks/usePhotoGallery";
-import { add, menu,text, arrowBackOutline } from "ionicons/icons";
+import { arrowBackOutline } from "ionicons/icons";
 import { prescriptions } from "../../Database";
 import { useHistory } from "react-router";
 import "../Tharik/Pendingpre.pages.scss";
@@ -42,8 +39,6 @@ const AddPrescription: React.FC = (props) => {
   const [orderType, setOrderType] = useState<string>("Pick Up");
   const history = useHistory();
   const submitForm = () => {
-    console.log(photos[0]);
-
     prescriptions.push({
       id: 12457 + prescriptions.length,
       orderType: orderType,
@@ -58,147 +53,157 @@ const AddPrescription: React.FC = (props) => {
     setSuccessAlert(true);
   };
   return (
-      <div className="bg-color">
-    <IonPage>
-        <div className = "addpres-page">
-           <IonHeader className="ion-no-border">
-        <IonItem lines="none">
-          <IonAvatar slot="end">
-            <img src="img/profile.jpg" />
-          </IonAvatar>
-          <IonButton fill="clear" color="light" href="/prescriptions">
-            <IonIcon icon={arrowBackOutline} />
-          </IonButton>
-        </IonItem>
-        <IonItem lines="none">
-          <div className="ion-padding-start ion-padding-bottom">
-            <IonLabel>
-              <h2>Add prescriptions</h2>
-            </IonLabel>
-
-            <IonRow className="ion-align-items-center">
-              <IonCol size="10"></IonCol>
-            </IonRow>
-          </div>
-        </IonItem>
-      </IonHeader>
-      </div>
-      <IonContent fullscreen>
-        <IonAlert
-          isOpen={alert}
-          onDidDismiss={() => setAlert(false)}
-          cssClass="my-custom-class"
-          header={`Rajya Osusala`}
-          subHeader={"Form Submission"}
-          message={"Please Complete All details"}
-          buttons={["OK"]}
-        />
-        <IonAlert
-          isOpen={successAlert}
-          onDidDismiss={() => setSuccessAlert(false)}
-          cssClass="my-custom-class"
-          header={`Rajya Osusala`}
-          subHeader={"Form Submission"}
-          message={"Successfully added"}
-          buttons={[
-            {
-              text: "Okay",
-              handler: () => {
-                setTime("");
-                setOrderType("");
-                history.push("/prescriptions");
-              },
-            },
-          ]}
-        />
-        <IonGrid>
-          <IonRow className="ion-justify-content-center">
-            {photos.map((photo, index) => (
-              <IonCol size="6" key={index}>
-                <IonImg
-                  style={{ height: "300px", width: "100%" }}
-                  src={photo.webviewPath}
-                />
-              </IonCol>
-            ))}
-          </IonRow>
-          <IonRow className="ion-justify-content-center">
-            <IonCol size="12" className="ion-float-right">
-              <IonFab>
-                <IonFabButton onClick={() => takePhoto()}>
-                  <IonIcon icon={camera}></IonIcon>
-                </IonFabButton>
-              </IonFab>
-            </IonCol>
-          </IonRow>
-          <div className="pendingpre-page">
-        <IonCard>
-          <IonRow className="ion-justify-content-center">
-            <IonItem>
-              <IonLabel>Prescription For</IonLabel>
-              <IonSelect
-                value={time}
-                placeholder="Select One"
-                onIonChange={(e) => setTime(e.detail.value)}
-              >
-                <IonSelectOption value="Per Week">Per Week</IonSelectOption>
-                <IonSelectOption value="Per Month">Per Month</IonSelectOption>
-                <IonSelectOption value="As Prescribed">
-                  As Prescribed
-                </IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </IonRow>
-          <IonRow className="ion-justify-content-center">
-            <IonItem>
-              <IonLabel>Order Type</IonLabel>
-              <IonSelect
-                value={orderType}
-                okText="Okay"
-                cancelText="Dismiss"
-                onIonChange={(e) => setOrderType(e.detail.value)}
-              >
-                <IonSelectOption value="Delivery">Delivery</IonSelectOption>
-                <IonSelectOption value="Pick UP">Pick Up</IonSelectOption>
-              </IonSelect>
-            </IonItem>
-          </IonRow>
-          </IonCard>
-          </div>
-
-          <br />
-
-          <div className="pendingpre-page">
-        <IonCard>
-          <IonItemDivider>Your Selections</IonItemDivider>
-          <IonRow className="ion-justify-content-center">
-            <IonItem>Time: {time ?? "(none selected)"}</IonItem>
-          </IonRow>
-          <IonRow className="ion-justify-content-center">
-            <IonItem>Order Type: {orderType}</IonItem>
-          </IonRow>
-
-          <IonRow className="ion-justify-content-center">
-            <IonItem>
-              <IonButton
-                color="primary"
-                onClick={() => {
-                  if (time == "" || orderType == "" || photos.length == 0) {
-                    setAlert(true);
-                  } else {
-                    submitForm();
-                  }
-                }}
-              >
-                Save
+    <div className="bg-color">
+      <IonPage>
+        <div className="addpres-page">
+          <IonHeader className="ion-no-border">
+            <IonItem lines="none">
+              <IonAvatar slot="end">
+                <img src="img/profile.jpg" />
+              </IonAvatar>
+              <IonButton fill="clear" color="light" href="/prescriptions">
+                <IonIcon icon={arrowBackOutline} />
               </IonButton>
             </IonItem>
-          </IonRow>
-          </IonCard>
-          </div>
-        </IonGrid>
-      </IonContent>
-    </IonPage>
+            <IonItem lines="none">
+              <div className="ion-padding-start ion-padding-bottom">
+                <IonLabel>
+                  <h2>Add prescriptions</h2>
+                </IonLabel>
+
+                <IonRow className="ion-align-items-center">
+                  <IonCol size="10"></IonCol>
+                </IonRow>
+              </div>
+            </IonItem>
+          </IonHeader>
+        </div>
+        <IonContent fullscreen>
+          <IonAlert
+            isOpen={alert}
+            onDidDismiss={() => setAlert(false)}
+            cssClass="my-custom-class"
+            header={`Rajya Osusala`}
+            subHeader={"Form Submission"}
+            message={"Please Complete All details"}
+            buttons={["OK"]}
+          />
+          <IonAlert
+            isOpen={successAlert}
+            onDidDismiss={() => setSuccessAlert(false)}
+            cssClass="my-custom-class"
+            header={`Rajya Osusala`}
+            subHeader={"Form Submission"}
+            message={"Successfully added"}
+            buttons={[
+              {
+                text: "Okay",
+                handler: () => {
+                  setTime("");
+                  setOrderType("");
+                  history.push("/prescriptions");
+                },
+              },
+            ]}
+          />
+          <IonGrid>
+            <IonRow className="ion-justify-content-center">
+              {photos.map((photo, index) => (
+                <IonCol size="6" key={index}>
+                  <IonImg
+                    style={{ height: "300px", width: "100%" }}
+                    src={photo.webviewPath}
+                  />
+                </IonCol>
+              ))}
+            </IonRow>
+            <IonRow className="ion-justify-content-center">
+              <IonCol size="12" className="ion-float-right">
+                <IonFab>
+                  <IonFabButton onClick={() => takePhoto()}>
+                    <IonIcon icon={camera}></IonIcon>
+                  </IonFabButton>
+                </IonFab>
+              </IonCol>
+            </IonRow>
+            <div className="pendingpre-page">
+              <IonCard>
+                <IonRow className="ion-justify-content-center">
+                  <IonItem>
+                    <IonLabel>Prescription For</IonLabel>
+                    <IonSelect
+                      value={time}
+                      placeholder="Select One"
+                      onIonChange={(e) => setTime(e.detail.value)}
+                    >
+                      <IonSelectOption value="Per Week">
+                        Per Week
+                      </IonSelectOption>
+                      <IonSelectOption value="Per Month">
+                        Per Month
+                      </IonSelectOption>
+                      <IonSelectOption value="As Prescribed">
+                        As Prescribed
+                      </IonSelectOption>
+                    </IonSelect>
+                  </IonItem>
+                </IonRow>
+                <IonRow className="ion-justify-content-center">
+                  <IonItem>
+                    <IonLabel>Order Type</IonLabel>
+                    <IonSelect
+                      value={orderType}
+                      okText="Okay"
+                      cancelText="Dismiss"
+                      onIonChange={(e) => setOrderType(e.detail.value)}
+                    >
+                      <IonSelectOption value="Delivery">
+                        Delivery
+                      </IonSelectOption>
+                      <IonSelectOption value="Pick UP">Pick Up</IonSelectOption>
+                    </IonSelect>
+                  </IonItem>
+                </IonRow>
+              </IonCard>
+            </div>
+
+            <br />
+
+            <div className="pendingpre-page">
+              <IonCard>
+                <IonItemDivider>Your Selections</IonItemDivider>
+                <IonRow className="ion-justify-content-center">
+                  <IonItem>Time: {time ?? "(none selected)"}</IonItem>
+                </IonRow>
+                <IonRow className="ion-justify-content-center">
+                  <IonItem>Order Type: {orderType}</IonItem>
+                </IonRow>
+
+                <IonRow className="ion-justify-content-center">
+                  <IonItem>
+                    <IonButton
+                      color="primary"
+                      onClick={() => {
+                        if (
+                          time == "" ||
+                          orderType == "" ||
+                          photos.length == 0
+                        ) {
+                          setAlert(true);
+                        } else {
+                          submitForm();
+                        }
+                      }}
+                    >
+                      Save
+                    </IonButton>
+                  </IonItem>
+                </IonRow>
+              </IonCard>
+            </div>
+          </IonGrid>
+        </IonContent>
+      </IonPage>
     </div>
   );
 };
