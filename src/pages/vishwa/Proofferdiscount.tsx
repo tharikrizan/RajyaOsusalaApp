@@ -22,14 +22,16 @@ import {
 } from "@ionic/react";
 import { options, arrowBackOutline } from "ionicons/icons";
 import "../vishwa/Offers.page.scss";
+import { Link } from "react-router-dom";
 
-const Productoffers: React.FC = () => {
+const Proofferdiscount: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   const optioons = {
     slidesPerView: 1,
     spaceBetween: -60,
   };
+
 
   return (
     <div className="offer-page">
@@ -38,10 +40,16 @@ const Productoffers: React.FC = () => {
           <IonAvatar slot="end">
             <img src="img/profile.jpg" />
           </IonAvatar>
-
-          <IonButton fill="clear" color="light" href="/offers">
-            <IonIcon icon={arrowBackOutline} />
-          </IonButton>
+          <Link
+            to="/offers"
+            style={{
+              textDecoration: "none",
+            }}
+          >
+            <IonButton fill="clear" color="light">
+              <IonIcon icon={arrowBackOutline} />
+            </IonButton>
+          </Link>
         </IonItem>
         <IonItem lines="none">
           <div className="ion-padding-start ion-padding-bottom">
@@ -101,7 +109,7 @@ const Productoffers: React.FC = () => {
               <IonLabel>Discount</IonLabel>
             </IonItem>
 
-            <IonItem>
+            <IonItem href="/productoffers">
               <IonLabel>Discount End date</IonLabel>
             </IonItem>
 
@@ -131,13 +139,13 @@ const Productoffers: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="img/ayuu.jpg"></IonImg>
+                        <IonImg src="img/ayu2.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Ayurveda 20% Discount
+                        Ayurveda 50% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Ends 10th Oct</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 20th Oct</IonCardSubtitle>
                       <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -158,13 +166,13 @@ const Productoffers: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="img/ayu2.jpg"></IonImg>
+                        <IonImg src="img/health.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Ayurveda 50% Discount
+                        Health Drink 40% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Ends 20th Oct</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 30th Oct</IonCardSubtitle>
                       <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -212,13 +220,13 @@ const Productoffers: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="img/health.jpg"></IonImg>
+                        <IonImg src="img/ayuu.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Health Drink 40% Discount
+                        Ayurveda 20% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Ends 30th Oct</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 10th Oct</IonCardSubtitle>
                       <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -232,4 +240,4 @@ const Productoffers: React.FC = () => {
   );
 };
 
-export default Productoffers;
+export default Proofferdiscount;

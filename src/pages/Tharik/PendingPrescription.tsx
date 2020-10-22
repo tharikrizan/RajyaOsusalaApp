@@ -1,41 +1,23 @@
+import { IonAlert, IonFab, IonFabButton } from "@ionic/react";
 import {
-  IonAlert,
-  IonBackButton,
-  IonFab,
-  IonFabButton,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
-import {
+
   IonAvatar,
-  IonModal,
-  IonBadge,
   IonLabel,
   IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
   IonCol,
   IonContent,
   IonGrid,
   IonHeader,
   IonIcon,
-  IonImg,
   IonItem,
   IonRow,
-  IonSearchbar,
-  IonSegment,
-  IonSlide,
-  IonSlides,
-  IonToast,
 } from "@ionic/react";
-import { add, menu,text } from "ionicons/icons";
-import React, { useState, useEffect } from "react";
+import { add, menu } from "ionicons/icons";
+import React, { useState } from "react";
+import { menuController } from "@ionic/core";
 import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
 import PrescriptionHeader from "../../components/Tharik/PrescriptionHeader";
+import Sidebar from "../vishwa/Sidebar";
 import "../Tharik/Pending.page.scss";
 import "../Tharik/Backgroundcolor.page.scss";
 import { Prescription, prescriptions } from "../../Database";
@@ -52,55 +34,39 @@ const PendingPrescription: React.FC = () => {
     setId(id);
     setAlert(true);
   };
+
+
+  const handleclick = () => {
+    menuController.open();
+  };
   return (
     <div className="bg-color">
-        <div className="pending-page">
-      <IonHeader className="ion-no-border">
-        <IonItem lines="none">
-          <IonAvatar slot="end">
-            <img src="img/profile.jpg" />
-          </IonAvatar>
-          <IonButton fill="clear" color="light" href="/offers">
-            <IonIcon icon={menu} />
-          </IonButton>
-        </IonItem>
-        <IonItem lines="none">
-          <div className="ion-padding-start ion-padding-bottom">
-            <IonLabel>
-              <h2>Pending prescriptions</h2>
-            </IonLabel>
+      <div className="pending-page">
+        <IonHeader className="ion-no-border">
+          <IonItem lines="none">
+            <IonAvatar slot="end">
+              <img src="img/profile.jpg" />
+            </IonAvatar>
+            <IonButton fill="clear" color="light" onClick={() => handleclick()}>
+              <IonIcon icon={menu} />
+            </IonButton>
+          </IonItem>
+          <IonItem lines="none">
+            <div className="ion-padding-start ion-padding-bottom">
+              <IonLabel>
+                <h2>Pending prescriptions</h2>
+              </IonLabel>
 
-            <IonRow className="ion-align-items-center">
-              <IonCol size="10"></IonCol>
-            </IonRow>
-          </div>
-        </IonItem>
-      </IonHeader>
+              <IonRow className="ion-align-items-center">
+                <IonCol size="10"></IonCol>
+              </IonRow>
+            </div>
+          </IonItem>
+        </IonHeader>
+        <Sidebar />
       </div>
 
       <IonContent fullscreen={true}>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <IonAlert
           isOpen={alert}
           onDidDismiss={() => setAlert(false)}

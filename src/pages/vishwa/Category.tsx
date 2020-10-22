@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
-import { IonAvatar, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
+import { IonAvatar, IonModal,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar,  IonSlide, IonSlides } from '@ionic/react';
 import { menu, options } from 'ionicons/icons';
+import { menuController } from "@ionic/core";
 import "../vishwa/Category.page.scss";
+import Sidebar from "../vishwa/Sidebar";
+import { Link } from "react-router-dom";
 
 
 const Category: React.FC = () => {
 
-    const [showToast, setShowToast] = useState(false);
+    const [showModal, setShowModal] = useState(false);
     const handleclick = () => {
-
-        setShowToast(true);
-        setTimeout(() => setShowToast(false), 1500);
-    }
+        menuController.open();
+      };
 
     const optioons = {
         centeredSlides: true,
@@ -31,8 +32,8 @@ const Category: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-    <IonButton fill="clear" color="light">
-     <IonIcon icon={menu} />
+    <IonButton fill="clear" color="light" onClick={() => handleclick()}>
+     <IonIcon icon={menu}/>
     </IonButton>
   </IonItem>
   <IonItem lines="none">
@@ -46,7 +47,7 @@ const Category: React.FC = () => {
           <IonSearchbar placeholder="Search for category" searchIcon="location-outline"></IonSearchbar>
         </IonCol>
         <IonCol size="2">
-          <IonButton color="light" fill="clear">
+          <IonButton color="light" fill="clear" onClick={() => setShowModal(true)}>
           <IonIcon icon={options} />
           </IonButton>
         </IonCol>
@@ -56,7 +57,44 @@ const Category: React.FC = () => {
   </IonItem>
 </IonHeader>
 
+<Sidebar />
+
         <IonContent fullscreen={true}>
+
+        <IonModal isOpen={showModal} cssClass="my-modal">
+          <div
+            style={{
+              top: "1px",
+              color: "white",
+
+              backgroundColor: "#316dd0",
+              width: "100%",
+            }}
+          >
+            <h2
+              style={{
+                marginLeft: "20px",
+              }}
+            >
+              Filter Categories
+            </h2>
+          </div>
+<div>
+          <Link to="/allcat"  style={{
+            textDecoration: "none",
+          }} >
+          <IonItem>
+          <IonLabel>
+          All product categories
+          </IonLabel>
+        </IonItem>
+        </Link>
+
+
+        </div>
+
+          <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
+        </IonModal>
 
 <div className="ion-padding wrapper">
 
@@ -155,7 +193,7 @@ const Category: React.FC = () => {
           <IonSlides options={categories}>
 
             <IonSlide>
-              <IonCard className="category" color="danger" href="/products">
+              <IonCard className="category" color="danger" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/ayurvedic.svg"></IonIcon>
                   <IonCardTitle>Ayurvedic</IonCardTitle>
@@ -165,7 +203,7 @@ const Category: React.FC = () => {
             </IonSlide>
 
             <IonSlide>
-              <IonCard className="category" color="primary">
+              <IonCard className="category" color="primary" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/skin-care.svg"></IonIcon>
                   <IonCardTitle>Skin</IonCardTitle>
@@ -175,7 +213,7 @@ const Category: React.FC = () => {
             </IonSlide>
 
             <IonSlide>
-              <IonCard className="category" color="success">
+              <IonCard className="category" color="success" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/supplement.svg"></IonIcon>
                   <IonCardTitle>Vitamins</IonCardTitle>
@@ -186,7 +224,7 @@ const Category: React.FC = () => {
 
 
             <IonSlide>
-              <IonCard className="category" color="warning">
+              <IonCard className="category" color="warning" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/diabetes.svg"></IonIcon>
                   <IonCardTitle>Diabetes</IonCardTitle>
@@ -197,7 +235,7 @@ const Category: React.FC = () => {
 
 
             <IonSlide>
-              <IonCard className="category" color="tertiary">
+              <IonCard className="category" color="tertiary" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/food.svg"></IonIcon>
                   <IonCardTitle>Food</IonCardTitle>
@@ -241,8 +279,8 @@ const Category: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Category 1</IonCardTitle>
-                    <IonCardSubtitle>Some description here</IonCardSubtitle>
+                    <IonCardTitle className="title">Sports</IonCardTitle>
+                    <IonCardSubtitle>Essentials</IonCardSubtitle>
                   </IonCardContent>
                 </IonCard>
               </IonSlide>
@@ -255,24 +293,8 @@ const Category: React.FC = () => {
                       <IonImg src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
                     </div>
 
-                    <IonCardTitle className="title">Category 2</IonCardTitle>
-                    <IonCardSubtitle>Some description here</IonCardSubtitle>
-                    <IonCardSubtitle>
-                    </IonCardSubtitle>
-                  </IonCardContent>
-                </IonCard>
-              </IonSlide>
-
-              <IonSlide>
-                <IonCard className="card">
-                  <IonCardContent className="ion-text-left">
-
-                    <div className="img-wrapper">
-                      <IonImg src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
-                    </div>
-
-                    <IonCardTitle className="title">Category 3</IonCardTitle>
-                    <IonCardSubtitle>Some description here</IonCardSubtitle>
+                    <IonCardTitle className="title">Other</IonCardTitle>
+                    <IonCardSubtitle>Essentials</IonCardSubtitle>
                     <IonCardSubtitle>
                     </IonCardSubtitle>
                   </IonCardContent>

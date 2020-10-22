@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import {
   IonAvatar,
   IonModal,
-  IonActionSheet,
-  IonBadge,
   IonLabel,
   IonButton,
   IonCard,
@@ -20,37 +18,26 @@ import {
   IonItem,
   IonRow,
   IonSearchbar,
-  IonSegment,
   IonSlide,
   IonSlides,
-  IonToast,
 } from "@ionic/react";
 import {
   menu,
   options,
-  trash,
-  share,
-  caretForwardCircle,
-  heart,
-  close,
-  person,
-  logIn,
-  lockOpen,
 } from "ionicons/icons";
+import { menuController } from "@ionic/core";
 import "../vishwa/Offers.page.scss";
 import "../vishwa/modell.page.scss";
 import { Link } from "react-router-dom";
+import Sidebar from "../vishwa/Sidebar";
 
 const Offer: React.FC = () => {
-  const [showToast, setShowToast] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [showActionSheet, setShowActionSheet] = useState(false);
   const handleclick = () => {
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 1500);
+    menuController.open();
   };
 
-  const PURPLE_COLOR = "#B04CEF";
+
 
   const optioons = {
     centeredSlides: true,
@@ -69,7 +56,7 @@ const Offer: React.FC = () => {
           <IonAvatar slot="end">
             <img src="img/profile.jpg" />
           </IonAvatar>
-          <IonButton fill="clear" color="light" href="/">
+          <IonButton fill="clear" color="light" onClick={() => handleclick()}>
             <IonIcon icon={menu} />
           </IonButton>
         </IonItem>
@@ -95,10 +82,13 @@ const Offer: React.FC = () => {
                   <IonIcon icon={options} />
                 </IonButton>
               </IonCol>
+
             </IonRow>
           </div>
         </IonItem>
       </IonHeader>
+
+      <Sidebar />
 
       <IonContent fullscreen={true}>
         <IonModal isOpen={showModal} cssClass="my-modal">
@@ -122,20 +112,24 @@ const Offer: React.FC = () => {
 
           <div
             style={{
-              marginTop: "1px",
-              textAlign: "center",
-              fontSize: "20px",
+
             }}
           >
-            <IonButton color="secondary" href="/limitedoffers">
-              Limited Offers
-            </IonButton>
-            <br />
-            <br />
+              <Link to="/limitedoffers"  style={{
+            textDecoration: "none",
+          }} >
+            <IonItem>
+          <IonLabel>
+            Limited Offers
+          </IonLabel>
+        </IonItem>
+        </Link>
+        <IonItem href="/productoffers">
+          <IonLabel>
+           Product Offers
+          </IonLabel>
+        </IonItem>
 
-            <IonButton color="secondary" href="/productoffers">
-              Product Offers
-            </IonButton>
           </div>
           <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
         </IonModal>
@@ -284,19 +278,14 @@ const Offer: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
+                        <IonImg src="img/ayuu.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Product Discount
+                        Ayurveda 20% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 10th Oct</IonCardSubtitle>
                       <IonCardSubtitle>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
                       </IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -306,29 +295,13 @@ const Offer: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
+                        <IonImg src="img/ayu2.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Product Discount
+                        Ayurveda 50% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
-                      <IonCardSubtitle></IonCardSubtitle>
-                    </IonCardContent>
-                  </IonCard>
-                </IonSlide>
-
-                <IonSlide>
-                  <IonCard className="card">
-                    <IonCardContent className="ion-text-left">
-                      <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
-                      </div>
-
-                      <IonCardTitle className="title">
-                        Product Discount
-                      </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 20th Oct</IonCardSubtitle>
                       <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -338,6 +311,9 @@ const Offer: React.FC = () => {
           </IonRow>
         </IonGrid>
 
+        <br />
+
+
         <IonGrid class="ion-no-padding">
           <IonRow>
             <IonCol size="12">
@@ -346,19 +322,14 @@ const Offer: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/109275/pexels-photo-109275.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
+                        <IonImg src="img/fruit.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Product Discount
+                        Fruits 20% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 25th Oct</IonCardSubtitle>
                       <IonCardSubtitle>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
-                        <IonIcon name="star"></IonIcon>
                       </IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>
@@ -368,29 +339,13 @@ const Offer: React.FC = () => {
                   <IonCard className="card">
                     <IonCardContent className="ion-text-left">
                       <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/616840/pexels-photo-616840.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
+                        <IonImg src="img/health.jpg"></IonImg>
                       </div>
 
                       <IonCardTitle className="title">
-                        Product Discount
+                        Health Drink 40% Discount
                       </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
-                      <IonCardSubtitle></IonCardSubtitle>
-                    </IonCardContent>
-                  </IonCard>
-                </IonSlide>
-
-                <IonSlide>
-                  <IonCard className="card">
-                    <IonCardContent className="ion-text-left">
-                      <div className="img-wrapper">
-                        <IonImg src="https://images.pexels.com/photos/1437629/pexels-photo-1437629.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"></IonImg>
-                      </div>
-
-                      <IonCardTitle className="title">
-                        Product Discount
-                      </IonCardTitle>
-                      <IonCardSubtitle>Some description here</IonCardSubtitle>
+                      <IonCardSubtitle>Ends 30th Oct</IonCardSubtitle>
                       <IonCardSubtitle></IonCardSubtitle>
                     </IonCardContent>
                   </IonCard>

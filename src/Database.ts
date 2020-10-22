@@ -2,6 +2,10 @@ export interface Photo {
   filepath: string;
   webviewPath?: string;
 }
+export interface MessageInt {
+  time: string;
+  msgs: string;
+}
 export interface Prescription {
   id: number;
   orderType: string;
@@ -70,4 +74,20 @@ export let Messages = [
     time: "Apr 13",
     msgs: "Hi Team",
   },
-]; 
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+  {
+    time: "Apr 13",
+    msgs: "Hi Team",
+  },
+];

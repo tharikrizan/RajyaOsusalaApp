@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 
 
-const Limitedoffers: React.FC = () => {
+const Discount: React.FC = () => {
 
     const [showModal, setShowModal] = useState(false);
 
@@ -23,11 +23,9 @@ const Limitedoffers: React.FC = () => {
     <IonAvatar slot="end">
       <img src="img/profile.jpg" />
     </IonAvatar>
-
     <IonButton fill="clear" color="light" href="/offers">
      <IonIcon icon={arrowBackOutline} />
     </IonButton>
-
   </IonItem>
   <IonItem lines="none">
     <div className="ion-padding-start ion-padding-bottom">
@@ -82,8 +80,7 @@ const Limitedoffers: React.FC = () => {
     textAlign: "center",
     fontSize: "20px",
   }}>
-
-<Link to="/dise"  style={{
+    <Link to="/dise"  style={{
             textDecoration: "none",
           }} >
           <IonItem>
@@ -102,7 +99,6 @@ const Limitedoffers: React.FC = () => {
           </IonLabel>
         </IonItem>
         </Link>
-
   </div>
       <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
     </IonModal>
@@ -130,24 +126,27 @@ const Limitedoffers: React.FC = () => {
           <IonSlides options={categories}>
 
           <IonSlide>
-              <IonCard className="category" color="danger">
+              <IonCard className="category" color="tertiary">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/man.svg"></IonIcon>
-                  <IonCardTitle>Senior Discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 1st Nov</IonCardSubtitle>
+                  <IonIcon src="img/discount.svg"></IonIcon>
+                  <IonCardTitle>30% discount</IonCardTitle>
+                  <IonCardSubtitle>Ends 5th Oct</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
 
             <IonSlide>
-              <IonCard className="category" color="primary">
+              <IonCard className="category" color="success">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/free.svg"></IonIcon>
-                  <IonCardTitle>Buy 2 Get 1 Free</IonCardTitle>
-                  <IonCardSubtitle>Ends 20th Sept</IonCardSubtitle>
+                  <IonIcon src="img/discount.svg"></IonIcon>
+                  <IonCardTitle>20% discount</IonCardTitle>
+                  <IonCardSubtitle>Ends 1st Oct</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
+
+
+
           </IonSlides>
         </IonCol>
       </IonRow>
@@ -159,22 +158,23 @@ const Limitedoffers: React.FC = () => {
         <IonCol size="12">
           <IonSlides options={categories}>
 
-          <IonSlide>
-              <IonCard className="category" color="success">
+
+            <IonSlide>
+              <IonCard className="category" color="primary">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/discount.svg"></IonIcon>
-                  <IonCardTitle>20% discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 1st Oct</IonCardSubtitle>
+                  <IonIcon src="img/free.svg"></IonIcon>
+                  <IonCardTitle>Buy 2 Get 1 Free</IonCardTitle>
+                  <IonCardSubtitle>Ends 20th Sept</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
 
             <IonSlide>
-              <IonCard className="category" color="tertiary">
+              <IonCard className="category" color="danger" href="/category">
                 <IonCardHeader className="ion-text-center">
-                  <IonIcon src="img/discount.svg"></IonIcon>
-                  <IonCardTitle>30% discount</IonCardTitle>
-                  <IonCardSubtitle>Ends 5th Oct</IonCardSubtitle>
+                  <IonIcon src="img/man.svg"></IonIcon>
+                  <IonCardTitle>Senior Discount</IonCardTitle>
+                  <IonCardSubtitle>Ends 1st Nov</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>
             </IonSlide>
@@ -194,4 +194,4 @@ const Limitedoffers: React.FC = () => {
      );
 }
 
-export default Limitedoffers;
+export default Discount;

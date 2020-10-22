@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   IonAvatar,
@@ -28,7 +28,7 @@ import "../vishwa/Offers.page.scss";
 import "../vishwa/Homecolor.page.scss";
 import Sidebar from "../vishwa/Sidebar";
 
-const Maps = (props: any) => {
+const Homenew = () => {
   const optioons = {
     centeredSlides: true,
     slidesPerView: 1,
@@ -39,12 +39,6 @@ const Maps = (props: any) => {
     menuController.open();
   };
 
-  // check if the user has logged in
-  useEffect(() => {
-    if (!props.isLoggedIn) {
-      props.history.push("/login");
-    }
-  }, [props.isLoggedIn]);
 
   return (
     <div className="home-color">
@@ -229,4 +223,4 @@ const Maps = (props: any) => {
   );
 };
 
-export default Maps;
+export default Homenew;

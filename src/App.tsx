@@ -1,20 +1,12 @@
 import React, { useState } from "react";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import {
   IonApp,
-  IonIcon,
-  IonLabel,
   IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
 } from "@ionic/react";
 
 import { IonReactRouter } from "@ionic/react-router";
-import { ellipse, square, triangle } from "ionicons/icons";
-import Tab1 from "./pages/Tab1";
-import Tab2 from "./pages/Tab2";
-import Tab3 from "./pages/Tab3";
+
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -38,7 +30,7 @@ import PendingPrescription from "./pages/Tharik/PendingPrescription";
 import PendingPres from "./pages/Tharik/PendingPres";
 import QuotedPrescription from "./pages/Tharik/QuotedPrescription";
 import AddPrescription from "./pages/Tharik/AddPrescription";
-import HomePage from "./pages/HomePage";
+
 
 import EditPrescription from "./pages/Tharik/EditPrescription";
 
@@ -46,9 +38,17 @@ import Products from "./pages/vishwa/Products";
 import Productsnew from "./pages/vishwa/Productsnew";
 import Category from "./pages/vishwa/Category";
 import Offers from "./pages/vishwa/Offers";
+import Sidebar from "./pages/vishwa/Sidebar";
 import Limitedoffers from "./pages/vishwa/Limitedoffers";
 import Productoffers from "./pages/vishwa/Productoffers";
+import Allcategories from "./pages/vishwa/Allcategories";
+import Discount from "./pages/vishwa/Discount";
+import Discountend from "./pages/vishwa/Discountend";
+import Prodesc from "./pages/vishwa/Prodesc";
+import Ayurveda from "./pages/vishwa/Ayurveda";
 import Home from "./pages/vishwa/Home";
+import Proofferdiscount from "./pages/vishwa/Proofferdiscount";
+import Prosearch from "./pages/vishwa/Prosearch"
 import Maps from "./pages/Lakshan/Pages/Maps";
 import LoginPage from "./pages/Lakshan/Pages/LoginPage";
 import RegisterPage from "./pages/Lakshan/Pages/RegisterPage";
@@ -56,6 +56,10 @@ import Logout from "./pages/Lakshan/Pages/Logout";
 import ForgotPassword from "./pages/Lakshan/Pages/ForgotPassword";
 import Chat from "./components/MR/Chat";
 import EditProfile from "./components/MR/Profile/EditProfile";
+import Profilenew from "./components/MR/Profile/Profilenew";
+import Chatnew from "./components/MR/Chatnew";
+import Offersearch from "./pages/vishwa/Offersearch";
+import Homenew from "./pages/vishwa/Homenew";
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -102,7 +106,16 @@ const App: React.FC = () => {
         <Route path="/productoffers" component={Productoffers} exact={true} />
         <Route path="/offers" component={Offers} exact={true} />
         <Route path="/maps" component={Maps} exact={true} />
+        <Route path="/allcat" component={Allcategories} exact={true} />
         <Route path="/pendingpre" component={PendingPres} exact={true} />
+        <Route path="/ayu" component={Ayurveda} exact={true} />
+        <Route path="/prodesc" component={Prodesc} exact={true} />
+        <Route path="/dis" component={Discount} exact={true} />
+        <Route path="/dise" component={Discountend} exact={true} />
+        <Route path="/prodise" component={Proofferdiscount} exact={true} />
+        <Route path="/prosearch" component={Prosearch} exact={true} />
+        <Route path="/offersearch" component={Offersearch} exact={true} />
+        <Route path="/homenew" component={Homenew} exact={true} />
         <Route
           path="/register"
           render={(props) => (
@@ -130,8 +143,15 @@ const App: React.FC = () => {
           exact={true}
         />
 
-        //added chat and profile paths
         <Route
+          path="/sidebar"
+          component={Sidebar}
+          exact={true}
+        />
+
+
+        //added chat and profile paths
+       <Route
           path="/chat"
           component={Chat}
           exact={true}
@@ -139,6 +159,18 @@ const App: React.FC = () => {
         <Route
           path="/editProfile"
           component={EditProfile}
+          exact={true}
+        />
+
+        <Route
+          path="/message"
+          component={Chatnew}
+          exact={true}
+        />
+
+        <Route
+          path="/profileEdit"
+          component={Profilenew}
           exact={true}
         />
 
