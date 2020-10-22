@@ -6,7 +6,7 @@ import {lockOpen, person} from "ionicons/icons";
 import {Link} from "react-router-dom";
 
 import {IonIcon, IonImg} from "@ionic/react";
-import {topHeaderBubble} from "./LoginPageTopBubble";
+import {topHeaderBubble} from "../components/LoginPageTopBubble";
 
 const PURPLE_COLOR = "#316DD0";
 
