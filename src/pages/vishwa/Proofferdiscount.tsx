@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import {
   IonAvatar,
   IonModal,
-  IonBadge,
   IonLabel,
   IonButton,
   IonCard,
   IonCardContent,
-  IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
   IonCol,
@@ -19,31 +17,21 @@ import {
   IonItem,
   IonRow,
   IonSearchbar,
-  IonSegment,
   IonSlide,
   IonSlides,
-  IonToast,
 } from "@ionic/react";
-import { menu, options, arrowBackOutline } from "ionicons/icons";
+import { options, arrowBackOutline } from "ionicons/icons";
 import "../vishwa/Offers.page.scss";
 import { Link } from "react-router-dom";
 
 const Proofferdiscount: React.FC = () => {
-  const [showToast, setShowToast] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const handleclick = () => {
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 1500);
-  };
 
   const optioons = {
     slidesPerView: 1,
     spaceBetween: -60,
   };
 
-  const categories = {
-    slidesPerView: 2,
-  };
 
   return (
     <div className="offer-page">

@@ -1,105 +1,85 @@
 import React, { useState } from "react";
 import {
   IonAvatar,
-  IonButtons,
-  IonBadge,
-  IonMenu,
   IonApp,
-  IonRouterOutlet,
   IonLabel,
   IonModal,
   IonButton,
   IonCard,
   IonCardContent,
-  IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
   IonCol,
   IonContent,
-  IonGrid,
   IonHeader,
   IonIcon,
   IonImg,
   IonItem,
   IonRow,
   IonSearchbar,
-  IonSegment,
-  IonSlide,
-  IonSlides,
-  IonToast,
-  IonMenuButton,
-  IonToolbar,
-  IonTitle,
-  IonList,
 } from "@ionic/react";
-import { menuController } from "@ionic/core";
-import { menu, options, paperPlane, search, arrowBackOutline } from "ionicons/icons";
+import { options, search, arrowBackOutline } from "ionicons/icons";
 import "../vishwa/Prodesc.page.scss";
 import "../vishwa/Side";
 import Sidebar from "../vishwa/Sidebar";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Prodesc: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
-  const handleclick = () => {
-    menuController.open();
-  };
+
   return (
-      <IonApp>
-    <div className="prodesc-page">
+    <IonApp>
       <div className="prodesc-page">
-        <IonHeader className="ion-no-border">
-          <IonItem lines="none">
-            <IonAvatar slot="end">
-              <img src="img/profile.jpg" />
-            </IonAvatar>
-            <IonButton fill="clear" color="light" href="/pro">
-              <IonIcon icon={arrowBackOutline}></IonIcon>
-            </IonButton>
-          </IonItem>
-          <IonItem lines="none">
-            <div className="ion-padding-start ion-padding-bottom">
-              <IonLabel>
-                <h2>Products</h2>
-              </IonLabel>
+        <div className="prodesc-page">
+          <IonHeader className="ion-no-border">
+            <IonItem lines="none">
+              <IonAvatar slot="end">
+                <img src="img/profile.jpg" />
+              </IonAvatar>
+              <IonButton fill="clear" color="light" href="/pro">
+                <IonIcon icon={arrowBackOutline}></IonIcon>
+              </IonButton>
+            </IonItem>
+            <IonItem lines="none">
+              <div className="ion-padding-start ion-padding-bottom">
+                <IonLabel>
+                  <h2>Products</h2>
+                </IonLabel>
 
-              <IonRow className="ion-align-items-center">
-                <IonCol size="8">
-                  <IonSearchbar
-                    placeholder="Search"
-                    searchIcon="location-outline"
-                  ></IonSearchbar>
-                </IonCol>
-                <IonCol size="2">
-                  <IonButton
-                    color="light"
-                    fill="clear"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonIcon icon={search} />
-                  </IonButton>
-                </IonCol>
-                <IonCol size="2">
-                  <IonButton
-                    color="light"
-                    fill="clear"
-                    onClick={() => setShowModal(true)}
-                  >
-                    <IonIcon icon={options} />
-                  </IonButton>
-                </IonCol>
-              </IonRow>
-            </div>
-          </IonItem>
-        </IonHeader>
+                <IonRow className="ion-align-items-center">
+                  <IonCol size="8">
+                    <IonSearchbar
+                      placeholder="Search"
+                      searchIcon="location-outline"
+                    ></IonSearchbar>
+                  </IonCol>
+                  <IonCol size="2">
+                    <IonButton
+                      color="light"
+                      fill="clear"
+                      onClick={() => setShowModal(true)}
+                    >
+                      <IonIcon icon={search} />
+                    </IonButton>
+                  </IonCol>
+                  <IonCol size="2">
+                    <IonButton
+                      color="light"
+                      fill="clear"
+                      onClick={() => setShowModal(true)}
+                    >
+                      <IonIcon icon={options} />
+                    </IonButton>
+                  </IonCol>
+                </IonRow>
+              </div>
+            </IonItem>
+          </IonHeader>
 
-        <Sidebar />
-
+          <Sidebar />
         </div>
 
         <IonContent fullscreen={true}>
-
-
           <IonModal isOpen={showModal} cssClass="my-modal">
             <div
               style={{
@@ -126,45 +106,49 @@ const Prodesc: React.FC = () => {
                 fontSize: "20px",
               }}
             >
-                <Link to="/pro"  style={{
-            textDecoration: "none",
-          }} >
-            <IonItem>
-          <IonLabel>
-            Ascending Order
-          </IonLabel>
-        </IonItem>
-        </Link>
+              <Link
+                to="/pro"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <IonItem>
+                  <IonLabel>Ascending Order</IonLabel>
+                </IonItem>
+              </Link>
 
-        <Link to="/prodesc"  style={{
-            textDecoration: "none",
-          }} >
-            <IonItem>
-          <IonLabel>
-            Descending Order
-          </IonLabel>
-        </IonItem>
-        </Link>
+              <Link
+                to="/prodesc"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <IonItem>
+                  <IonLabel>Descending Order</IonLabel>
+                </IonItem>
+              </Link>
 
-        <Link to="/pro"  style={{
-            textDecoration: "none",
-          }} >
-            <IonItem>
-          <IonLabel>
-            Price: Low to High
-          </IonLabel>
-        </IonItem>
-        </Link>
+              <Link
+                to="/pro"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <IonItem>
+                  <IonLabel>Price: Low to High</IonLabel>
+                </IonItem>
+              </Link>
 
-        <Link to="/prodesc"  style={{
-            textDecoration: "none",
-          }} >
-            <IonItem>
-          <IonLabel>
-            Price: High to Low
-          </IonLabel>
-        </IonItem>
-        </Link>
+              <Link
+                to="/prodesc"
+                style={{
+                  textDecoration: "none",
+                }}
+              >
+                <IonItem>
+                  <IonLabel>Price: High to Low</IonLabel>
+                </IonItem>
+              </Link>
             </div>
             <IonButton onClick={() => setShowModal(false)}>Close</IonButton>
           </IonModal>
@@ -184,26 +168,24 @@ const Prodesc: React.FC = () => {
               </IonCol>
             </IonRow>
             <div className="pronew-page">
-            <IonRow>
-              <IonCard>
-                <IonCardContent>
-                  <IonImg src="img/pro3.jpg"></IonImg>
+              <IonRow>
+                <IonCard>
+                  <IonCardContent>
+                    <IonImg src="img/pro3.jpg"></IonImg>
 
-                  <IonRow>
-                    <IonCol size="">
-                      <IonCardTitle>EProduct</IonCardTitle>
-                      <IonCardSubtitle>Rs 350</IonCardSubtitle>
-                    </IonCol>
-                  </IonRow>
-                </IonCardContent>
-              </IonCard>
-
-            </IonRow>
-          </div>
+                    <IonRow>
+                      <IonCol size="">
+                        <IonCardTitle>EProduct</IonCardTitle>
+                        <IonCardSubtitle>Rs 350</IonCardSubtitle>
+                      </IonCol>
+                    </IonRow>
+                  </IonCardContent>
+                </IonCard>
+              </IonRow>
+            </div>
           </div>
         </IonContent>
-
-    </div>
+      </div>
     </IonApp>
   );
 };

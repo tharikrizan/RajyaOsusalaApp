@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
-import { IonAvatar, IonBadge, IonLabel, IonModal, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
-import { menu, options, trashBin, logOutOutline } from 'ionicons/icons';
+import { IonAvatar, IonLabel, IonModal, IonButton, IonContent, IonHeader, IonIcon, IonItem, IonToast } from '@ionic/react';
+import { menu, logOutOutline } from 'ionicons/icons';
 import { menuController } from "@ionic/core";
 import Sidebar from "../../../pages/vishwa/Sidebar";
 import "../../Tharik/PrescriptionContent.page.scss";
 import "../Profile/Profilenew.page.scss";
-import { Link } from "react-router-dom"
+
 
 
 const Maps: React.FC = () => {

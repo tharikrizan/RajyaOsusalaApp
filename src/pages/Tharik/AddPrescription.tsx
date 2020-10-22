@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { camera, trash, close } from "ionicons/icons";
+import { camera } from "ionicons/icons";
 import {
   IonContent,
   IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
   IonFab,
   IonFabButton,
   IonIcon,
@@ -13,7 +11,6 @@ import {
   IonRow,
   IonCol,
   IonImg,
-  IonBackButton,
   IonItem,
   IonLabel,
   IonSelect,
@@ -24,9 +21,8 @@ import {
   IonAlert,
   IonCard,
 } from "@ionic/react";
-import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
 import { usePhotoGallery } from "../../hooks/usePhotoGallery";
-import { add, menu,text, arrowBackOutline } from "ionicons/icons";
+import {arrowBackOutline } from "ionicons/icons";
 import { prescriptions } from "../../Database";
 import { useHistory } from "react-router";
 import "../Tharik/Pendingpre.pages.scss";

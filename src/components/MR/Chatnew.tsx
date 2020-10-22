@@ -2,33 +2,18 @@ import React, { useEffect, useState } from "react";
 import {
   IonAvatar,
   IonModal,
-  IonFooter,
-  IonBadge,
   IonLabel,
-  IonToolbar,
-  IonTitle,
   IonButton,
-  IonCard,
-  IonCardContent,
-  IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
   IonCol,
   IonContent,
   IonGrid,
   IonHeader,
   IonIcon,
-  IonImg,
   IonItem,
   IonRow,
   IonSearchbar,
-  IonSegment,
-  IonSlide,
-  IonSlides,
-  IonToast,
 } from "@ionic/react";
-import { menu, options, arrowBackOutline, trashBin } from "ionicons/icons";
-import { menuController } from "@ionic/core";
+import { arrowBackOutline, trashBin } from "ionicons/icons";
 import "../MR/Chatt.page.scss";
 import { Link } from "react-router-dom";
 import ChatForm from "./ChatForm";
@@ -37,12 +22,10 @@ import Sidebar from "../../pages/vishwa/Sidebar";
 import { MessageInt, Messages } from "../../Database";
 
 const Chatt: React.FC = () => {
-  const [showToast, setShowToast] = useState(false);
+
   const [showModal, setShowModal] = useState(false);
   const [messages, setMessages] = useState(Messages);
-  const handleclick = () => {
-    menuController.open();
-  };
+
 
   useEffect(() => {
     setMessages(Messages);
@@ -60,16 +43,6 @@ const Chatt: React.FC = () => {
       msgs: message.msgs,
   }]);
 
-  };
-
-  const optioons = {
-    centeredSlides: true,
-    slidesPerView: 1,
-    spaceBetween: -60,
-  };
-
-  const categories = {
-    slidesPerView: 2,
   };
 
   return (

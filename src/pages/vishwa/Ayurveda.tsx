@@ -1,27 +1,17 @@
 import React, {useState} from 'react';
-import { IonAvatar, IonModal, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
-import { menu, options, search, arrowBackOutline  } from 'ionicons/icons';
+import { IonAvatar, IonModal, IonLabel, IonButton, IonCard, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonRow, IonSearchbar, IonSlide, IonSlides } from '@ionic/react';
+import { search, arrowBackOutline  } from 'ionicons/icons';
 import "../vishwa/Offers.page.scss";
 import { Link } from "react-router-dom";
-import { NONAME } from 'dns';
+
 
 
 
 const Ayurveda: React.FC = () => {
 
-    const [showToast, setShowToast] = useState(false);
+
     const [showModal, setShowModal] = useState(false);
-    const handleclick = () => {
 
-        setShowToast(true);
-        setTimeout(() => setShowToast(false), 1500);
-    }
-
-    const optioons = {
-        centeredSlides: true,
-        slidesPerView: 1,
-        spaceBetween: -60,
-      }
 
     const categories = {
         slidesPerView: 2,
@@ -33,7 +23,7 @@ const Ayurveda: React.FC = () => {
  <IonHeader className="ion-no-border">
   <IonItem lines="none">
     <IonAvatar slot="end">
-      <img src="img/profile.jpg" />
+      <img src="img/profile.jpg" alt="description of image"/>
     </IonAvatar>
     <Link to="/allcat">
     <IonButton fill="clear" color="light" href="/allcat">

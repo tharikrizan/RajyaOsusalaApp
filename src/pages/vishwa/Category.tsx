@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { IonAvatar, IonModal, IonBadge,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar, IonSegment, IonSlide, IonSlides, IonToast } from '@ionic/react';
+import { IonAvatar, IonModal,IonLabel, IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonImg, IonItem, IonRow, IonSearchbar,  IonSlide, IonSlides } from '@ionic/react';
 import { menu, options } from 'ionicons/icons';
 import { menuController } from "@ionic/core";
 import "../vishwa/Category.page.scss";
@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 
 const Category: React.FC = () => {
 
-    const [showToast, setShowToast] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const handleclick = () => {
         menuController.open();

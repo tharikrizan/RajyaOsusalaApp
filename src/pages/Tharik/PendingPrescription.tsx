@@ -1,39 +1,22 @@
 import {
     IonAlert,
-    IonBackButton,
     IonFab,
     IonFabButton,
-    IonPage,
-    IonTitle,
-    IonToolbar,
   } from "@ionic/react";
   import {
     IonAvatar,
-    IonModal,
-    IonBadge,
     IonLabel,
     IonButton,
-    IonCard,
-    IonCardContent,
-    IonCardHeader,
-    IonCardSubtitle,
-    IonCardTitle,
     IonCol,
     IonContent,
     IonGrid,
     IonHeader,
     IonIcon,
-    IonImg,
     IonItem,
     IonRow,
-    IonSearchbar,
-    IonSegment,
-    IonSlide,
-    IonSlides,
-    IonToast,
   } from "@ionic/react";
-  import { add, menu,text } from "ionicons/icons";
-  import React, { useState, useEffect } from "react";
+  import { add, menu } from "ionicons/icons";
+  import React, { useState } from "react";
   import { menuController } from "@ionic/core";
   import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
   import PrescriptionHeader from "../../components/Tharik/PrescriptionHeader";

@@ -1,6 +1,5 @@
 import {
     IonAlert,
-    IonBackButton,
     IonCol,
     IonContent,
     IonFab,
@@ -14,12 +13,9 @@ import {
     IonButton,
     IonAvatar,
     IonLabel,
-    IonTitle,
-    IonToolbar,
   } from "@ionic/react";
   import { trashBin, menu } from "ionicons/icons";
   import React, { useState } from "react";
-  import PrescriptionContent from "../../components/Tharik/PrescriptionContent";
   import PrescriptionHeader from "../../components/Tharik/PrescriptionHeader";
   import { menuController } from "@ionic/core";
   import Sidebar from "../vishwa/Sidebar";

@@ -4,8 +4,6 @@ import {
   IonContent,
   IonHeader,
   IonPage,
-  IonTitle,
-  IonToolbar,
   IonFab,
   IonFabButton,
   IonIcon,
@@ -13,7 +11,6 @@ import {
   IonRow,
   IonCol,
   IonImg,
-  IonBackButton,
   IonItem,
   IonLabel,
   IonSelect,
@@ -28,7 +25,7 @@ import {
 import { usePhotoGallery } from "../../hooks/usePhotoGallery";
 import { Photo, Prescription, prescriptions } from "../../Database";
 import { useParams } from "react-router";
-import { add, menu,text, arrowBackOutline } from "ionicons/icons";
+import { arrowBackOutline } from "ionicons/icons";
 import "../Tharik/Pendingpre.pages.scss";
 import "../Tharik/AddPrescription.page.scss";
 import "../Tharik/Backgroundcolor.page.scss";
