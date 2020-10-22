@@ -106,7 +106,7 @@ const Offer: React.FC = () => {
                 marginLeft: "20px",
               }}
             >
-              Filter Offers By
+              Filter Offers
             </h2>
           </div>
 
@@ -227,7 +227,7 @@ const Offer: React.FC = () => {
                   <IonCard className="category" color="primary">
                     <IonCardHeader className="ion-text-center">
                       <IonIcon src="img/free.svg"></IonIcon>
-                      <IonCardTitle>Buy 2 Get 1 Free</IonCardTitle>
+                      <IonCardTitle>Buy 2 One free</IonCardTitle>
                       <IonCardSubtitle>Ends 20th Sept</IonCardSubtitle>
                     </IonCardHeader>
                   </IonCard>

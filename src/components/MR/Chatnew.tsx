@@ -52,17 +52,10 @@ const Chatt: React.FC = () => {
           <IonAvatar slot="end">
             <img src="img/profile.jpg" />
           </IonAvatar>
-          <Link
-            to="/homenew"
-            style={{
-              textDecoration: "none",
-            }}
-          >
-            <IonButton fill="clear" color="light">
+
+            <IonButton fill="clear" color="light" href="/homenew">
               <IonIcon icon={arrowBackOutline} />
             </IonButton>
-
-            </Link>
 
         </IonItem>
         <IonItem lines="none">

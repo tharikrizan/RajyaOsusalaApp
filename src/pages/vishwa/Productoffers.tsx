@@ -52,7 +52,7 @@ const Productoffers: React.FC = () => {
             <IonRow className="ion-align-items-center">
               <IonCol size="10">
                 <IonSearchbar
-                  placeholder="Search for category"
+                  placeholder="Search category"
                   searchIcon="location-outline"
                 ></IonSearchbar>
               </IonCol>
@@ -86,7 +86,7 @@ const Productoffers: React.FC = () => {
                 marginLeft: "20px",
               }}
             >
-              Filter Offers By
+              Filter Offers
             </h2>
           </div>
 

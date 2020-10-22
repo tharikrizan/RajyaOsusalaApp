@@ -44,7 +44,7 @@ const Category: React.FC = () => {
 
       <IonRow className="ion-align-items-center">
         <IonCol size="10">
-          <IonSearchbar placeholder="Search for category" searchIcon="location-outline"></IonSearchbar>
+          <IonSearchbar placeholder="Search category" searchIcon="location-outline"></IonSearchbar>
         </IonCol>
         <IonCol size="2">
           <IonButton color="light" fill="clear" onClick={() => setShowModal(true)}>
@@ -73,10 +73,10 @@ const Category: React.FC = () => {
           >
             <h2
               style={{
-                marginLeft: "20px",
+                marginLeft: "55px",
               }}
             >
-              Filter Categories
+              Filter
             </h2>
           </div>
 <div>
@@ -85,7 +85,7 @@ const Category: React.FC = () => {
           }} >
           <IonItem>
           <IonLabel>
-          All product categories
+          All categories
           </IonLabel>
         </IonItem>
         </Link>
@@ -196,7 +196,7 @@ const Category: React.FC = () => {
               <IonCard className="category" color="danger" href="/pro">
                 <IonCardHeader className="ion-text-center">
                   <IonIcon src="img/ayurvedic.svg"></IonIcon>
-                  <IonCardTitle>Ayurvedic</IonCardTitle>
+                  <IonCardTitle>Ayurveda</IonCardTitle>
                   <IonCardSubtitle>Category</IonCardSubtitle>
                 </IonCardHeader>
               </IonCard>

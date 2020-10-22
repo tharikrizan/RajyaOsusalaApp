@@ -180,7 +180,7 @@ const Maps: React.FC = () => {
 
                   <IonRow>
                     <IonCol size="">
-                      <IonCardTitle>AProduct</IonCardTitle>
+                      <IonCardTitle>Product</IonCardTitle>
                       <IonCardSubtitle>Rs 150</IonCardSubtitle>
                     </IonCol>
                   </IonRow>
@@ -204,7 +204,7 @@ const Maps: React.FC = () => {
             <IonRow>
               <IonCard>
                 <IonCardContent>
-                  <IonImg src="img/pro3.jpg"></IonImg>
+                  <IonImg src="img/healthDrink.jpg"></IonImg>
 
                   <IonRow>
                     <IonCol size="">
@@ -217,7 +217,7 @@ const Maps: React.FC = () => {
 
               <IonCard>
                 <IonCardContent>
-                  <IonImg src="img/pro4.jpg"></IonImg>
+                  <IonImg src="img/healthFruit.jpeg"></IonImg>
 
                   <IonRow>
                     <IonCol size="">
@@ -232,7 +232,7 @@ const Maps: React.FC = () => {
             <IonRow>
               <IonCard>
                 <IonCardContent>
-                  <IonImg src="img/pro3.jpg"></IonImg>
+                  <IonImg src="img/last.png"></IonImg>
 
                   <IonRow>
                     <IonCol size="">
@@ -245,7 +245,7 @@ const Maps: React.FC = () => {
 
               <IonCard>
                 <IonCardContent>
-                  <IonImg src="img/pro4.jpg"></IonImg>
+                  <IonImg src="img/fruuit.jpg"></IonImg>
 
                   <IonRow>
                     <IonCol size="">

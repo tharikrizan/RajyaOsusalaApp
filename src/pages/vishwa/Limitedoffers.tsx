@@ -75,7 +75,7 @@ const Limitedoffers: React.FC = () => {
 
   }}><h2 style={{
       marginLeft: "20px"
-  }}>Filter Offers  By</h2></div>
+  }}>Filter Offers</h2></div>
 
 <div style={{
     marginTop: "1px",

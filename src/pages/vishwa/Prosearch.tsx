@@ -171,7 +171,7 @@ const Prodesc: React.FC = () => {
               <IonRow>
                 <IonCard>
                   <IonCardContent>
-                    <IonImg src="img/pro3.jpg"></IonImg>
+                    <IonImg src="img/last.png"></IonImg>
 
                     <IonRow>
                       <IonCol size="">

@@ -129,8 +129,8 @@ const Homenew = () => {
 
                     <IonCol size="">
 
-                      <IonCardTitle>Upload</IonCardTitle>
-                      <IonCardSubtitle>Prescription</IonCardSubtitle>
+                      <IonCardTitle>Order</IonCardTitle>
+
 
                     </IonCol>
 
@@ -148,8 +148,8 @@ const Homenew = () => {
 
                   <IonRow>
                     <IonCol size="">
-                      <IonCardTitle>Location</IonCardTitle>
-                      <IonCardSubtitle>Service</IonCardSubtitle>
+                      <IonCardTitle>Locations</IonCardTitle>
+
                     </IonCol>
                   </IonRow>
                 </IonCardContent>
