@@ -47,7 +47,7 @@ const PrescriptionContent: React.FC<Props> = ({
             return (
               <IonItem key={index}>
                 <IonAvatar slot="start">
-                  {console.log(pres.photo.webviewPath !== "")}
+
                   <IonImg src={realPath} />
                 </IonAvatar>
                 <IonRow>
