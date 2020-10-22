@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import {
   IonAvatar,
   IonModal,
-  IonActionSheet,
-  IonBadge,
   IonLabel,
   IonButton,
   IonCard,
@@ -20,23 +18,12 @@ import {
   IonItem,
   IonRow,
   IonSearchbar,
-  IonSegment,
   IonSlide,
   IonSlides,
-  IonToast,
 } from "@ionic/react";
 import {
   menu,
   options,
-  search,
-  trash,
-  share,
-  caretForwardCircle,
-  heart,
-  close,
-  person,
-  logIn,
-  lockOpen,
 } from "ionicons/icons";
 import { menuController } from "@ionic/core";
 import "../vishwa/Offers.page.scss";
@@ -45,14 +32,12 @@ import { Link } from "react-router-dom";
 import Sidebar from "../vishwa/Sidebar";
 
 const Offer: React.FC = () => {
-  const [showToast, setShowToast] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [showActionSheet, setShowActionSheet] = useState(false);
   const handleclick = () => {
     menuController.open();
   };
 
-  const PURPLE_COLOR = "#B04CEF";
+
 
   const optioons = {
     centeredSlides: true,

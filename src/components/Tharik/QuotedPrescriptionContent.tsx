@@ -12,8 +12,8 @@ import {
   IonRow,
 } from "@ionic/react";
 import React, { useState, useEffect } from "react";
-import { Prescription, prescriptions } from "../../Database";
-import { trashBin, pencil, car } from "ionicons/icons";
+import { Prescription } from "../../Database";
+import { trashBin, car } from "ionicons/icons";
 import "../Tharik/PrescriptionContent.page.scss";
 
 interface Props {

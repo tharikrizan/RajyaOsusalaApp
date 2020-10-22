@@ -1,30 +1,10 @@
-import {
-    IonBackButton,
-    IonButton,
-    IonCol,
-    IonContent,
-    IonGrid,
-    IonHeader,
-    IonIcon,
-    IonLabel,
-    IonNav,
-    IonPage,
-    IonRow,
-    IonTab,
-    IonTabBar,
-    IonTabButton,
-    IonTabs,
-    IonTitle,
-    IonToolbar,
-    IonList,
-  } from "@ionic/react";
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import './Message.css';
 import { MessageInt } from "../../Database";
 
 interface Props{
     messages:MessageInt[];
-    
+
 }
 
 const Message: React.FC<Props> = ({messages}) => {
@@ -33,7 +13,7 @@ const [Messages, setMessages] = useState(messages);
 
 
     console.log(Messages);
-    
+
     return (
         <div id="chat-message-list">
             { Messages.map( (M,index) =>

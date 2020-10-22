@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import {
   IonAvatar,
@@ -18,6 +19,7 @@ import {
   IonSearchbar,
 } from "@ionic/react";
 import { menu, options } from "ionicons/icons";
+
 import "../Tharik/Pendingpre.pages.scss";
 
 const Pendingpre: React.FC = () => {

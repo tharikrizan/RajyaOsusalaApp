@@ -1,29 +1,13 @@
 import {
-    IonBackButton,
     IonButton,
     IonCol,
-    IonContent,
     IonGrid,
-    IonHeader,
-    IonIcon,
     IonLabel,
-    IonNav,
     IonPage,
     IonRow,
     IonRadio,
-    IonTab,
-    IonTabBar,
-    IonTabButton,
-    IonTabs,
-    IonTitle,
-    IonToolbar,
-    IonText,
-    IonRadioGroup,
     IonItem,
-    IonList,
   } from "@ionic/react";
-import { Icon } from "ionicons/dist/types/components/icon/icon";
-import { ellipse, square, triangle } from "ionicons/icons";
 import React from "react";
 import "./EditProfile.css"
 export interface EditProfile {}
@@ -41,7 +25,7 @@ const isBackgroundRed = true;
                   <IonCol size='6'>
                     <input type='text' placeholder='Title'></input>
                   </IonCol>
-                </IonRow> 
+                </IonRow>
                 <br></br>
                 <IonRow className={'background-white'}>
                   <IonCol size='5' >
@@ -50,7 +34,7 @@ const isBackgroundRed = true;
                   <IonCol size='6'>
                     <input type='text' placeholder='Name'></input>
                   </IonCol>
-                </IonRow> 
+                </IonRow>
                 <br></br>
                 <IonRow className={'background-white'}>
                   <IonCol size='5' >
@@ -187,7 +171,7 @@ const isBackgroundRed = true;
                     <IonButton>Remove</IonButton>
                   </IonCol>
                 </IonRow>
-                
+
 
           </IonGrid>
       </IonPage>

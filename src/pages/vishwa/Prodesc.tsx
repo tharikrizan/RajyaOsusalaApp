@@ -1,39 +1,25 @@
 import React, { useState } from "react";
 import {
   IonAvatar,
-  IonButtons,
-  IonBadge,
-  IonMenu,
   IonApp,
-  IonRouterOutlet,
   IonLabel,
   IonModal,
   IonButton,
   IonCard,
   IonCardContent,
-  IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
   IonCol,
   IonContent,
-  IonGrid,
   IonHeader,
   IonIcon,
   IonImg,
   IonItem,
   IonRow,
   IonSearchbar,
-  IonSegment,
-  IonSlide,
-  IonSlides,
-  IonToast,
-  IonMenuButton,
-  IonToolbar,
-  IonTitle,
-  IonList,
 } from "@ionic/react";
 import { menuController } from "@ionic/core";
-import { menu, options, paperPlane, search } from "ionicons/icons";
+import { menu, options, search } from "ionicons/icons";
 import "../vishwa/Prodesc.page.scss";
 import "../vishwa/Side";
 import Sidebar from "../vishwa/Sidebar";

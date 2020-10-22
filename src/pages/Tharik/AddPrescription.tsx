@@ -23,7 +23,8 @@ import {
 } from "@ionic/react";
 
 import { usePhotoGallery } from "../../hooks/usePhotoGallery";
-import { arrowBackOutline } from "ionicons/icons";
+import {arrowBackOutline } from "ionicons/icons";
+
 import { prescriptions } from "../../Database";
 import { useHistory } from "react-router";
 import "../Tharik/Pendingpre.pages.scss";

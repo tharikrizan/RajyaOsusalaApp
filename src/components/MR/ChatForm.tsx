@@ -1,7 +1,6 @@
-import { IonButton, IonIcon } from '@ionic/react';
-import { camera, triangle } from 'ionicons/icons';
-import React, { useState , useEffect } from 'react';
-import { MessageInt, Messages } from "../../Database";
+import {triangle } from 'ionicons/icons';
+import React, { useState } from 'react';
+import { MessageInt } from "../../Database";
 import './ChatForm.css';
 export interface Props {
   submitForm:(message:MessageInt)=>void;
@@ -9,13 +8,13 @@ export interface Props {
 
 const ChatForm: React.FC<Props> = ({submitForm}) => {
     const [msgs, setMsgs] = useState<string>("");
-    
+
    /* const submitForm = () => {
         Messages.push({
             time: String(Date.now()),
             msgs: msgs,
         });
-        
+
       };*/
     return (
         <div id="chat-form">

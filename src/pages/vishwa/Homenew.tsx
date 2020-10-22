@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import {
   IonAvatar,
-  IonBadge,
   IonLabel,
   IonButton,
   IonCard,
   IonCardContent,
-  IonCardHeader,
   IonCardSubtitle,
   IonCardTitle,
   IonCol,
@@ -19,12 +17,10 @@ import {
   IonItem,
   IonRow,
   IonSearchbar,
-  IonSegment,
   IonSlide,
   IonSlides,
-  IonToast,
 } from "@ionic/react";
-import { menu, options } from "ionicons/icons";
+import { menu } from "ionicons/icons";
 import { menuController } from "@ionic/core";
 import "../vishwa/Home.page.scss";
 import "../vishwa/Homee.page.scss";

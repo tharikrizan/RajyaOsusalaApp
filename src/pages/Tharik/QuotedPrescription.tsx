@@ -1,4 +1,5 @@
 import {
+
   IonAlert,
   IonCol,
   IonContent,
@@ -16,7 +17,6 @@ import {
 } from "@ionic/react";
 import { trashBin, menu } from "ionicons/icons";
 import React, { useState } from "react";
-
 import PrescriptionHeader from "../../components/Tharik/PrescriptionHeader";
 import { menuController } from "@ionic/core";
 import Sidebar from "../vishwa/Sidebar";

@@ -47,6 +47,7 @@ const PrescriptionContent: React.FC<Props> = ({
             return (
               <IonItem key={index}>
                 <IonAvatar slot="start">
+
                   <IonImg src={realPath} />
                 </IonAvatar>
                 <IonRow>

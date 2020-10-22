@@ -1,6 +1,6 @@
 import React from 'react';
 import './ChatTitle.css';
-import { IonIcon, IonButton, IonFabButton } from '@ionic/react';
+import { IonIcon} from '@ionic/react';
 import { trash } from 'ionicons/icons';
 import { Messages } from '../../Database';
 
