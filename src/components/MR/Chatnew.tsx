@@ -12,6 +12,8 @@ import {
   IonItem,
   IonRow,
   IonSearchbar,
+  IonFooter,
+  IonToast,
 } from "@ionic/react";
 import { arrowBackOutline, trashBin } from "ionicons/icons";
 import "../MR/Chatt.page.scss";
@@ -25,6 +27,7 @@ const Chatt: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
   const [messages, setMessages] = useState(Messages);
 
+  const [showToast1, setShowToast1] = useState(false);
 
   useEffect(() => {
     setMessages(Messages);
@@ -86,6 +89,13 @@ const Chatt: React.FC = () => {
       </IonHeader>
 
       <IonContent fullscreen={true}>
+
+      <IonToast
+        isOpen={showToast1}
+        onDidDismiss={() => setShowToast1(false)}
+        message="Chat Cleared"
+        duration={1000}
+      />
       <IonModal isOpen={showModal} cssClass="my-modal">
           <div
             style={{
@@ -110,7 +120,7 @@ const Chatt: React.FC = () => {
 
             <IonItem>
           <IonLabel>
-              <IonButton href="/logout">
+              <IonButton onClick={() => setShowToast1(true)}>
             Yes
             </IonButton>
           </IonLabel>
@@ -140,8 +150,14 @@ const Chatt: React.FC = () => {
 
         <Message  messages={messages}/>
 
-        <ChatForm  submitForm={submitForm}/>
+
+
       </IonContent>
+
+      <IonFooter>
+        <ChatForm  submitForm={submitForm}/>
+
+        </IonFooter>
     </div>
   );
 };

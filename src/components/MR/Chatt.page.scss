@@ -102,4 +102,12 @@
     padding: 10px;
     font-size: 14px;
   }
+
+  .footer,
+  ion-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
